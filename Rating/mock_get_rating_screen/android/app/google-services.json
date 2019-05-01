@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "96666328805",
+    "firebase_url": "https://taxibossmock.firebaseio.com",
+    "project_id": "taxibossmock",
+    "storage_bucket": "taxibossmock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96666328805:android:d38ee391a581ac5d",
+        "android_client_info": {
+          "package_name": "com.example.mock_get_rating_screen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96666328805-2r2903nfcpdaco37jvlng53i5g70ilhp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP6hkwH7hHi2udxjflwbmeOEjkn71ro8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96666328805-2r2903nfcpdaco37jvlng53i5g70ilhp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
