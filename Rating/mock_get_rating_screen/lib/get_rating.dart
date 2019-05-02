@@ -1,28 +1,64 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:firebase_firestore/firebase_firestore.dart';
 
 class GetAvgRating {
   
-  int comfort = 0, safety = 0, etiquette = 0;
-
-  void collectData(){
+  double comfort = 0, safety = 0, etiquette = 0, avgRating = 0;
+  String out; 
+  collectData(userID){
     //connect and get data from database here
-    String id;
-    final db = Firestore.instance;
+    //comfort = 0;
+    //safety = 0;
+    //etiquette = 0;
+
+    String id = userID;
+    int count = 0;
+    Future<QuerySnapshot> qS = Firestore.instance.collection('Rating').getDocuments().then((snap){
+      for(int i = 0; i < snap.documents.length; i++){
+        if(snap.documents.elementAt(i).data['driverID'] == id)
+        {
+          if(i == 0)
+          {
+            comfort = 0;
+            safety = 0;
+            etiquette = 0;
+            avgRating = 0;
+          } 
+          count++;
+          comfort += snap.documents.elementAt(i).data['comfort'];
+          safety += snap.documents.elementAt(i).data['safety'];
+          etiquette += snap.documents.elementAt(i).data['etiquette'];
+          avgRating += snap.documents.elementAt(i).data['averageRating'];
+        }
+      }
+      comfort = comfort/count;
+      safety = safety/count;
+      etiquette = etiquette/count;
+      avgRating = avgRating/count;
+    });    
+    //snap.documents.elementAt(0).data['driverID']}
+    //print(ratings.toString());
+    //out = 'Output: ${ratings.toString()}';
+    //return out;
   }
 
-  int getAvgRatingComfort()
+  double getAvgRatingComfort()
   {
-    return 0;
+    return comfort;
   }
 
-  int getAvgRatingSafety()
+  double getAvgRatingSafety()
   {
-    return 0;
+    return safety;
   }
 
-  int getAvgRatingEtiquette()
+  double getAvg(){
+    return avgRating;
+  }
+
+  double getAvgRatingEtiquette()
   {
-    return 0;
+    return etiquette;
   }
 }
