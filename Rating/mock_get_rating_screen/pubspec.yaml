@@ -26,6 +26,9 @@ dependencies:
   firebase_core: ^0.3.4
   cloud_firestore:
   flutter_rating_bar: ^1.1.1
+  geoflutterfire:
+  location: ^1.4.1
+  google_maps_flutter: ^0.2.0
 
 dev_dependencies:
   flutter_test:

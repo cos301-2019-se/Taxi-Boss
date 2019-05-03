@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mock_get_rating_screen/appW.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-
-final barColor = const Color(0xFFf1f442);
+final barColor = Colors.yellow;//const Color.fromRGBO(255, 157, 7, 0);
 final bgColor = const Color(0xFFDAE0E2);
 
 class Location extends StatefulWidget{
@@ -10,6 +10,7 @@ class Location extends StatefulWidget{
   Location(String driver){
     id = driver;
   }
+  //State createState()=>FireMapState();
   createState() {
     return PickupLocation(id);
   }
@@ -17,10 +18,12 @@ class Location extends StatefulWidget{
 
 class PickupLocation extends State<Location> {
   String id;
+  GoogleMapController mapController;
   PickupLocation(String driver){
     id = driver;
   }
   Widget build(BuildContext context){
+    
     return MaterialApp(
       home: Builder(
         builder: (context)=>
@@ -55,9 +58,22 @@ class PickupLocation extends State<Location> {
           backgroundColor: barColor,
           title: Text("Pickup Locations"),
         ),
-        backgroundColor: bgColor,
-      )
-    )
-    );
+        //backgroundColor: bgColor,
+        body: GoogleMap(
+            initialCameraPosition: CameraPosition(target: LatLng(24.150, -110.32), zoom: 10),
+            onMapCreated: _onMapCreated,
+            myLocationEnabled: true, // Add little blue dot for device location, requires permission from user
+            mapType: MapType.hybrid, 
+            trackCameraPosition: true
+        ),
+        )
+        )
+      );
+  }
+
+  void _onMapCreated(GoogleMapController controller){
+    setState(() {
+     mapController=controller; 
+    });
   }
 }
