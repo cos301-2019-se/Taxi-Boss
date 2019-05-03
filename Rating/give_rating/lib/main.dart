@@ -113,7 +113,7 @@ class MyTextInputState extends State<MyTextInput>
                   {
                     setState(() {
                     etiquette = res; //stores user input
-                    input.etiquette = int.parse(etiquette);
+                    input.etiquette = int.parse(etiquette); //cast to int
                     
                     });
                   }
