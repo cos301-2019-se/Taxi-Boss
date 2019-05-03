@@ -126,7 +126,7 @@ class MyTextInputState extends State<MyTextInput>
                                   double sum;
                                   sum = input.comfort + input.safety + input.etiquette;
 
-                                  input.average = (sum/15) * 5; //calculate averahe rating out of 5
+                                  input.average = (sum/15) * 5;
                                   Firestore.instance.collection("Rating").document().setData({'averageRating': input.average, 'comfort':input.comfort, 'driverID':"1" ,'etiquette':input.etiquette, 'safety':input.safety});
 
                                 }
