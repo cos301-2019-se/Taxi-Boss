@@ -5,7 +5,7 @@ import "package:cloud_firestore/cloud_firestore.dart"; //connect to firestore da
 void main()
 {
   runApp(new MaterialApp(
-    home: new MyTextInput(),
+    home: new MyTextInput(), //instance of MyTextInput
     
 
  
