@@ -112,7 +112,7 @@ class MyTextInputState extends State<MyTextInput>
                   onSubmitted: (String res)
                   {
                     setState(() {
-                    etiquette = res; 
+                    etiquette = res; //stores user input
                     input.etiquette = int.parse(etiquette);
                     
                     });
