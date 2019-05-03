@@ -38,7 +38,7 @@ class MyTextInputState extends State<MyTextInput>
   
   
   
-
+//Could only work with string for now. Will cast this to int before uploading to db
   String safety = "";
   String comfort = "";
   String etiquette = "";
