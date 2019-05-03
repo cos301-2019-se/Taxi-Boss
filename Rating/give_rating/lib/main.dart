@@ -74,7 +74,7 @@ class MyTextInputState extends State<MyTextInput>
                   {
                     setState(() {
                     safety = res; //stores user input
-                    input.safety = int.parse(safety);
+                    input.safety = int.parse(safety); //cast to int
 
                     });
                   }
