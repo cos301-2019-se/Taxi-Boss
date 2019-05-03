@@ -93,7 +93,7 @@ class MyTextInputState extends State<MyTextInput>
                   onSubmitted: (String res)
                   {
                     setState(() {
-                    comfort = res; 
+                    comfort = res; //stores user input
                     input.comfort = int.parse(comfort);
                     });
                   }
