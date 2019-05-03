@@ -51,7 +51,7 @@ class MyTextInputState extends State<MyTextInput>
   
   return new Scaffold(
 
-    appBar: new AppBar(title: new Text("Rate your D!"), backgroundColor: Colors.yellow),
+    appBar: new AppBar(title: new Text("Rate your Dr!"), backgroundColor: Colors.yellow),
 
     body: new SafeArea(
           top: false,
