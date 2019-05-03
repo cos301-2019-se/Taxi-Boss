@@ -4,10 +4,12 @@ This project creates the page that allows a user to rate a driver.
 
 `
 ` 
-####The user can rate a ride based on:
->Their comfort level,
->The driver's etiquette, and
->How safe they felt during the ride.
+#### The user can rate a ride based on:
+> Their comfort level,
+
+> The driver's etiquette, and
+
+> How safe they felt during the ride.
 
 This will be further updated in the future..
 
