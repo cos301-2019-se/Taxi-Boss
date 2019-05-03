@@ -37,10 +37,7 @@ class GetAvgRating {
       etiquette = etiquette/count;
       avgRating = avgRating/count;
     });    
-    //snap.documents.elementAt(0).data['driverID']}
-    //print(ratings.toString());
-    //out = 'Output: ${ratings.toString()}';
-    //return out;
+    
   }
 
   double getAvgRatingComfort()
