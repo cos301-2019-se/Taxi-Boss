@@ -118,7 +118,7 @@ class MyTextInputState extends State<MyTextInput>
                     });
                   }
                   ),
-                new Text("Etiquette Rating:  ${etiquette}"),
+                new Text("Etiquette Rating:  ${etiquette}"), //view the rating on screen before uploading to db
 
                 new Container(
                               padding: const EdgeInsets.only(left: 40.0, top: 50.0),
