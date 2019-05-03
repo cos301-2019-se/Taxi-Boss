@@ -79,7 +79,7 @@ class MyTextInputState extends State<MyTextInput>
                     });
                   }
                   ),
-                  new Text("Safety Rating:  ${safety}"),
+                  new Text("Safety Rating:  ${safety}"), //view the rating on screen before uploading to db
 
                   new TextField(
                     maxLength: 1,
