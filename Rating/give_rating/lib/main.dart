@@ -73,7 +73,7 @@ class MyTextInputState extends State<MyTextInput>
                   onSubmitted: (String res)
                   {
                     setState(() {
-                    safety = res; 
+                    safety = res; //stores user input
                     input.safety = int.parse(safety);
 
                     });
