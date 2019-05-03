@@ -94,7 +94,7 @@ class MyTextInputState extends State<MyTextInput>
                   {
                     setState(() {
                     comfort = res; //stores user input
-                    input.comfort = int.parse(comfort);
+                    input.comfort = int.parse(comfort); //cast to int
                     });
                   }
                   ),
