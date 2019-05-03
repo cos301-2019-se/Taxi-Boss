@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import './pages/give_rating.dart';
 import "package:cloud_firestore/cloud_firestore.dart";
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 void main()
 {
@@ -51,7 +52,7 @@ class MyTextInputState extends State<MyTextInput>
   
   return new Scaffold(
 
-    appBar: new AppBar(title: new Text("Rate your Driver!"), backgroundColor: Colors.yellow),
+    appBar: new AppBar(title: new Text("Give Us Your Feedback"), backgroundColor: Colors.yellow),
 
     body: new SafeArea(
           top: false,
@@ -62,64 +63,59 @@ class MyTextInputState extends State<MyTextInput>
                 
                 children: <Widget>[
                     Image.network("https://cdn.dribbble.com/users/514552/screenshots/4255081/taxidup.gif", fit: BoxFit.fill),
-                    new TextField(
-                    maxLength: 1,
-                    keyboardType: TextInputType.number,
-                    decoration: new InputDecoration(
-                    hintText: "Enter Safety Rating:"
+                 
+
+                  new Text("Rate your Driver!", style: new TextStyle(color: Colors.red, fontSize:30,) ,),
+                 Padding (
+                   padding: const EdgeInsets.only(top:30)
+                 ),
 
 
-                  ),
+                 new Text("Safety Rating: ", style: new TextStyle(fontSize:20,) ,),
+                 FlutterRatingBar(
+                    initialRating: 0,
+                    fillColor: Colors.amber,
+                    itemSize: 50.0,
+                    borderColor: Colors.amber.withAlpha(50),
+                    allowHalfRating: true,
+                    onRatingUpdate: (rating) {
+                    print(rating);
+                    input.safety = rating;
+                     },
+                    ),
+                  
+
+              
+
                 
-                  onSubmitted: (String res)
-                  {
-                    setState(() {
-                    safety = res; 
-                    input.safety = int.parse(safety);
-
-                    });
-                  }
-                  ),
-                  new Text("Safety Rating:  ${safety}"),
-
-                  new TextField(
-                    maxLength: 1,
-                    keyboardType: TextInputType.number,
-                    decoration: new InputDecoration(
-                    hintText: "Enter Comfort Rating:"
-
-
-                  ),
+            
+                 new Text("Comfort Rating: ", style: new TextStyle(fontSize:20,) ,),
+                 FlutterRatingBar(
+                    initialRating: 0,
+                    fillColor: Colors.amber,
+                     itemSize: 50.0,
+                    borderColor: Colors.amber.withAlpha(50),
+                    allowHalfRating: true,
+                    onRatingUpdate: (rating) {
+                    print(rating);
+                    input.comfort = rating;
+                     },
+                    ),
                 
-                  onSubmitted: (String res)
-                  {
-                    setState(() {
-                    comfort = res; 
-                    input.comfort = int.parse(comfort);
-                    });
-                  }
-                  ),
-                new Text("Comfort Rating:  ${comfort}"),
 
-                new TextField(
-                    maxLength: 1,
-                    keyboardType: TextInputType.number,
-                    decoration: new InputDecoration(
-                    hintText: "Enter Etiquette Rating:"
-
-
-                  ),
+              new Text("Etiquette Rating: ", style: new TextStyle(fontSize:20,) ,),
+                 FlutterRatingBar(
+                    initialRating: 0,
+                    fillColor: Colors.amber,
+                    itemSize: 50.0,
+                    borderColor: Colors.amber.withAlpha(50),
+                    allowHalfRating: true,
+                    onRatingUpdate: (rating) {
+                    print(rating);
+                    input.etiquette = rating;
+                     },
+                    ),
                 
-                  onSubmitted: (String res)
-                  {
-                    setState(() {
-                    etiquette = res; 
-                    input.etiquette = int.parse(etiquette);
-                    
-                    });
-                  }
-                  ),
-                new Text("Etiquette Rating:  ${etiquette}"),
 
                 new Container(
                               padding: const EdgeInsets.only(left: 40.0, top: 50.0),
@@ -127,7 +123,7 @@ class MyTextInputState extends State<MyTextInput>
                                 child: const Text('Submit'),
                                 onPressed: ()
                                 {
-                                  int sum;
+                                  double sum;
                                   sum = input.comfort + input.safety + input.etiquette;
 
                                   input.average = (sum/15) * 5;
@@ -180,9 +176,9 @@ class MyTextInputState extends State<MyTextInput>
 
 class Input
 {
-  int comfort = 0;
-  int safety = 0;
-  int etiquette = 0;
+  double comfort = 0;
+  double safety = 0;
+  double etiquette = 0;
   double average = 0;
 
 }
