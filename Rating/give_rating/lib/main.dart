@@ -98,7 +98,7 @@ class MyTextInputState extends State<MyTextInput>
                     });
                   }
                   ),
-                new Text("Comfort Rating:  ${comfort}"),
+                new Text("Comfort Rating:  ${comfort}"), //view the rating on screen before uploading to db
 
                 new TextField(
                     maxLength: 1,
