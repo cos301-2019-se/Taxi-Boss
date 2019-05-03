@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //import './pages/give_rating.dart';
-import "package:cloud_firestore/cloud_firestore.dart";
+import "package:cloud_firestore/cloud_firestore.dart"; //connect to firestore database
 
 void main()
 {
