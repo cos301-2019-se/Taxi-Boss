@@ -1,16 +1,20 @@
 # give_rating
 
-A new Flutter project.
+This project creates the page that allows a user to rate a driver. 
 
-## Getting Started
+`
+` 
+#### The user can rate a ride based on:
+> Their comfort level,
 
-This project is a starting point for a Flutter application.
+> The driver's etiquette, and
 
-A few resources to get you started if this is your first Flutter project:
+> How safe they felt during the ride.
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+This will be further updated in the future..
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+>Once a user has rated the driver, an average is calcuated and those 3 values are sent to the database. We do not store the user's details, as we'd like the ratings to remain annonymous. 
+
+>The driver can then see their total score rating from the driver app.
+
+
