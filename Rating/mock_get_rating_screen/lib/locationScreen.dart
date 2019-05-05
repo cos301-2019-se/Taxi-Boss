@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mock_get_rating_screen/appW.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:permission/permission.dart';
+//import 'package:permission/permission.dart';
 
 final barColor = Colors.yellow;//const Color.fromRGBO(255, 157, 7, 0);
 final bgColor = const Color(0xFFDAE0E2);

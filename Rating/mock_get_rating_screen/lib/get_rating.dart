@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:firebase_firestore/firebase_firestore.dart';
 
 class GetAvgRating {
-  
+  bool done = false;
   double comfort = 0, safety = 0, etiquette = 0, avgRating = 0;
   String out; 
   collectData(userID){
@@ -11,7 +11,7 @@ class GetAvgRating {
     //comfort = 0;
     //safety = 0;
     //etiquette = 0;
-
+    
     String id = userID;
     int count = 0;
     Future<QuerySnapshot> qS = Firestore.instance.collection('Rating').getDocuments().then((snap){
@@ -36,26 +36,35 @@ class GetAvgRating {
       safety = safety/count;
       etiquette = etiquette/count;
       avgRating = avgRating/count;
+      done = true;
     });    
     
   }
 
   double getAvgRatingComfort()
   {
+    while(done == false){}
+    done = false;
     return comfort;
   }
 
   double getAvgRatingSafety()
   {
+    while(done == false){}
+    done = false;
     return safety;
   }
 
   double getAvg(){
+    while(done == false){}
+    done = false;
     return avgRating;
   }
 
   double getAvgRatingEtiquette()
   {
+    while(done == false){}
+    done = false;
     return etiquette;
   }
 }
