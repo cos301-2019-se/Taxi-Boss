@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mock_get_rating_screen/appW.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:permission/permission.dart';
 
 final barColor = Colors.yellow;//const Color.fromRGBO(255, 157, 7, 0);
 final bgColor = const Color(0xFFDAE0E2);
@@ -20,6 +21,7 @@ class PickupLocation extends State<Location> {
   GoogleMapController mapController;
   PickupLocation(String driver){
     id = driver;
+    
   }
   Widget build(BuildContext context){
     
@@ -66,9 +68,8 @@ class PickupLocation extends State<Location> {
                mapController = controller; 
               });
             },
-            //myLocationEnabled: true, // Add little blue dot for device location, requires permission from user
-            
-            //trackCameraPosition: true
+            myLocationEnabled: true, // Add little blue dot for device location, requires permission from use
+            trackCameraPosition: true
         ),
         )
         )
