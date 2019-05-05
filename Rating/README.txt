@@ -1,1 +1,1 @@
-Give Rating and Get Rating will be here
+Give Rating and Get Rating will be done here

@@ -3,7 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:mock_get_rating_screen/get_rating.dart';
 import 'package:mock_get_rating_screen/locationScreen.dart';
 
-final barColor = const Color.fromRGBO(255, 157, 7, 0);
+final barColor = Colors.yellow;//const Color.fromRGBO(255, 157, 7, 0);
 final bgColor = const Color(0xFFDAE0E2);
 
 class Rating extends StatefulWidget{
@@ -71,9 +71,6 @@ class DriverRating extends State<Rating> {
                   child: Icon(Icons.stars, size: 100),
                 ),
               ),
-              //Padding(
-                //padding: const EdgeInsets.only(top: 5),
-              //),
               Text('${avgRating.toStringAsFixed(1)}', style: new TextStyle(fontSize: 40.0)),
               Padding(
                 padding: const EdgeInsets.only(top: 40, bottom: 30.0),
@@ -115,8 +112,11 @@ class DriverRating extends State<Rating> {
               //display and refresh rating on screen
               setState(() {
                 dataA.collectData(id);//in future it should give as parameter the current driver id using the app
+                //while(dataA.getAvgRatingComfort() == -1.0){}
                 comfort = dataA.getAvgRatingComfort();
+                //while(dataA.getAvgRatingSafety() == -1){}
                 safety = dataA.getAvgRatingSafety();
+
                 etiquette = dataA.getAvgRatingEtiquette();
                 avgRating = dataA.getAvg();
               });
