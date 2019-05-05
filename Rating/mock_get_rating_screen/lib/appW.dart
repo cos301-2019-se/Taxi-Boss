@@ -112,8 +112,11 @@ class DriverRating extends State<Rating> {
               //display and refresh rating on screen
               setState(() {
                 dataA.collectData(id);//in future it should give as parameter the current driver id using the app
+                //while(dataA.getAvgRatingComfort() == -1.0){}
                 comfort = dataA.getAvgRatingComfort();
+                //while(dataA.getAvgRatingSafety() == -1){}
                 safety = dataA.getAvgRatingSafety();
+
                 etiquette = dataA.getAvgRatingEtiquette();
                 avgRating = dataA.getAvg();
               });

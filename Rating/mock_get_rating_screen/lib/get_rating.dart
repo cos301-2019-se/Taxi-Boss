@@ -38,14 +38,11 @@ class GetAvgRating {
       avgRating = avgRating/count;
       done = true;
     });    
-    
   }
 
   double getAvgRatingComfort()
   {
-    while(done == false){}
-    done = false;
-    return comfort;
+      return comfort;
   }
 
   double getAvgRatingSafety()
@@ -54,15 +51,11 @@ class GetAvgRating {
   }
 
   double getAvg(){
-    while(done == false){}
-    done = false;
     return avgRating;
   }
 
   double getAvgRatingEtiquette()
   {
-    while(done == false){}
-    done = false;
     return etiquette;
   }
 }
