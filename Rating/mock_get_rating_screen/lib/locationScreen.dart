@@ -10,7 +10,6 @@ class Location extends StatefulWidget{
   Location(String driver){
     id = driver;
   }
-  //State createState()=>FireMapState();
   createState() {
     return PickupLocation(id);
   }
@@ -32,7 +31,7 @@ class PickupLocation extends State<Location> {
             child: ListView(
               children: <Widget>[
                 DrawerHeader(
-                  child: Center(child: Text('Add cool location image here!')),
+                  child: Center(child: Image.network('https://cdn.dribbble.com/users/514552/screenshots/4255081/taxidup.gif', fit: BoxFit.fill,)),
                 ),
                 ListTile(
                   leading: Icon(Icons.location_on),
@@ -61,19 +60,24 @@ class PickupLocation extends State<Location> {
         //backgroundColor: bgColor,
         body: GoogleMap(
             initialCameraPosition: CameraPosition(target: LatLng(24.150, -110.32), zoom: 10),
-            onMapCreated: _onMapCreated,
-            myLocationEnabled: true, // Add little blue dot for device location, requires permission from user
-            mapType: MapType.hybrid, 
-            trackCameraPosition: true
+            mapType: MapType.normal, 
+            onMapCreated: (controller){
+              setState(() {
+               mapController = controller; 
+              });
+            },
+            //myLocationEnabled: true, // Add little blue dot for device location, requires permission from user
+            
+            //trackCameraPosition: true
         ),
         )
         )
       );
   }
 
-  void _onMapCreated(GoogleMapController controller){
-    setState(() {
-     mapController=controller; 
-    });
-  }
+  //void _onMapCreated(GoogleMapController controller){
+   // setState(() {
+     //mapController=controller; 
+    //});
+  //}
 }
