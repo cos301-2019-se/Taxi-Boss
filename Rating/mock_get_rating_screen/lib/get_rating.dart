@@ -32,12 +32,16 @@ class GetAvgRating {
           avgRating += snap.documents.elementAt(i).data['averageRating'];
         }
       }
-      comfort = comfort/count;
-      safety = safety/count;
-      etiquette = etiquette/count;
-      avgRating = avgRating/count;
+      comfort = calcAvg(comfort,count);
+      safety = calcAvg(safety,count);
+      etiquette = calcAvg(etiquette,count);
+      avgRating = calcAvg(avgRating,count);
       done = true;
     });    
+  }
+
+  double calcAvg(double sum, int count){
+    return sum/count;
   }
 
   double getAvgRatingComfort()
