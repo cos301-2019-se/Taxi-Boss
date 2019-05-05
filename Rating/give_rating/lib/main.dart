@@ -9,12 +9,49 @@ void main()
     home: new MyTextInput(),
     
 
- 
+  
 
   ));
 }
 
+ double calc(double safe, double comf, double etiq)
+  {
+      return safe + comf + etiq;
+  }
 
+
+
+double avg(double sum, double fifteen, double five)
+  {
+      
+      return (sum/fifteen) * five ;
+  }
+
+
+
+
+    void _showDialog() {
+    // flutter defined function
+    showDialog(
+     // context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text("Alert Dialog title"),
+          content: new Text("Alert Dialog body"),
+          actions: <Widget>[
+            // usually buttons at the bottom of the dialog
+            new FlatButton(
+              child: new Text("Close"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 class MyTextInput extends StatefulWidget
 {
   @override
@@ -44,6 +81,8 @@ class MyTextInputState extends State<MyTextInput>
   String comfort = "";
   String etiquette = "";
 
+  
+  
 
   @override
   Widget build(BuildContext context)
@@ -124,11 +163,35 @@ class MyTextInputState extends State<MyTextInput>
                                 onPressed: ()
                                 {
                                   double sum;
-                                  sum = input.comfort + input.safety + input.etiquette;
+                                  sum = calc(input.comfort, input.safety , input.etiquette);
 
-                                  input.average = (sum/15) * 5;
+                                  double teen = 15.0;
+                                  double five = 5.0;
+
+                                  input.average = avg( sum,  teen,  five);
                                   Firestore.instance.collection("Rating").document().setData({'averageRating': input.average, 'comfort':input.comfort, 'driverID':"1" ,'etiquette':input.etiquette, 'safety':input.safety});
 
+                                   showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text("Submitted!"),
+         // content: new Text("Alert Dialog body"),
+          actions: <Widget>[
+            // usually buttons at the bottom of the dialog
+            new FlatButton(
+              child: new Text("Close"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+
+                                  
                                 }
                                 
                               )
