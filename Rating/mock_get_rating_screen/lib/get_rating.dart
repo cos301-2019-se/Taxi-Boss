@@ -50,8 +50,6 @@ class GetAvgRating {
 
   double getAvgRatingSafety()
   {
-    while(done == false){}
-    done = false;
     return safety;
   }
 
