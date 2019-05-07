@@ -8,7 +8,7 @@ void main() {
 
     bool test = true;
     if(test){
-      print("View Ratings Successfully");
+      print("View Ratings Successfully Rendered");
       expect(test, true);
     }
   });
