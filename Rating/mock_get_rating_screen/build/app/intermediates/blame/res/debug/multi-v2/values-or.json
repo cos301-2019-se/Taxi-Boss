@@ -1,7 +1,6 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
             "outputFile": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-or\\values-or.xml",
             "map": [
                 {
@@ -23,12 +22,6 @@
                 },
                 {
                     "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\13580b083689c5ed3a3e799dce795a56\\res\\values-or\\values.xml",
-=======
-            "outputFile": "C:\\Users\\dewal\\Documents\\GitHub\\Taxi Boss\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-or\\values-or.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\0de5fee67e9092261cdf80f71774d6ba\\res\\values-or\\values.xml",
->>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -43,26 +36,6 @@
                         "endColumns": "112,192,134,118,214,137,144,138,226,114,191,135,210,187,94,101,115",
                         "endOffsets": "213,406,541,660,875,1013,1158,1297,1723,1838,2030,2166,2377,2565,2660,2762,2878"
                     }
-<<<<<<< HEAD
-=======
-                },
-                {
-                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\d4c6a1e1298b4fc7837b74efec49df04\\res\\values-or\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "198",
-                        "endOffsets": "445"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1302",
-                        "endColumns": "198",
-                        "endOffsets": "1496"
-                    }
->>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
                 }
             ]
         }

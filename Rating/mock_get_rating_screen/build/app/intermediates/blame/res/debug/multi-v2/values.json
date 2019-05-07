@@ -1,7 +1,6 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
             "outputFile": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
@@ -61,29 +60,6 @@
                 },
                 {
                     "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\support-core-ui-27.1.1.aar\\15de01a23475fc8bdb2df1d302b7ffe5\\res\\values\\values.xml",
-=======
-            "outputFile": "C:\\Users\\dewal\\Documents\\GitHub\\Taxi Boss\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\dewal\\Documents\\GitHub\\Taxi Boss\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,198,302,383,487,589,709,802",
-                        "endColumns": "142,103,80,103,101,119,92,69",
-                        "endOffsets": "193,297,378,482,584,704,797,867"
-                    },
-                    "to": {
-                        "startLines": "232,233,234,235,236,237,238,239",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "10939,11082,11186,11267,11371,11473,11593,11686",
-                        "endColumns": "142,103,80,103,101,119,92,69",
-                        "endOffsets": "11077,11181,11262,11366,11468,11588,11681,11751"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\support-core-ui-27.1.1.aar\\f44be69eda90f861981ecf2b25afb1ae\\res\\values\\values.xml",
->>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
                     "from": {
                         "startLines": "2,3,4,66",
                         "startColumns": "4,4,4,4",
@@ -102,28 +78,7 @@
                     }
                 },
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\29c5bc4e4a7e5f3adbbe87c42030c423\\res\\values\\values.xml",
-=======
-                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\e087aaa39e33599e0a61f3cfe6728487\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,144,215,288,348,414,536,597,663",
-                        "endColumns": "88,70,72,59,65,121,60,65,66",
-                        "endOffsets": "139,210,283,343,409,531,592,658,725"
-                    },
-                    "to": {
-                        "startLines": "13,14,16,211,251,253,254,259,261",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "969,1058,1187,8408,12442,12618,12740,13002,13197",
-                        "endColumns": "88,70,72,59,65,121,60,65,66",
-                        "endOffsets": "1053,1124,1255,8463,12503,12735,12796,13063,13259"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7a2a52d369f4a055f985de83ed5d251e\\res\\values\\values.xml",
->>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
                     "from": {
                         "startLines": "2,3,4,5,6,15,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,54,55,59,60,61",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -142,7 +97,6 @@
                     }
                 },
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\f97d157280942f7afb30c0a61e4dba1c\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
@@ -161,28 +115,6 @@
                 },
                 {
                     "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-maps-15.0.1.aar\\e91949fd2c0363ad23e270aae590c90e\\res\\values\\values.xml",
-=======
-                    "source": "C:\\Users\\dewal\\Documents\\GitHub\\Taxi Boss\\Taxi-Boss\\Rating\\mock_get_rating_screen\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "353"
-                    },
-                    "to": {
-                        "startLines": "241",
-                        "startColumns": "4",
-                        "startOffsets": "11827",
-                        "endLines": "245",
-                        "endColumns": "12",
-                        "endOffsets": "12119"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-maps-15.0.1.aar\\3257a650a6ad0ef782a9c3be4d864250\\res\\values\\values.xml",
->>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -201,7 +133,6 @@
                     }
                 },
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -216,41 +147,6 @@
                         "startOffsets": "10939,11082,11186,11267,11371,11473,11593,11686",
                         "endColumns": "142,103,80,103,101,119,92,69",
                         "endOffsets": "11077,11181,11262,11366,11468,11588,11681,11751"
-=======
-                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\0de5fee67e9092261cdf80f71774d6ba\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,33,46,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "215,301,377,463,549,625,702,778,3164,3475,951,1052,1233,1354,1457,1637,1756,1868,1967,2155,2256,2437,2558,2733,2877,2936,2994",
-                        "endLines": "4,5,6,7,8,9,10,11,45,64,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30",
-                        "endColumns": "85,75,85,85,75,76,75,75,20,20,100,180,120,102,179,118,111,98,187,100,180,120,174,143,58,57,74",
-                        "endOffsets": "300,376,462,548,624,701,777,853,3474,3887,1051,1232,1353,1456,1636,1755,1867,1966,2154,2255,2436,2557,2732,2876,2935,2993,3068"
-                    },
-                    "to": {
-                        "startLines": "3,4,5,6,7,8,9,10,94,164,214,215,216,217,218,219,220,221,223,224,225,226,227,228,229,230,231",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "166,256,336,426,516,596,677,757,4631,6300,8606,8711,8892,9017,9124,9304,9427,9543,9813,10001,10106,10287,10412,10587,10735,10798,10860",
-                        "endLines": "3,4,5,6,7,8,9,10,106,182,214,215,216,217,218,219,220,221,223,224,225,226,227,228,229,230,231",
-                        "endColumns": "89,79,89,89,79,80,79,79,20,20,104,180,124,106,179,122,115,102,187,104,180,124,174,147,62,61,78",
-                        "endOffsets": "251,331,421,511,591,672,752,832,4941,6712,8706,8887,9012,9119,9299,9422,9538,9641,9996,10101,10282,10407,10582,10730,10793,10855,10934"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\d4c6a1e1298b4fc7837b74efec49df04\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "4,7",
-                        "startColumns": "0,0",
-                        "startOffsets": "238,401",
-                        "endColumns": "63,166",
-                        "endOffsets": "301,567"
-                    },
-                    "to": {
-                        "startLines": "212,222",
-                        "startColumns": "4,4",
-                        "startOffsets": "8468,9646",
-                        "endColumns": "67,166",
-                        "endOffsets": "8531,9808"
->>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
                     }
                 }
             ]

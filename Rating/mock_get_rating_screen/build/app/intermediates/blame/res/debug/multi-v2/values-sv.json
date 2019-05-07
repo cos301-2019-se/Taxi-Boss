@@ -1,17 +1,10 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
             "outputFile": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sv\\values-sv.xml",
             "map": [
                 {
                     "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\aef759574d3e6fc6b7e703fb392a4321\\res\\values-sv\\values.xml",
-=======
-            "outputFile": "C:\\Users\\dewal\\Documents\\GitHub\\Taxi Boss\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sv\\values-sv.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\d4c6a1e1298b4fc7837b74efec49df04\\res\\values-sv\\values.xml",
->>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -28,7 +21,6 @@
                     }
                 },
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\13580b083689c5ed3a3e799dce795a56\\res\\values-sv\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -47,9 +39,6 @@
                 },
                 {
                     "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\29c5bc4e4a7e5f3adbbe87c42030c423\\res\\values-sv\\values-sv.xml",
-=======
-                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7a2a52d369f4a055f985de83ed5d251e\\res\\values-sv\\values-sv.xml",
->>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -64,26 +53,6 @@
                         "endColumns": "100",
                         "endOffsets": "2896"
                     }
-<<<<<<< HEAD
-=======
-                },
-                {
-                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\0de5fee67e9092261cdf80f71774d6ba\\res\\values-sv\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,350,539,664,772,972,1095,1244,1373,1580,1686,1879,2005,2218,2400,2492,2581",
-                        "endColumns": "104,188,124,107,199,122,148,128,206,105,192,125,212,181,91,88,103",
-                        "endOffsets": "349,538,663,771,971,1094,1243,1372,1579,1685,1878,2004,2217,2399,2491,2580,2684"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,214,403,532,644,844,971,1124,1464,1671,1781,1974,2104,2317,2503,2599,2692",
-                        "endColumns": "108,188,128,111,199,126,152,132,206,109,192,129,212,185,95,92,107",
-                        "endOffsets": "209,398,527,639,839,966,1119,1252,1666,1776,1969,2099,2312,2498,2594,2687,2795"
-                    }
->>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
                 }
             ]
         }

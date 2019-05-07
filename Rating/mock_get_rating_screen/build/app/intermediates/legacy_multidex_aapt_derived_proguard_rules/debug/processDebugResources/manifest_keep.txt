@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 # Referenced at C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\app\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:28
-=======
-# Referenced at C:\Users\dewal\Documents\GitHub\Taxi Boss\Taxi-Boss\Rating\mock_get_rating_screen\build\app\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:28
->>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
 -keep class io.flutter.app.FlutterApplication { <init>(...); }
