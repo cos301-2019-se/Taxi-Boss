@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:give_rating/main.dart';
+import 'package:mock_get_rating_screen/get_rating.dart';
 
 void main()
 {

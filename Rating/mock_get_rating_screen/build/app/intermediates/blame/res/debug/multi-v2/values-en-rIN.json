@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rIN\\values-en-rIN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\29c5bc4e4a7e5f3adbbe87c42030c423\\res\\values-en-rIN\\values-en-rIN.xml",
+=======
+            "outputFile": "C:\\Users\\dewal\\Documents\\GitHub\\Taxi Boss\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rIN\\values-en-rIN.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\dewal\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7a2a52d369f4a055f985de83ed5d251e\\res\\values-en-rIN\\values-en-rIN.xml",
+>>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

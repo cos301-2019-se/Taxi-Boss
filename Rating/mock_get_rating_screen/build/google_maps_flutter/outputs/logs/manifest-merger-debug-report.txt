@@ -1,5 +1,6 @@
 -- Merging decision tree log ---
 manifest
+<<<<<<< HEAD
 ADDED from C:\Users\brian\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml:1:1-3:12
 INJECTED from C:\Users\brian\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml:1:1-3:12
 INJECTED from C:\Users\brian\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml:1:1-3:12
@@ -17,3 +18,22 @@ INJECTED from C:\Users\brian\flutter\.pub-cache\hosted\pub.dartlang.org\google_m
 		INJECTED from C:\Users\brian\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml
 		ADDED from C:\Users\brian\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\brian\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml
+=======
+ADDED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml:1:1-3:12
+	package
+		ADDED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml:2:3-42
+		INJECTED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml
+		INJECTED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml
+INJECTED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml
+		ADDED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml
+		INJECTED from C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\google_maps_flutter-0.2.0+6\android\src\main\AndroidManifest.xml
+>>>>>>> d700b579c742ef6230208f761af1e3018c7747a2

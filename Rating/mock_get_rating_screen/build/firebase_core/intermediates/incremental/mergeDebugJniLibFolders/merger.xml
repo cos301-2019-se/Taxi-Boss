@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\brian\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-0.3.4\android\src\main\jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\brian\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-0.3.4\android\src\debug\jniLibs"/></dataSet></merger>
+=======
+<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-0.3.4\android\src\main\jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Program Files\flutter_windows_v1.2.1-stable\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-0.3.4\android\src\debug\jniLibs"/></dataSet></merger>
+>>>>>>> d700b579c742ef6230208f761af1e3018c7747a2

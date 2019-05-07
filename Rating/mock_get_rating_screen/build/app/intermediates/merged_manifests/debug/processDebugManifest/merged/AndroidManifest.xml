@@ -30,10 +30,13 @@
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="mock_get_rating_screen" >
+<<<<<<< HEAD
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
+=======
+>>>>>>> d700b579c742ef6230208f761af1e3018c7747a2
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDDrqsnVfkoJsL0m96_4moTbe1qdFnxK3g" />
