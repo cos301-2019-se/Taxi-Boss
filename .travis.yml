@@ -147,7 +147,6 @@ jobs:
   - stage: build
     <<: *build
  # - stage: deploy
-
 stages:
 - name: test
   if: (NOT branch =~ /^\d*\.\d*\.\d*$/) OR (NOT branch IN (internal, alpha, beta, prod))
