@@ -28,7 +28,7 @@ cache:
 
 unit_tests: &unit_tests
   name: "Unit tests"
-  script: flutter test test/unit_test.dart
+  script: flutter test
 
 build: &build
   name: "Build APK"
@@ -77,6 +77,8 @@ stages:
   if: (NOT branch =~ /^\d*\.\d*\.\d*$/) OR (NOT branch IN (internal, alpha, beta, prod))
 - name: build
   if: (NOT branch =~ /^\d*\.\d*\.\d*$/) OR (NOT branch IN (internal, alpha, beta, prod))
+
+
 
 cache:
   directories:
