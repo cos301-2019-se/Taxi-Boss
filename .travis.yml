@@ -28,7 +28,7 @@ cache:
 
 unit_tests: &unit_tests
   name: "Unit tests"
-  script: flutter test test/unit_test.dart
+  script: flutter 
 
 build: &build
   name: "Build APK"
@@ -104,7 +104,7 @@ cache:
 
 unit_tests: &unit_testsDriver
   name: "Unit tests driver"
-  script: flutter test test/unitTest_test.dart
+  script: flutter test
 
 build: &build
   name: "Build APK"
