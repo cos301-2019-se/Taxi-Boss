@@ -22,9 +22,9 @@ cache:
   directories:
   - $HOME/.pub-cache
 
-static_analysis: &static_analysis
-  name: "Static analysis"
-  script: flutter analyze $TRAVIS_BUILD_DIR/Rating/give_rating/lib
+#static_analysis: &static_analysis
+ # name: "Static analysis"
+ # script: flutter analyze $TRAVIS_BUILD_DIR/Rating/give_rating/lib
 
 unit_tests: &unit_tests
   name: "Unit tests"
@@ -66,7 +66,7 @@ after_deploy:
 
 jobs:
   include:
-  - <<: *static_analysis
+  - #<<: *static_analysis
   - <<: *unit_tests
   - stage: build
     <<: *build
