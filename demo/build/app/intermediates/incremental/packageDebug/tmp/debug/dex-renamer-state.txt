@@ -1,0 +1,4 @@
+#Wed May 01 14:48:20 CAT 2019
+base.0=C\:\\Users\\dewal\\Documents\\GitHub\\Taxi Boss\\Taxi-Boss\\demo\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
