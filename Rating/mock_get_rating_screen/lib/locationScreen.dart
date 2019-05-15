@@ -19,6 +19,7 @@ class Location extends StatefulWidget{
 class PickupLocation extends State<Location> {
   String id;
   GoogleMapController mapController;
+  // Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
   PickupLocation(String driver){
     id = driver;
     
@@ -61,24 +62,53 @@ class PickupLocation extends State<Location> {
         ),
         //backgroundColor: bgColor,
         body: GoogleMap(
-            initialCameraPosition: CameraPosition(target: LatLng(24.150, -110.32), zoom: 10),
+            initialCameraPosition: CameraPosition(target: LatLng(-25.7545, 28.2314), zoom: 16),
             mapType: MapType.normal, 
             onMapCreated: (controller){
               setState(() {
                mapController = controller; 
               });
+              mapController.addMarker(
+                MarkerOptions(
+                  draggable: false,
+                  position: LatLng(-25.750703, 28.232692),
+                  infoWindowText: InfoWindowText('Stop H1', 'Sunnyside')
+                ) 
+              );
+              mapController.addMarker(
+                MarkerOptions(
+                  draggable: false,
+                  position: LatLng(-25.750623, 28.235500),
+                  infoWindowText: InfoWindowText('Stop H2', 'Menlyn')
+                ) 
+              );
+              mapController.addMarker(
+                MarkerOptions(
+                  draggable: false,
+                  position: LatLng(-25.755586, 28.239173),
+                  infoWindowText: InfoWindowText('Stop H3', 'Brooklyn')
+                ) 
+              );
+              mapController.addMarker(
+                MarkerOptions(
+                  draggable: false,
+                  position: LatLng(-25.750946, 28.231121),
+                  infoWindowText: InfoWindowText('Stop H4', 'Arcadia')
+                ) 
+              );
             },
+
+            // markers: Set<Marker>.of(markers.values),
             myLocationEnabled: true, // Add little blue dot for device location, requires permission from use
-            trackCameraPosition: true
+            trackCameraPosition: true,
+            compassEnabled: true
         ),
         )
         )
       );
-  }
+  } 
 
-  //void _onMapCreated(GoogleMapController controller){
-   // setState(() {
-     //mapController=controller; 
-    //});
-  //}
+  void getMarkers(GoogleMapController controller){
+   
+  }
 }
