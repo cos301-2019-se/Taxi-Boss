@@ -9,8 +9,8 @@ env:
     - FLUTTER_CHANNEL=stable
 
 before_install:
-  - cd Rating
-  - cd give_rating
+  - cd Driver
+  - cd mock_get_rating_screen
 
 install:
   - git clone https://github.com/flutter/flutter.git -b $FLUTTER_CHANNEL
