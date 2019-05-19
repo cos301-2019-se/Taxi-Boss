@@ -1,17 +1,17 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
-INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
-INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
-INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
-MERGED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
+ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
+INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
+INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
+INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
+MERGED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\4c4ae125bdf1c667e03330c5d8956f39\AndroidManifest.xml:17:1-22:12
-MERGED from [:permission] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\permission\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
-MERGED from [:geoflutterfire] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\geoflutterfire\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
-MERGED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-10:12
-MERGED from [:google_maps_flutter] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\google_maps_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
-MERGED from [:cloud_firestore] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\cloud_firestore\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
-MERGED from [:firebase_core] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\firebase_core\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:permission] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\permission\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:geoflutterfire] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\geoflutterfire\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-10:12
+MERGED from [:google_maps_flutter] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\google_maps_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:cloud_firestore] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\cloud_firestore\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:firebase_core] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\firebase_core\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\e9fa04e528aed4e4c44b3ffbcfaeb5ad\AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\1be45ea940ba24218b9527c968813279\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\e91949fd2c0363ad23e270aae590c90e\AndroidManifest.xml:17:1-32:12
@@ -45,27 +45,27 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\brian\.gradle\
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\84b5afa0b8e886550cca34535fe8a873\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.3.aar\b9f9527fe48be4c5164c13f2a222577d\AndroidManifest.xml:2:1-9:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f885b64a5dc0af0d91f25c8cc1f65218\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:2:5-49
-		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:2:5-49
+		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
-		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
+		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
-		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:1-38:12
+		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:8:5-66
-MERGED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:8:5-66
-MERGED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:8:5-66
+ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:8:5-66
+MERGED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:8:5-66
+MERGED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:8:5-66
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\e9fa04e528aed4e4c44b3ffbcfaeb5ad\AndroidManifest.xml:14:5-67
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\e9fa04e528aed4e4c44b3ffbcfaeb5ad\AndroidManifest.xml:14:5-67
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\e91949fd2c0363ad23e270aae590c90e\AndroidManifest.xml:24:5-67
@@ -79,15 +79,15 @@ MERGED from [com.google.firebase:firebase-analytics-impl:16.2.2] C:\Users\brian\
 MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\a9ec7e8bf6d499bff6f41fb60027dd4d\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\a9ec7e8bf6d499bff6f41fb60027dd4d\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:8:22-64
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:8:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:9:5-78
-MERGED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:8:5-79
-MERGED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:8:5-79
+ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:9:5-78
+MERGED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:8:5-79
+MERGED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:8:5-79
 	android:name
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:9:22-76
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:9:22-76
 application
-ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:11:5-37:19
+ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:11:5-37:19
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\e9fa04e528aed4e4c44b3ffbcfaeb5ad\AndroidManifest.xml:16:5-22:19
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\e9fa04e528aed4e4c44b3ffbcfaeb5ad\AndroidManifest.xml:16:5-22:19
 MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\1be45ea940ba24218b9527c968813279\AndroidManifest.xml:7:5-20
@@ -129,71 +129,71 @@ MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\bria
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.3.aar\b9f9527fe48be4c5164c13f2a222577d\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.3.aar\b9f9527fe48be4c5164c13f2a222577d\AndroidManifest.xml:7:5-20
 	android:label
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:13:9-47
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:13:9-47
 	android:icon
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:14:9-43
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:14:9-43
 	android:name
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:12:9-57
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:12:9-57
 uses-library#org.apache.http.legacy
-ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:15:9-88
+ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:15:9-88
 	android:required
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:15:61-85
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:15:61-85
 	android:name
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:15:23-60
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:15:23-60
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:16:9-123
+ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:16:9-123
 	android:value
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:16:66-121
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:16:66-121
 	android:name
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:16:20-65
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:16:20-65
 activity#com.example.mock_get_rating_screen.MainActivity
-ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:17:9-36:20
+ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:17:9-36:20
 	android:launchMode
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:19:13-43
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:19:13-43
 	android:hardwareAccelerated
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:22:13-47
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:22:13-47
 	android:windowSoftInputMode
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:23:13-55
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:23:13-55
 	android:configChanges
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:21:13-144
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:21:13-144
 	android:theme
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:20:13-47
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:20:13-47
 	android:name
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:18:13-41
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:18:13-41
 meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
-ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:28:13-30:40
+ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:28:13-30:40
 	android:value
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:30:17-37
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:30:17-37
 	android:name
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:29:17-82
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:29:17-82
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:32:13-35:29
+ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:32:13-35:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:33:17-68
+ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:33:17-68
 	android:name
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:33:25-66
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:34:17-76
+ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:34:17-76
 	android:name
-		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:34:27-74
+		ADDED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml:34:27-74
 uses-sdk
-INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\4c4ae125bdf1c667e03330c5d8956f39\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\4c4ae125bdf1c667e03330c5d8956f39\AndroidManifest.xml:20:5-43
-MERGED from [:permission] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\permission\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [:permission] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\permission\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [:geoflutterfire] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\geoflutterfire\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [:geoflutterfire] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\geoflutterfire\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [:google_maps_flutter] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\google_maps_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [:google_maps_flutter] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\google_maps_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [:cloud_firestore] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\cloud_firestore\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [:cloud_firestore] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\cloud_firestore\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_core] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\firebase_core\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_core] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\firebase_core\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:permission] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\permission\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:permission] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\permission\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:geoflutterfire] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\geoflutterfire\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:geoflutterfire] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\geoflutterfire\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:google_maps_flutter] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\google_maps_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:google_maps_flutter] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\google_maps_flutter\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\cloud_firestore\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\cloud_firestore\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\firebase_core\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\firebase_core\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\e9fa04e528aed4e4c44b3ffbcfaeb5ad\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\e9fa04e528aed4e4c44b3ffbcfaeb5ad\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\1be45ea940ba24218b9527c968813279\AndroidManifest.xml:5:5-44
@@ -260,18 +260,18 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.3.aar\b9f9527fe48be4c5164c13f2a222577d\AndroidManifest.xml:5:5-44
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f885b64a5dc0af0d91f25c8cc1f65218\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f885b64a5dc0af0d91f25c8cc1f65218\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
-INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\android\app\src\debug\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-81
+ADDED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-81
 	android:name
-		ADDED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Rating\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:22-78
+		ADDED from [:location] C:\Users\brian\Documents\COS301\MainProject\Taxi-Boss\Driver\mock_get_rating_screen\build\location\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\e9fa04e528aed4e4c44b3ffbcfaeb5ad\AndroidManifest.xml:13:5-79
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\e91949fd2c0363ad23e270aae590c90e\AndroidManifest.xml:23:5-79
