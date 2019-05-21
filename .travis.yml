@@ -25,6 +25,7 @@ cache:
 #static_analysis: &static_analysis
  # name: "Static analysis"
  # script: flutter analyze $TRAVIS_BUILD_DIR/Rating/give_rating/lib
+ # Testline - ignore
 
 unit_tests: &unit_tests
   name: "Unit tests"
