@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:mock_get_rating_screen/get_rating.dart';
 import 'package:mock_get_rating_screen/locationScreen.dart';
+import 'package:mock_get_rating_screen/login.dart';
 
 final barColor = Colors.yellow;//const Color.fromRGBO(255, 157, 7, 0);
 final bgColor = const Color(0xFFDAE0E2);
@@ -51,6 +52,15 @@ class DriverRating extends State<Rating> {
                   onTap: () {
                     // change app state...
                     Navigator.pop(context); // close the drawer
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.block),
+                  title: Text('Logout'),
+                  onTap: () {
+                    // change app state...
+                    //Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+                    runApp(Login());
                   },
                 ),
               ],
