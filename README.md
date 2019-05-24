@@ -13,7 +13,7 @@ EPI-Use has identified a problem in the informal public transport industry. Thus
 
 #### [User Manual](Documents/)
 
-### [Coding Standards](
+### [Coding Standards](Documents/CodingStandards.pdf)
 
 ### The team:
 **team email**: supremeinternect@gmail.com
