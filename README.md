@@ -91,41 +91,6 @@ EPI-Use has identified a problem in the informal public transport industry. Thus
 
 
 ###### **Name and surname:**
->   *Duncan Smallwood*
-  
-###### **Student number:**
-
->*u130027205*
-
-###### **Link to LinkedIn account:**
-
-
-###### **Position in team:**
-> *Member*
-
-###### **Interests:**
-> *Games and Game Design*
-
-###### **Skills:**
-> *basic understanding of C based Languages*
-
-###### **Work Experience:**
-> *none*
-
-###### **Attitudes:**
-> *nihilism*
-
-
-
-
-`
-`
-
-`
-`
-
-
-###### **Name and surname:**
 >   *Dewald van Hoven*
   
 ###### **Student number:**
