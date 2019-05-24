@@ -9,6 +9,8 @@ EPI-Use has identified a problem in the informal public transport industry. Thus
 
 #### [SRS Document](https://www.overleaf.com/1835113163cbrbxsbptdvw)
 
+#### [Test Policy Document](Documents/testPolicyDocument.pdf)
+
 ### The team:
 **team email**: supremeinternect@gmail.com
 
