@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "C:\\Users\\Waldo\\Documents\\COS301\\CapstoneProject\\Taxi-Boss\\Driver\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\29c5bc4e4a7e5f3adbbe87c42030c423\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Waldo\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\016ce436f26280890da3daeb6b121c55\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\f97d157280942f7afb30c0a61e4dba1c\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Waldo\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fdd852186e6c58f5e1c8ba21a41afee\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",

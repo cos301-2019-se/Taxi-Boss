@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-my\\values-my.xml",
+            "outputFile": "C:\\Users\\Waldo\\Documents\\COS301\\CapstoneProject\\Taxi-Boss\\Driver\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-my\\values-my.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\aef759574d3e6fc6b7e703fb392a4321\\res\\values-my\\values.xml",
+                    "source": "C:\\Users\\Waldo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\647bb5470e94be348f80fb33e4898bb8\\res\\values-my\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\13580b083689c5ed3a3e799dce795a56\\res\\values-my\\values.xml",
+                    "source": "C:\\Users\\Waldo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\22d687299f99785173427d141b4d0b32\\res\\values-my\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\29c5bc4e4a7e5f3adbbe87c42030c423\\res\\values-my\\values-my.xml",
+                    "source": "C:\\Users\\Waldo\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\016ce436f26280890da3daeb6b121c55\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

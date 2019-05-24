@@ -16,15 +16,15 @@ class GetAvgRating {
     int count = 0;
     Future<QuerySnapshot> qS = Firestore.instance.collection('Rating').getDocuments().then((snap){
       for(int i = 0; i < snap.documents.length; i++){
-        if(snap.documents.elementAt(i).data['driverID'] == id)
-        {
-          if(i == 0)
+        if(i == 0)
           {
             comfort = 0;
             safety = 0;
             etiquette = 0;
             avgRating = 0;
           } 
+        if(id.contains(snap.documents.elementAt(i).data['driverID']))
+        {
           count++;
           comfort += snap.documents.elementAt(i).data['comfort'];
           safety += snap.documents.elementAt(i).data['safety'];

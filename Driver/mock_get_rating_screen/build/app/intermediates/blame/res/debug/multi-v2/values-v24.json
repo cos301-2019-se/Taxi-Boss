@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "C:\\Users\\Waldo\\Documents\\COS301\\CapstoneProject\\Taxi-Boss\\Driver\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\f97d157280942f7afb30c0a61e4dba1c\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Waldo\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fdd852186e6c58f5e1c8ba21a41afee\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
