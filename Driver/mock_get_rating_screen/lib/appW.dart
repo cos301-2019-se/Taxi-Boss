@@ -41,7 +41,7 @@ class DriverRating extends State<Rating> {
                   title: Text('Pickup Locations'),
                   onTap: () {
                     // change app state...
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Location(id)));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => LocationScreen()));
                     //Navigator.pop(context);
                   },
                 ),

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Driver\\mock_get_rating_screen\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\brian\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\aef759574d3e6fc6b7e703fb392a4321\\res\\values\\values.xml",
@@ -37,25 +37,6 @@
                         "endLines": "3,4,5,6,7,8,9,10,106,182,214,215,216,217,218,219,220,221,223,224,225,226,227,228,229,230,231",
                         "endColumns": "89,79,89,89,79,80,79,79,20,20,104,180,124,106,179,122,115,102,187,104,180,124,174,147,62,61,78",
                         "endOffsets": "251,331,421,511,591,672,752,832,4941,6712,8706,8887,9012,9119,9299,9422,9538,9641,9996,10101,10282,10407,10582,10730,10793,10855,10934"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Rating\\mock_get_rating_screen\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "353"
-                    },
-                    "to": {
-                        "startLines": "241",
-                        "startColumns": "4",
-                        "startOffsets": "11827",
-                        "endLines": "245",
-                        "endColumns": "12",
-                        "endOffsets": "12119"
                     }
                 },
                 {
@@ -133,7 +114,26 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Rating\\mock_get_rating_screen\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "source": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Driver\\mock_get_rating_screen\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "353"
+                    },
+                    "to": {
+                        "startLines": "241",
+                        "startColumns": "4",
+                        "startOffsets": "11827",
+                        "endLines": "245",
+                        "endColumns": "12",
+                        "endOffsets": "12119"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\brian\\Documents\\COS301\\MainProject\\Taxi-Boss\\Driver\\mock_get_rating_screen\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
