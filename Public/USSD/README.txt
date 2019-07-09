@@ -1,0 +1,1 @@
+Files used for USSD are placed in this directory
