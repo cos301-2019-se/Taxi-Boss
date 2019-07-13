@@ -21,10 +21,12 @@
 			$document = new FireStoreDocument();
 			$document->setString('violationOrigin', 'USSD');
 			
-			if($data->sessionValues[6]->indexableKey->key == "VIOLATION_VALUE")//first menu
+			if(count($data->sessionValues) == 12)//first menu
 			{
-				$document->setString('numberPlate', $data->sessionValues[5]->value);
-				switch ($data->sessionValues[6]->value) {
+				//-------TODO---------
+				//Add location data, date and time to database
+				$document->setString('numberPlate', $data->sessionValues[10]->value);
+				switch ($data->sessionValues[9]->value) {
 				case '1':
 					# code...
 					$document->setString('violationDescription', 'Illegal stop');
@@ -50,10 +52,12 @@
 					break;
 				}
 			}
-			else//second menu
+			else if(count($data->sessionValues) == 13)//second menu
 			{
-				$document->setString('numberPlate', $data->sessionValues[6]->value);
-				switch ($data->sessionValues[5]->value) {
+				//-------TODO---------
+				//Add location data, date and time to database
+				$document->setString('numberPlate', $data->sessionValues[12]->value);
+				switch ($data->sessionValues[6]->value) {
 					case '5':
 						# code...
 						$document->setString('violationDescription', 'Unroadworthy');
@@ -94,6 +98,12 @@
 						break;
 				}
 			}
+			else{ //other has been chosen
+				//-------TODO---------
+				//Add location data, date and time to database
+				$document->setString('violationDescription', $data->sessionValues[10]);
+				$document->setString('numberPlate', $data->sessionValues[13]->value);
+			}
 			
 			//V---Add Document to Actual Firestore Database---V
 			$firestore->addDocument('Violations', $document);
@@ -107,6 +117,7 @@
 		}
 		else
 		{
+			header('Content-Type: text/xml');
 			echo '<ussdAppResponse>
 					<prompt>Report not sent!  Please close this window.</prompt>
 					<state>end</state>
