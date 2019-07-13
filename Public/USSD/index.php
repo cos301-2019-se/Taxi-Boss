@@ -23,8 +23,11 @@
 			
 			if(count($data->sessionValues) == 12)//first menu
 			{
-				//-------TODO---------
-				//Add location data, date and time to database
+				$document->setString('time', $data->sessionValues[5]);
+				$document->setString('date', $data->sessionValues[8]);
+				$document->setString('street', $data->sessionValues[7]);
+				$document->setString('city', $data->sessionValues[4]);
+				$document->setString('province', $data->sessionValues[6]);
 				$document->setString('numberPlate', $data->sessionValues[10]->value);
 				switch ($data->sessionValues[9]->value) {
 				case '1':
@@ -54,8 +57,11 @@
 			}
 			else if(count($data->sessionValues) == 13)//second menu
 			{
-				//-------TODO---------
-				//Add location data, date and time to database
+				$document->setString('time', $data->sessionValues[5]);
+				$document->setString('date', $data->sessionValues[9]);
+				$document->setString('street', $data->sessionValues[8]);
+				$document->setString('city', $data->sessionValues[4]);
+				$document->setString('province', $data->sessionValues[7]);
 				$document->setString('numberPlate', $data->sessionValues[12]->value);
 				switch ($data->sessionValues[6]->value) {
 					case '5':
@@ -99,8 +105,11 @@
 				}
 			}
 			else{ //other has been chosen
-				//-------TODO---------
-				//Add location data, date and time to database
+				$document->setString('time', $data->sessionValues[5]);
+				$document->setString('date', $data->sessionValues[9]);
+				$document->setString('street', $data->sessionValues[8]);
+				$document->setString('city', $data->sessionValues[4]);
+				$document->setString('province', $data->sessionValues[7]);
 				$document->setString('violationDescription', $data->sessionValues[10]);
 				$document->setString('numberPlate', $data->sessionValues[13]->value);
 			}
