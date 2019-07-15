@@ -121,7 +121,7 @@
 			//V---Respond Back to Mobile Device---V
 	        header('Content-Type: text/xml');
 	        echo '<ussdAppResponse>
-					<prompt>Thank you for your report!  Please close this window.</prompt>
+					<prompt>Thank you for your report!  Please close this window!</prompt>
 					<state>end</state>
 				  </ussdAppResponse>';
 		}
