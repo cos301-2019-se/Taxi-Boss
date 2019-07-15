@@ -6,7 +6,7 @@
 
 		//V---Connect to Firestore Database Here---V
 		$firestore = new FireStoreApiClient(
-		 'taxi-boss', 'AIzaSyDcPdaDs-ixSojbM4P_DhOO4-x05QG0_0'
+		 'taxi-boss', 'AIzaSyA_HjHtNIobFyRctyPzR4YWTjrtmDw-pbA'
 		);
 
 		//Get post request here and put correct data in fields below
