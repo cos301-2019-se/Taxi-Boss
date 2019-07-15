@@ -104,7 +104,8 @@
 						break;
 				}
 			}
-			else{ //other has been chosen
+			else
+			{
 				$document->setString('time', $data->sessionValues[5]);
 				$document->setString('date', $data->sessionValues[9]);
 				$document->setString('street', strtoupper($data->sessionValues[8]));
