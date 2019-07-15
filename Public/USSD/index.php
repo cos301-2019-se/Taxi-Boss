@@ -32,22 +32,22 @@
 				switch ($data->sessionValues[9]->value) {
 				case '1':
 					# code...
-					$document->setString('violationDescription', 'Illegal stop');
+					$document->setString('violationDescription', 'ILLEGAL_STOP');
 					break;
 
 				case '2':
 					# code...
-					$document->setString('violationDescription', 'Illegal use of emergency lane');
+					$document->setString('violationDescription', 'ILLEGAL_USE_OF_EMERGENCY_LANE');
 					break;
 
 				case '3':
 					# code...
-					$document->setString('violationDescription', 'Driving on wrong side of the road');
+					$document->setString('violationDescription', 'DRIVING_ON_WRONG_SIDE_OF_ROAD');
 					break;
 
 				case '4':
 					# code...
-					$document->setString('violationDescription', 'Illegal/unsafe overtake');
+					$document->setString('violationDescription', 'ILLEGAL/UNSAFE_OVERTAKE');
 					break;
 				
 				default:
@@ -66,37 +66,37 @@
 				switch ($data->sessionValues[6]->value) {
 					case '5':
 						# code...
-						$document->setString('violationDescription', 'Unroadworthy');
+						$document->setString('violationDescription', 'UNROADWORTHY');
 						break;
 					
 					case '6':
 						# code...
-						$document->setString('violationDescription', 'Violent behaviour');
+						$document->setString('violationDescription', 'VIOLENT_BEHAVIOUR');
 						break;
 
 					case '7':
 						# code...
-						$document->setString('violationDescription', 'Skipping robot');
+						$document->setString('violationDescription', 'SKIPPING_ROBOT');
 						break;
 
 					case '8':
 						# code...
-						$document->setString('violationDescription', 'Skipping a stop sign');
+						$document->setString('violationDescription', 'SKIPPING_A_STOP_SIGN');
 						break;
 
 					case '9':
 						# code...
-						$document->setString('violationDescription', 'Speeding');
+						$document->setString('violationDescription', 'SPEEDING');
 						break;
 
 					case '10':
 						# code...
-						$document->setString('violationDescription', 'Incorrect use of indicators/hazards');
+						$document->setString('violationDescription', 'INCORRECT_USE_OF_INDICATORS/HAZARDS');
 						break;
 
 					case '11':
 						# code...
-						$document->setString('violationDescription', 'Cutting off drivers');
+						$document->setString('violationDescription', 'CUTTING_OF_DRIVERS');
 						break;
 
 					default:
