@@ -25,10 +25,10 @@
 			{
 				$document->setString('time', $data->sessionValues[5]);
 				$document->setString('date', $data->sessionValues[8]);
-				$document->setString('street', $data->sessionValues[7]);
-				$document->setString('city', $data->sessionValues[4]);
-				$document->setString('province', $data->sessionValues[6]);
-				$document->setString('numberPlate', $data->sessionValues[10]->value);
+				$document->setString('street', strtoupper($data->sessionValues[7]));
+				$document->setString('city', strtoupper($data->sessionValues[4]));
+				$document->setString('province', strtoupper($data->sessionValues[6]));
+				$document->setString('numberPlate', str_replace(' ', '', strtoupper($data->sessionValues[10]->value)));
 				switch ($data->sessionValues[9]->value) {
 				case '1':
 					# code...
@@ -59,10 +59,10 @@
 			{
 				$document->setString('time', $data->sessionValues[5]);
 				$document->setString('date', $data->sessionValues[9]);
-				$document->setString('street', $data->sessionValues[8]);
-				$document->setString('city', $data->sessionValues[4]);
-				$document->setString('province', $data->sessionValues[7]);
-				$document->setString('numberPlate', $data->sessionValues[12]->value);
+				$document->setString('street', strtoupper($data->sessionValues[8]));
+				$document->setString('city', strtoupper($data->sessionValues[4]));
+				$document->setString('province', strtoupper($data->sessionValues[7]));
+				$document->setString('numberPlate', str_replace(' ', '', strtoupper($data->sessionValues[12]->value)));
 				switch ($data->sessionValues[6]->value) {
 					case '5':
 						# code...
@@ -107,11 +107,11 @@
 			else{ //other has been chosen
 				$document->setString('time', $data->sessionValues[5]);
 				$document->setString('date', $data->sessionValues[9]);
-				$document->setString('street', $data->sessionValues[8]);
-				$document->setString('city', $data->sessionValues[4]);
-				$document->setString('province', $data->sessionValues[7]);
-				$document->setString('violationDescription', $data->sessionValues[10]);
-				$document->setString('numberPlate', $data->sessionValues[13]->value);
+				$document->setString('street', strtoupper($data->sessionValues[8]));
+				$document->setString('city', strtoupper($data->sessionValues[4]));
+				$document->setString('province', strtoupper($data->sessionValues[7]));
+				$document->setString('violationDescription', strtoupper($data->sessionValues[10]));
+				$document->setString('numberPlate', str_replace(' ', '', strtoupper($data->sessionValues[13]->value)));
 			}
 			
 			//V---Add Document to Actual Firestore Database---V
