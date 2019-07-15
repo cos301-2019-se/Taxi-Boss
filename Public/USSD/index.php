@@ -23,11 +23,11 @@
 			
 			if(count($data->sessionValues) == 12)//first menu
 			{
-				$document->setString('time', $data->sessionValues[5]);
-				$document->setString('date', $data->sessionValues[8]);
-				$document->setString('street', strtoupper($data->sessionValues[7]));
-				$document->setString('city', strtoupper($data->sessionValues[4]));
-				$document->setString('province', strtoupper($data->sessionValues[6]));
+				$document->setString('time', $data->sessionValues[5]->value);
+				$document->setString('date', $data->sessionValues[8]->value);
+				$document->setString('street', strtoupper($data->sessionValues[7]->value));
+				$document->setString('city', strtoupper($data->sessionValues[4]->value));
+				$document->setString('province', strtoupper($data->sessionValues[6]->value));
 				$document->setString('numberPlate', str_replace(' ', '', strtoupper($data->sessionValues[10]->value)));
 				switch ($data->sessionValues[9]->value) {
 				case '1':
@@ -42,7 +42,7 @@
 
 				case '3':
 					# code...
-					$document->setString('violationDescription', 'DRIVING_ON_WRONG_SIDE_OF_ROAD');
+					$document->setString('violationDescription', 'WRONG_SIDE_OF_ROAD');
 					break;
 
 				case '4':
@@ -57,11 +57,11 @@
 			}
 			else if(count($data->sessionValues) == 13)//second menu
 			{
-				$document->setString('time', $data->sessionValues[5]);
-				$document->setString('date', $data->sessionValues[9]);
-				$document->setString('street', strtoupper($data->sessionValues[8]));
-				$document->setString('city', strtoupper($data->sessionValues[4]));
-				$document->setString('province', strtoupper($data->sessionValues[7]));
+				$document->setString('time', $data->sessionValues[5]->value);
+				$document->setString('date', $data->sessionValues[9]->value);
+				$document->setString('street', strtoupper($data->sessionValues[8]->value));
+				$document->setString('city', strtoupper($data->sessionValues[4]->value));
+				$document->setString('province', strtoupper($data->sessionValues[7]->value));
 				$document->setString('numberPlate', str_replace(' ', '', strtoupper($data->sessionValues[12]->value)));
 				switch ($data->sessionValues[6]->value) {
 					case '5':
@@ -91,7 +91,7 @@
 
 					case '10':
 						# code...
-						$document->setString('violationDescription', 'INCORRECT_USE_OF_INDICATORS/HAZARDS');
+						$document->setString('violationDescription', 'INCORRECT_INDICATORS/HAZARDS');
 						break;
 
 					case '11':
@@ -101,17 +101,18 @@
 
 					default:
 						# code...
+						$document->setString('violationDescription', 'SERVER_ERROR');
 						break;
 				}
 			}
 			else
 			{
-				$document->setString('time', $data->sessionValues[5]);
-				$document->setString('date', $data->sessionValues[9]);
-				$document->setString('street', strtoupper($data->sessionValues[8]));
-				$document->setString('city', strtoupper($data->sessionValues[4]));
-				$document->setString('province', strtoupper($data->sessionValues[7]));
-				$document->setString('violationDescription', strtoupper($data->sessionValues[10]));
+				$document->setString('time', $data->sessionValues[5]->value);
+				$document->setString('date', $data->sessionValues[9]->value);
+				$document->setString('street', strtoupper($data->sessionValues[8]->value));
+				$document->setString('city', strtoupper($data->sessionValues[4]->value));
+				$document->setString('province', strtoupper($data->sessionValues[7]->value));
+				$document->setString('violationDescription', strtoupper($data->sessionValues[10]->value));
 				$document->setString('numberPlate', str_replace(' ', '', strtoupper($data->sessionValues[13]->value)));
 			}
 			
