@@ -96,7 +96,7 @@
 
 					case '11':
 						# code...
-						$document->setString('violationDescription', 'CUTTING_OF_DRIVERS');
+						$document->setString('violationDescription', 'CUTTING_OFF_DRIVERS');
 						break;
 
 					default:
