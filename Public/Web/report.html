@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Taxi Boss</title>
+
+    <meta charset = "UTF-8">
+    <meta name = "description" content="Report Bad Driving">
+    <meta name = "keyword" content="report bad driving, driving, report, bad driving">
+    <meta name = "auther" content="Supreme Internect">
+    <meta name = "viewport" content="width = device-width, initial-scale = 1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+      //This function shows the "other" textbox, when a user clicks "other" when reporting a violation
+      //It is hidden at all other times.  
+
+      function checkEvent(val)
+      {
+        var element = document.getElementById("other");
+
+        if(val == 'OTHER') //if value is set to OTHER
+        {
+          element.style.display = "block"; //Display the block
+        }
+        else
+        {
+          element.style.display = "none"; //Else hide the block
+        }
+      }
+
+    </script>
+
+    <style>
+
+      .footer 
+      {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #FED428;
+        color: black;
+        text-align: center;
+		  }
+
+    </style>
+    
+</head>
+<body style="background-color: #FED428">
+
+    <!--Taxi Boss Logo-->
+    <div class="col-12">
+      <img src="logo.PNG" style="margin-left: 50px;" alt = "TaxiBoss Logo" width="250" height="200" id = "head1">
+    </div>
+       
+    <br>
+    <br>
+
+    <div class="container">
+
+      <!--Heading-->  
+      <form action= "action.php" method="post">
+        <div class="col-sm-12">
+          <h2 class="display-5"> 
+            <p class="font-weight-bolder" >Report Bad Driving</p>
+          </h2>
+        </div>
+
+      <br>
+
+        <!--Creates a textbox so users can insert number plate of taxi-->
+        <div class = "col-sm-4">
+          <div class="form-group" >
+            <label for="text"><b>Number Plate:</b></label>
+            <input type="text" class="form-control" id="numberPlate"  placeholder="Enter number plate" name="numberPlate">
+          </div>
+        </div>
+
+        <!--Drop down menu for users to choose the type of violation commited by taxi driver-->
+        <div class = "col-sm-6">
+          <div class="form-group">
+            <label><b>Type of violation:</b></label>
+            <select name="event" onchange ='checkEvent(this.value);' required="required" id="report_event" class="form-control">
+              <option value="CUTTING_OFF_DRIVERS">Cutting off other drivers</option>
+
+              <option value="DRIVING_ON_WRONG_SIDE_OF_ROAD"> Driving on the wrong side of the road</option>
+
+              <option value="FAILURE_TO_YIELD"> Failure to yield</option>
+
+              <option value="ILLEGAL/UNSAFE_OVERTAKE">Illegal or unsafe overtake</option>
+
+              <option value="ILLEGAL_STOP">Illegal Stop</option>
+
+              <option value="ILLEGAL_USE_OF_EMERGENCY_LANE">Illegal use of the emergency lane</option>
+
+              <option value="INCORRECT_USE_OF_INDICATORS/HAZARDS">Incorrect use of indicators or hazards</option>
+
+              <option value="LITTERING">Littering</option>
+
+              <option value="OVERLOADED_VEHICLE">Overloaded vehicle</option>
+
+              <option value="PARKED_INCORRECTLY">Parked Incorrectly</option>
+
+              <option value="PHONE/TEXTING">Phone/Texting</option>
+
+              <option value="RECKLESS">Reckless driving</option>
+
+              <option value="SKIPPING_A_STOP_SIGN">Skipping a stop sign</option>
+
+              <option value="SKIPPING_ROBOT"> Skipping robot</option>
+
+              <option value="SPEEDING">Speeding</option>
+
+              <option value="UNROADWORTHY">Unroadworthy vehicle</option>
+
+              <option value="VIOLENT_BEHAVIOUR">Violent/Aggressive behaviour</option>
+            
+              <option value="TAILGATING">Tailgating</option>
+            
+              <option value="OTHER">Other</option>
+
+
+            </select>
+          </div>
+        </div>
+
+        <!--If the user picked other. This textbox will allow users to input another kind of violation-->
+        <div class = "col-sm-6"> 
+          <div class="form-group">
+            <input type="text" class="form-control" id="other" placeholder="Other event" name="other" value="" style="display: none;">
+          </div>
+        </div>
+        
+        <!--Shows claender, so users can choose the date when the violation took place-->
+        <div class = "col-sm-6">
+          <div class="form-group">
+            <label for="date"><b>Date:</b></label>
+            <input type="date" class="form-control" id="date" name="date" >
+          </div>
+        </div>
+  	
+         <!--Shows watch, so users can choose the time when the violation took place-->
+        <div class = "col-sm-6">
+          <div class="form-group">
+            <label for="time"><b>Time:</b></label>
+            <input type="time" class="form-control" id="time"  name="time">
+          </div>
+        </div>
+
+        <!--Text box that allows users to insert the name of the street where the violation took place-->
+        <div class = "col-sm-6">
+          <div class="form-group">
+            <label for="text"><b>Street:</b></label>
+            <input type="text" class="form-control" id="street"  name="street" placeholder = "Enter street name">
+          </div>
+        </div>
+
+        <!--Text box that allows users to insert the name of the city where the violation took place-->
+        <div class = "col-sm-6">  
+          <div class="form-group">
+            <label for="text"><b>City:</b></label>
+            <input type="text" class="form-control" id="city"  name="city" placeholder = "Enter city name">
+          </div>
+        </div>
+
+        <!--Text box that allows users to insert the name of the province where the violation took place-->
+        <div class = "col-sm-6">
+          <div class="form-group">
+            <label for="text"><b>Province:</b></label>
+            <input type="text" class="form-control" id="province"  placeholder = "Enter province name" name="province">
+          </div>
+        </div>
+   
+        <br>
+
+        <!--Submit button that sends a post request to the php file on the server, once it has been clicked-->
+        <div class = "col-sm-12">
+          <input type="submit" class="btn btn-primary" name="submit"></input>
+        </div>
+
+     </form>
+
+    <br>
+    <br>
+
+
+  </div>
+
+  <!--Footer with team name-->
+	<div class="footer">
+  		<p><b> 2019 Supreme Internect</b> </p>
+	</div>
+
+</body>
+</html>
