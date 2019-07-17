@@ -1,11 +1,11 @@
-var WindowRef = (function () {
+var WindowRef = /** @class */ (function () {
     function WindowRef() {
     }
     WindowRef.prototype.getNativeWindow = function () { return window; };
     return WindowRef;
 }());
 export { WindowRef };
-var DocumentRef = (function () {
+var DocumentRef = /** @class */ (function () {
     function DocumentRef() {
     }
     DocumentRef.prototype.getNativeDocument = function () { return document; };

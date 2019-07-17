@@ -9,7 +9,10 @@ exports.config = {
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    'chromeOptions': {
+      'args': ['show-fps-counter=true', '--no-sandbox']
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
@@ -19,12 +22,11 @@ exports.config = {
     defaultTimeoutInterval: 30000,
     print: function() {}
   },
-  beforeLaunch: function() {
+  onPrepare() {
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });
-  },
-  onPrepare() {
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+
+    jasmine.getEnv().addReporter(new SpecReporter({ acspec: { displayStacktrace: true } }));
   }
 };

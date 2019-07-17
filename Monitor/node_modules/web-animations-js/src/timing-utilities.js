@@ -81,7 +81,7 @@
     },
     set iterationStart(value) {
       if ((isNaN(value) || value < 0) && isInvalidTimingDeprecated()) {
-        throw new TypeError('iterationStart must be a non-negative number, received: ' + timing.iterationStart);
+        throw new TypeError('iterationStart must be a non-negative number, received: ' + value);
       }
       this._setMember('iterationStart', value);
     },
@@ -192,9 +192,9 @@
       }
 
       var start = 0, end = 1;
+      function f(a, b, m) { return 3 * a * (1 - m) * (1 - m) * m + 3 * b * (1 - m) * m * m + m * m * m};
       while (start < end) {
         var mid = (start + end) / 2;
-        function f(a, b, m) { return 3 * a * (1 - m) * (1 - m) * m + 3 * b * (1 - m) * m * m + m * m * m};
         var xEst = f(a, c, mid);
         if (Math.abs(x - xEst) < 0.00001) {
           return f(b, d, mid);
@@ -278,7 +278,7 @@
   }
 
   function repeatedDuration(timing) {
-    // https://w3c.github.io/web-animations/#calculating-the-active-duration
+    // https://drafts.csswg.org/web-animations/#calculating-the-active-duration
     if (timing.duration === 0 || timing.iterations === 0) {
       return 0;
     }
@@ -291,7 +291,7 @@
   var PhaseActive = 3;
 
   function calculatePhase(activeDuration, localTime, timing) {
-    // https://w3c.github.io/web-animations/#animation-effect-phases-and-states
+    // https://drafts.csswg.org/web-animations/#animation-effect-phases-and-states
     if (localTime == null) {
       return PhaseNone;
     }
@@ -308,7 +308,7 @@
   }
 
   function calculateActiveTime(activeDuration, fillMode, localTime, phase, delay) {
-    // https://w3c.github.io/web-animations/#calculating-the-active-time
+    // https://drafts.csswg.org/web-animations/#calculating-the-active-time
     switch (phase) {
       case PhaseBefore:
         if (fillMode == 'backwards' || fillMode == 'both')
@@ -326,7 +326,7 @@
   }
 
   function calculateOverallProgress(iterationDuration, phase, iterations, activeTime, iterationStart) {
-    // https://w3c.github.io/web-animations/#calculating-the-overall-progress
+    // https://drafts.csswg.org/web-animations/#calculating-the-overall-progress
     var overallProgress = iterationStart;
     if (iterationDuration === 0) {
       if (phase !== PhaseBefore) {
@@ -339,7 +339,7 @@
   }
 
   function calculateSimpleIterationProgress(overallProgress, iterationStart, phase, iterations, activeTime, iterationDuration) {
-    // https://w3c.github.io/web-animations/#calculating-the-simple-iteration-progress
+    // https://drafts.csswg.org/web-animations/#calculating-the-simple-iteration-progress
 
     var simpleIterationProgress = (overallProgress === Infinity) ? iterationStart % 1 : overallProgress % 1;
     if (simpleIterationProgress === 0 && phase === PhaseAfter && iterations !== 0 &&
@@ -350,7 +350,7 @@
   }
 
   function calculateCurrentIteration(phase, iterations, simpleIterationProgress, overallProgress) {
-    // https://w3c.github.io/web-animations/#calculating-the-current-iteration
+    // https://drafts.csswg.org/web-animations/#calculating-the-current-iteration
     if (phase === PhaseAfter && iterations === Infinity) {
       return Infinity;
     }
@@ -361,7 +361,7 @@
   }
 
   function calculateDirectedProgress(playbackDirection, currentIteration, simpleIterationProgress) {
-    // https://w3c.github.io/web-animations/#calculating-the-directed-progress
+    // https://drafts.csswg.org/web-animations/#calculating-the-directed-progress
     var currentDirection = playbackDirection;
     if (playbackDirection !== 'normal' && playbackDirection !== 'reverse') {
       var d = currentIteration;
@@ -390,8 +390,8 @@
     var currentIteration = calculateCurrentIteration(phase, timing.iterations, simpleIterationProgress, overallProgress);
     var directedProgress = calculateDirectedProgress(timing.direction, currentIteration, simpleIterationProgress);
 
-    // https://w3c.github.io/web-animations/#calculating-the-transformed-progress
-    // https://w3c.github.io/web-animations/#calculating-the-iteration-progress
+    // https://drafts.csswg.org/web-animations/#calculating-the-transformed-progress
+    // https://drafts.csswg.org/web-animations/#calculating-the-iteration-progress
     return timing._easingFunction(directedProgress);
   }
 

@@ -10,7 +10,9 @@ describe('PolylineManager', function () {
                 { provide: NgZone, useFactory: function () { return new NgZone({ enableLongStackTrace: true }); } },
                 PolylineManager, {
                     provide: GoogleMapsAPIWrapper,
-                    useValue: jasmine.createSpyObj('GoogleMapsAPIWrapper', ['createPolyline'])
+                    useValue: {
+                        createPolyline: jest.fn()
+                    }
                 }
             ]
         });
@@ -36,8 +38,10 @@ describe('PolylineManager', function () {
     describe('Delete a polyline', function () {
         it('should set the map to null when deleting a existing polyline', inject([PolylineManager, GoogleMapsAPIWrapper], function (polylineManager, apiWrapper) {
             var newPolyline = new AgmPolyline(polylineManager);
-            var polylineInstance = jasmine.createSpyObj('Polyline', ['setMap']);
-            apiWrapper.createPolyline.and.returnValue(Promise.resolve(polylineInstance));
+            var polylineInstance = {
+                setMap: jest.fn()
+            };
+            apiWrapper.createPolyline.mockReturnValue(Promise.resolve(polylineInstance));
             polylineManager.addPolyline(newPolyline);
             polylineManager.deletePolyline(newPolyline).then(function () {
                 expect(polylineInstance.setMap).toHaveBeenCalledWith(null);

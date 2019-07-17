@@ -40,7 +40,7 @@ var LexedCssResult = (function () {
 }());
 exports.LexedCssResult = LexedCssResult;
 function generateErrorMessage(input, message, errorValue, index, row, column) {
-    return (message + " at column " + row + ":" + column + " in expression [" + findProblemCode(input, errorValue, index, column) + ']');
+    return message + " at column " + row + ":" + column + " in expression [" + findProblemCode(input, errorValue, index, column) + ']';
 }
 exports.generateErrorMessage = generateErrorMessage;
 function findProblemCode(input, errorValue, index, column) {
@@ -409,9 +409,7 @@ var CssScanner = (function () {
     CssScanner.prototype.error = function (message, errorTokenValue, doNotAdvance) {
         if (errorTokenValue === void 0) { errorTokenValue = null; }
         if (doNotAdvance === void 0) { doNotAdvance = false; }
-        var index = this.index;
-        var column = this.column;
-        var line = this.line;
+        var _a = this, column = _a.column, index = _a.index, line = _a.line;
         errorTokenValue = errorTokenValue || String.fromCharCode(this.peek);
         var invalidToken = new CssToken(index, column, line, CssTokenType.Invalid, errorTokenValue);
         var errorMessage = generateErrorMessage(this.input, message, errorTokenValue, index, line, column);
@@ -448,11 +446,7 @@ function isIdentifierStart(code, next) {
     return chars.isAsciiLetter(target) || target == chars.$BACKSLASH || target == chars.$MINUS || target == chars.$_;
 }
 function isIdentifierPart(target) {
-    return (chars.isAsciiLetter(target) ||
-        target == chars.$BACKSLASH ||
-        target == chars.$MINUS ||
-        target == chars.$_ ||
-        chars.isDigit(target));
+    return chars.isAsciiLetter(target) || target == chars.$BACKSLASH || target == chars.$MINUS || target == chars.$_ || chars.isDigit(target);
 }
 function isValidPseudoSelectorCharacter(code) {
     switch (code) {

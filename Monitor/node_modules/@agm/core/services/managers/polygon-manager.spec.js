@@ -10,7 +10,9 @@ describe('PolygonManager', function () {
                 { provide: NgZone, useFactory: function () { return new NgZone({ enableLongStackTrace: true }); } },
                 PolygonManager, AgmPolygon, {
                     provide: GoogleMapsAPIWrapper,
-                    useValue: jasmine.createSpyObj('GoogleMapsAPIWrapper', ['createPolygon'])
+                    useValue: {
+                        createPolygon: jest.fn()
+                    }
                 }
             ]
         });
@@ -38,8 +40,10 @@ describe('PolygonManager', function () {
     describe('Delete a polygon', function () {
         it('should set the map to null when deleting a existing polygon', inject([PolygonManager, GoogleMapsAPIWrapper], function (polygonManager, apiWrapper) {
             var newPolygon = new AgmPolygon(polygonManager);
-            var polygonInstance = jasmine.createSpyObj('Polygon', ['setMap']);
-            apiWrapper.createPolygon.and.returnValue(Promise.resolve(polygonInstance));
+            var polygonInstance = {
+                setMap: jest.fn()
+            };
+            apiWrapper.createPolygon.mockReturnValue(Promise.resolve(polygonInstance));
             polygonManager.addPolygon(newPolygon);
             polygonManager.deletePolygon(newPolygon).then(function () {
                 expect(polygonInstance.setMap).toHaveBeenCalledWith(null);

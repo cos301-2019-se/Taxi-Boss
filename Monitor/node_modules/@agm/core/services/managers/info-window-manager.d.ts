@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { NgZone } from '@angular/core';
 import { AgmInfoWindow } from '../../directives/info-window';
 import { GoogleMapsAPIWrapper } from '../google-maps-api-wrapper';

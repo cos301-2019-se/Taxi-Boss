@@ -1,5 +1,5 @@
 import { NgZone } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { AgmKmlLayer } from './../../directives/kml-layer';
 import { GoogleMapsAPIWrapper } from './../google-maps-api-wrapper';
 import { KmlLayerOptions } from './../google-maps-types';
