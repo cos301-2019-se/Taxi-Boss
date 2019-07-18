@@ -154,7 +154,9 @@ exports.loginMonitor = functions
             {
                 res.setHeader('Content-Type', 'application/json');
                 return res.status(200).send({data:{
-                    token: name
+                    name: name,
+                    token: name,
+                    email: data.email
                 }});
             }
             else{
