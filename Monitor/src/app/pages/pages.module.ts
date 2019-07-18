@@ -5,8 +5,8 @@ import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
-// import { RegisterDriverComponent } from './registerDriver/registerDriver.component';
-// import { ViewDriversComponent } from './viewDrivers/viewDrivers.component';
+import { RegisterDriverModule } from './registerDriver/registerDriver.module';
+import { ViewDriversModule } from './viewDrivers/viewDrivers.module';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { PagesRoutingModule } from './pages-routing.module';
     ThemeModule,
     NbMenuModule,
     DashboardModule,
-    // RegisterDriverComponent,
-    // ViewDriversComponent,
+    RegisterDriverModule,
+    ViewDriversModule,
   ],
   declarations: [
     PagesComponent,

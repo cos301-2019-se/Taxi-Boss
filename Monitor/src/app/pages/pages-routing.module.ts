@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-// import { RegisterDriverComponent } from './registerDriver/registerDriver.component';
-// import { ViewDriversComponent } from './viewDrivers/viewDrivers.component';
+import { RegisterDriverComponent } from './registerDriver/registerDriver.component';
+import { ViewDriversComponent } from './viewDrivers/viewDrivers.component';
 
 
 const routes: Routes = [{
@@ -22,11 +22,11 @@ const routes: Routes = [{
     },
     {
       path: 'registerDriver',
-      // component: RegisterDriverComponent,
+      component: RegisterDriverComponent,
     },
     {
       path: 'viewDrivers',
-      // component: ViewDriversComponent,
+      component: ViewDriversComponent,
     },
   ],
 }];

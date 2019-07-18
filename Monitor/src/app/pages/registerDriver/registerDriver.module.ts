@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbCardModule, NbListModule } from '@nebular/theme';
+import { NbCardModule, NbListModule, NbInputModule, NbCheckboxModule } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { RegisterDriverComponent } from './registerDriver.component';
@@ -9,6 +9,8 @@ import { RegisterDriverComponent } from './registerDriver.component';
     NbCardModule,
     ThemeModule,
     NbListModule,
+    NbInputModule,
+    NbCheckboxModule,
   ],
   declarations: [
     RegisterDriverComponent,

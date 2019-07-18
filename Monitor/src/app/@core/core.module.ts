@@ -7,7 +7,7 @@ import { of as observableOf } from 'rxjs';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { AnalyticsService } from './utils';
 import { UserData } from './data/users';
-import { UserService } from './mock/users.service';
+// import { UserService } from './mock/users.service';
 import { MockDataModule } from './mock/mock-data.module';
 
 const socialLinks = [
@@ -82,9 +82,9 @@ const formSetting: any = {
 };
 
 
-const DATA_SERVICES = [
-  { provide: UserData, useClass: UserService },
-];
+// const DATA_SERVICES = [
+//   { provide: UserData, useClass: UserService },
+// ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
   getRole() {
@@ -95,12 +95,12 @@ export class NbSimpleRoleProvider extends NbRoleProvider {
 
 export const NB_CORE_PROVIDERS = [
   ...MockDataModule.forRoot().providers,
-  ...DATA_SERVICES,
+  // ...DATA_SERVICES,
   ...NbAuthModule.forRoot({
 
     strategies: [
       NbPasswordAuthStrategy.setup({
-        name: 'email',
+        name: 'name',
 
         baseEndpoint: 'https://europe-west2-taxi-boss.cloudfunctions.net',
          login: {
@@ -108,7 +108,7 @@ export const NB_CORE_PROVIDERS = [
              success: '/dashboard/'
            },
            // ...
-           endpoint: '/login',
+           endpoint: '/loginMonitor',
          },
          register: {
            // ...

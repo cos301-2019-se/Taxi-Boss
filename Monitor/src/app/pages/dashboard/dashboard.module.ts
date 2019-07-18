@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbCardModule, NbListModule, NbTabsetModule } from '@nebular/theme';
+import { NbCardModule, NbListModule, NbTabsetModule, NbSelectModule } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
@@ -9,6 +9,8 @@ import { ChartPanelHeaderComponent } from './charts-panel/chart-panel-header/cha
 import { OrdersChartComponent } from './charts-panel/charts/orders-chart.component';
 import { ProfitChartComponent } from './charts-panel/charts/profit-chart.component';
 import { ECommerceLegendChartComponent } from './legend-chart/legend-chart.component';
+import { RegisterDriverModule } from '../registerDriver/registerDriver.module';
+import { ViewDriversModule } from '../viewDrivers/viewDrivers.module';
 
 @NgModule({
   imports: [
@@ -16,6 +18,9 @@ import { ECommerceLegendChartComponent } from './legend-chart/legend-chart.compo
     NbCardModule,
     ThemeModule,
     NbListModule,
+    NbSelectModule,
+    RegisterDriverModule,
+    ViewDriversModule,
   ],
   declarations: [
     DashboardComponent,

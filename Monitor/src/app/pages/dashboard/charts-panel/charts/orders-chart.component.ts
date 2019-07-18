@@ -10,7 +10,7 @@ import { LayoutService } from '../../../../@core/utils/layout.service';
   styleUrls: ['./charts-common.component.scss'],
   template: `
     <div echarts
-         [options]="option"
+         (options)="option"
          class="echart"
          (chartInit)="onChartInit($event)">
     </div>
