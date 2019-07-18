@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbMenuModule } from '@nebular/theme';
+import { NbMenuModule, NbListModule } from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -16,6 +16,7 @@ import { ViewDriversModule } from './viewDrivers/viewDrivers.module';
     DashboardModule,
     RegisterDriverModule,
     ViewDriversModule,
+    NbListModule,
   ],
   declarations: [
     PagesComponent,
