@@ -395,9 +395,10 @@ exports.allViolations = functions
                     
                         for (let ob of plateList)
                         {
-                            ret= await getViolationsByPlate(ob);
+                            await getViolationsByPlate(ob);
+                            return;
                         }
-                        return;
+                        
                     }
 
                     
@@ -419,3 +420,55 @@ exports.allViolations = functions
     });//cors
 
 })//onRequest
+
+
+
+//This function takes a number plate as parameter and returns all
+//violations reported on that number plate. Response Code 200
+//returns a JSON array that contains violation objects. 
+
+exports.allViolationsByPlate = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('allViolationsByPlate triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            numberPlate: req.query.numberPlate
+            //password: req.query.password
+        };*/
+
+
+        let data={
+            numberPlate: req.body.numberPlate
+        };
+
+        return driverList= db.collection('Violations')
+        .where('numberPlate','==',data.numberPlate)
+        .get()
+        .then(snapshot=> {
+            
+            let ret=[];
+            snapshot.forEach(doc => {
+                ret.push({
+                    city: doc.data().city,
+                    date: doc.data().date,
+                    numberPlate: doc.data().numberPlate,
+                    province: doc.data().province,
+                    street: doc.data().street,
+                    time: doc.data().time,
+                    violationDescription: doc.data().violationDescription
+                })
+            })
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        })
+        
+    })
+})
+
+
