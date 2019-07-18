@@ -1,1 +1,1 @@
-Files used for reporting via web are placed in this directory
+Files used to create the reporting website are placed in this directory.
