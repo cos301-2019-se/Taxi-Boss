@@ -136,26 +136,30 @@ exports.loginMonitor = functions
         .then(snapshot=> {
             if (snapshot.empty){
                 res.setHeader('Content-Type', 'application/json');
-                return res.status(200).send({status: 'Account not found'});
+                return res.status(500).send({status: 'Account not found'});
             }
 
             let correct=false;
+            let name;
             
             snapshot.forEach(doc => {
                 if (doc.data().password == data.password)
                 {
-                   return correct=true;
+                   correct=true;
+                   name=doc.data().name;
                 }
             })
             
             if (correct == true)
             {
                 res.setHeader('Content-Type', 'application/json');
-                return res.status(200).send({status: 'Success'});
+                return res.status(200).send({data:{
+                    token: name
+                }});
             }
             else{
                 res.setHeader('Content-Type', 'application/json');
-                return res.status(200).send({status: 'Incorrect password'});
+                return res.status(500).send({status: 'Incorrect password'});
             }
  
 
@@ -472,3 +476,62 @@ exports.allViolationsByPlate = functions
 })
 
 
+
+//This function takes as parameters a number plate
+//and password. It checks for the combination and returns
+// a JSON object. It returns either status 200: 'success'
+//or status 500: 'Account not found' or status 500: 
+//'Incorrect password'.
+
+
+exports.loginDriver = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('loginDriver triggered');
+    return cors(req, res, () => {
+
+        let data= {
+            //name: req.query.fullName,
+            numberPlate: req.query.numberPlate,
+            password: req.query.password
+        };
+
+
+        /*let data={
+            email: req.body.email,
+            password: req.body.password
+        };*/
+
+        return monitor= db.collection('Taxi Driver')
+        .where('numberPlate','==',data.numberPlate)
+        .get()
+        .then(snapshot=> {
+            if (snapshot.empty){
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(500).send({status: 'Account not found'});
+            }
+
+            let correct=false;
+            
+            snapshot.forEach(doc => {
+                if (doc.data().password == data.password)
+                {
+                   correct=true;
+                }
+            })
+            
+            if (correct == true)
+            {
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(200).send({status: 'success'});
+            }
+            else{
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(500).send({status: 'Incorrect password'});
+            }
+ 
+
+        });
+        
+    })
+})
