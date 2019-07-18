@@ -10,4 +10,13 @@
 
 export const environment = {
   production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyDcPdaDs-ixSojbM4P_DhOO4-x05QG0_08",
+    authDomain: "taxi-boss.firebaseapp.com",
+    databaseURL: "https://taxi-boss.firebaseio.com",
+    projectId: "taxi-boss",
+    storageBucket: "taxi-boss.appspot.com",
+    messagingSenderId: "99448085876",
+    appId: "1:99448085876:web:42157fda8280ee8e"
+  }
 };

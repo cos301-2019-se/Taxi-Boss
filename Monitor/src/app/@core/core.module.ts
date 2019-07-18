@@ -101,7 +101,6 @@ export const NB_CORE_PROVIDERS = [
     strategies: [
       NbPasswordAuthStrategy.setup({
         name: 'email',
-
         baseEndpoint: 'https://europe-west2-taxi-boss.cloudfunctions.net',
          login: {
            redirect:{

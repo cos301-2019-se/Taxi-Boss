@@ -12,6 +12,8 @@ import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from '../auth-guard.service';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore'; 
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -22,6 +24,7 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,6 +44,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
     NgxEchartsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     CoreModule.forRoot(),
   ],
   providers: [

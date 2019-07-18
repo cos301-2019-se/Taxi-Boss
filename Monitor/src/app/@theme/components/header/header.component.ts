@@ -4,7 +4,7 @@ import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeServ
 import { UserData } from '../../../@core/data/users';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { NbAuthService, NbAuthSimpleToken, NbPasswordStrategyMessage, NbPasswordAuthStrategy } from '@nebular/auth';
+import { NbAuthService, NbAuthSimpleToken, NbPasswordStrategyMessage, NbPasswordAuthStrategy, NbPasswordAuthStrategyOptions } from '@nebular/auth';
 
 @Component({
   selector: 'ngx-header',
@@ -45,20 +45,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private themeService: NbThemeService,
               // private userService: UserData,
               private breakpointService: NbMediaBreakpointsService,
-              private authService: NbAuthService,
-              private response: NbPasswordStrategyMessage) {
+              private authService: NbAuthService) {
               this.authService.onTokenChange()
                 .subscribe((token: NbAuthSimpleToken) => {
                   // this.userDetails = message.
                   if (token.isValid()) {
                     this.user = token.getValue(); // here we receive a payload from the token and assigns it to our `user` variable 
                     console.log(token);
-                    console.log(response.getter);
+                    // console.log();
                   }
               });
-              // this.userDetails=g;
-              // message: NbPasswordAuthStrategy;
-              // console.log();
+              // this.authService.onTokenChange(){
+                
+              // }
   }
 
   ngOnInit() {
