@@ -9,6 +9,16 @@
   "bugs": {
     "url": "https://github.com/akveo/ngx-admin/issues"
   },
+  "promise": {
+    "version": "7.3.1",
+    "resolved": "https://registry.npmjs.org/promise/-/promise-7.3.1.tgz",
+    "integrity": "sha512-nolQXZ/4L+bP/UGlkfaIujX9BKxGwmQ9OT4mOt5yvy8iK1h3wqTEJCijzGANTCCl9nWjY41juyAn2K3Q1hLLTg==",
+    "dev": true,
+    "optional": true,
+    "requires": {
+      "asap": "~2.0.3"
+    }
+  },
   "engines": {
     "node": "12.6.0",
     "npm": "6.9.0"
