@@ -7,13 +7,13 @@ EPI-Use has identified a problem in the informal public transport industry. Thus
 
 ##### [Trello](https://trello.com/b/N4usDTSI/working-board)
 
-#### [SRS Document](Documents/Taxi_Boss_SRS.pdf)
+#### [SRS Document](Documentation/Taxi_Boss_SRS.pdf)
 
-#### [Test Policy Document](Documents/testPolicyDocument.pdf)
+#### [Test Policy Document](Documentation/testPolicyDocument.pdf)
 
-#### [User Manual](Documents/UserManual.pdf)
+#### [User Manual](Documentation/UserManual.pdf)
 
-#### [Coding Standards](Documents/CodingStandards.pdf)
+#### [Coding Standards](Documentation/coding_standards.pdf)
 
 ### The team:
 **team email**: supremeinternect@gmail.com
