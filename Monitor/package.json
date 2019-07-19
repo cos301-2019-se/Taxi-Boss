@@ -94,6 +94,7 @@
     "karma-jasmine-html-reporter": "0.2.2",
     "node-sass": "^4.12.0",
     "npm-run-all": "4.0.2",
+    "postinstall": "^0.4.2",
     "protractor": "5.1.2",
     "rimraf": "2.6.1",
     "stylelint": "7.13.0",
