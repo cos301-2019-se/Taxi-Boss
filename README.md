@@ -11,7 +11,7 @@ EPI-Use has identified a problem in the informal public transport industry. Thus
 
 #### [Test Policy Document](Documentation/testPolicyDocument.pdf)
 
-#### [User Manual](Documentation/UserManual.pdf)
+#### [User Manual](Documentation/user_manual.pdf)
 
 #### [Coding Standards](Documentation/coding_standards.pdf)
 
