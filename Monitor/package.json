@@ -9,16 +9,6 @@
   "bugs": {
     "url": "https://github.com/akveo/ngx-admin/issues"
   },
-  "promise": {
-    "version": "7.3.1",
-    "resolved": "https://registry.npmjs.org/promise/-/promise-7.3.1.tgz",
-    "integrity": "sha512-nolQXZ/4L+bP/UGlkfaIujX9BKxGwmQ9OT4mOt5yvy8iK1h3wqTEJCijzGANTCCl9nWjY41juyAn2K3Q1hLLTg==",
-    "dev": true,
-    "optional": true,
-    "requires": {
-      "asap": "~2.0.3"
-    }
-  },
   "engines": {
     "node": "12.6.0",
     "npm": "6.9.0"
@@ -44,6 +34,8 @@
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
+    "@angular/cli": "^8.0.2",
+    "@angular/compiler-cli": "^8.0.0",
     "@agm/core": "^1.0.0-beta.5",
     "@angular/animations": "^8.0.0",
     "@angular/cdk": "^8.0.0",
@@ -70,7 +62,6 @@
     "ionicons": "2.0.1",
     "nebular-icons": "1.1.0",
     "ngx-echarts": "^4.2.1",
-    "node-sass": "^4.12.0",
     "normalize.css": "6.0.0",
     "pace-js": "1.0.2",
     "path": "^0.12.7",
@@ -84,8 +75,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.2",
-    "@angular/cli": "^8.0.2",
-    "@angular/compiler-cli": "^8.0.0",
     "@angular/language-service": "8.0.0",
     "@compodoc/compodoc": "1.0.1",
     "@types/jasmine": "2.5.54",
@@ -103,6 +92,7 @@
     "karma-coverage-istanbul-reporter": "1.3.0",
     "karma-jasmine": "1.1.0",
     "karma-jasmine-html-reporter": "0.2.2",
+    "node-sass": "^4.12.0",
     "npm-run-all": "4.0.2",
     "protractor": "5.1.2",
     "rimraf": "2.6.1",
