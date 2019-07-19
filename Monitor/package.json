@@ -34,9 +34,9 @@
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
-    "@angular/cli": "^8.0.2",
-    "@angular/compiler-cli": "^8.0.0",
     "@agm/core": "^1.0.0-beta.5",
+    "@angular/cli": "^8.1.2",
+    "@angular/compiler-cli": "^8.1.2",
     "@angular/animations": "^8.0.0",
     "@angular/cdk": "^8.0.0",
     "@angular/common": "^8.0.0",
