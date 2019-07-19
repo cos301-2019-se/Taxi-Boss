@@ -1,0 +1,2 @@
+# Referenced at C:\Users\Waldo\Documents\COS301\CapstoneProjectAfterSystemChange\Taxi-Boss\driver\build\app\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:28
+-keep class io.flutter.app.FlutterApplication { <init>(...); }

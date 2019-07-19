@@ -1,0 +1,10 @@
+#Fri Jul 19 06:57:54 CAT 2019
+path.2=classes3.dex
+path.1=classes2.dex
+path.0=classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+base.2=C\:\\Users\\Waldo\\Documents\\COS301\\CapstoneProjectAfterSystemChange\\Taxi-Boss\\driver\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+base.1=C\:\\Users\\Waldo\\Documents\\COS301\\CapstoneProjectAfterSystemChange\\Taxi-Boss\\driver\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+base.0=C\:\\Users\\Waldo\\Documents\\COS301\\CapstoneProjectAfterSystemChange\\Taxi-Boss\\driver\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
