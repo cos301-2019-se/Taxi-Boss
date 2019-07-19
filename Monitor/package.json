@@ -13,11 +13,10 @@
     "node": "12.6.0",
     "npm": "6.9.0"
   },
-  
   "scripts": {
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "build:prod": "npm run build -- --prod --aot",
     "test": "ng test",

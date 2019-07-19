@@ -101,17 +101,24 @@ export const NB_CORE_PROVIDERS = [
     strategies: [
       NbPasswordAuthStrategy.setup({
         name: 'email',
+        token:{
+          key:'email'
+        },
         baseEndpoint: 'https://europe-west2-taxi-boss.cloudfunctions.net',
          login: {
            redirect:{
              success: '/dashboard/'
            },
+           
            // ...
            endpoint: '/loginMonitor',
          },
          register: {
            // ...
            endpoint: '/registerMonitor',
+         },
+         logout:{
+           endpoint: '/loginMonitor',
          },
         }),
       

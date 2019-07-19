@@ -38,7 +38,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   currentTheme = 'default';
 
-  userMenu = [ { title: 'Log out' } ];
+  userMenu = [ {
+    title: 'Log Out',
+    link: '/logout',
+  }, ];
   userDetails: {};
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
@@ -51,7 +54,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
                   // this.userDetails = message.
                   if (token.isValid()) {
                     this.user = token.getValue(); // here we receive a payload from the token and assigns it to our `user` variable 
-                    console.log(token);
+                    // console.log(token);
                     // console.log();
                   }
               });
