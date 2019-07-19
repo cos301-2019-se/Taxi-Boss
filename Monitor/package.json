@@ -13,7 +13,7 @@
     "node": "12.6.0",
     "npm": "6.9.0"
   },
-  "postinstall": "ng build --aot -prod",
+  "heroku-postbuild": "ng build --prod",
   "scripts": {
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
