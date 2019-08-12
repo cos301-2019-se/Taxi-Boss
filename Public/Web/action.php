@@ -7,7 +7,7 @@
 
 		//use API key to connect to the database
 		$firestore = new FireStoreApiClient(
-		 'taxi-boss', 'AIzaSyDcPdaDs-ixSojbM4P_DhOO4-x05QG0_08'
+		 'taxi-boss', '' //api goes in quotes
 		);
 		
 
