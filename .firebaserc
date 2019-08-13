@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "taxi-boss"
+    "default": "taxi-boss",
+    "tb": "taxi-boss-3792e"
   }
 }
