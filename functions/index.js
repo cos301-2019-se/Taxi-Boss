@@ -537,3 +537,183 @@ exports.loginDriver = functions
         
     })
 })
+
+
+
+exports.numUSSD = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('numUSSD triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            email: req.query.email,
+            //password: req.query.password
+        };*/
+
+
+
+        return numUSSD= db.collection('DetailedViolations')
+        .where('violationOrigin','==','USSD')
+        .get()
+        .then(snapshot=> {
+            
+            let arr=[];
+            snapshot.forEach(doc =>{
+                arr.push({rec: doc.data().violationOrigin});
+            })
+            ret=arr.length;
+            console.log("Items returned: "+ret);
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send({numUSSD: ret});
+
+        });
+        
+    })
+})
+
+
+
+exports.numWEB = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('numWEB triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            email: req.query.email,
+            //password: req.query.password
+        };*/
+
+
+
+        return numUSSD= db.collection('DetailedViolations')
+        .where('violationOrigin','==','WEB')
+        .get()
+        .then(snapshot=> {
+            
+            let arr=[];
+            snapshot.forEach(doc =>{
+                arr.push({rec: doc.data().violationOrigin});
+            })
+            ret=arr.length;
+            console.log("Items returned: "+ret);
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send({numWEB: ret});
+
+        });
+        
+    })
+})
+
+
+exports.violationsByCity = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationsByCity triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            email: req.query.email,
+            //password: req.query.password
+        };*/
+
+
+
+        return this.violationsByCity= db.collection('DetailedViolations')
+        .get()
+        .then(snapshot=> {
+            
+            let arr=[];
+            snapshot.forEach(doc =>{
+                arr.push(doc.data().city);
+            })
+            let cities= [];
+            let count=[];
+            arr.forEach((city)=>{
+                if (cities.includes(city))
+                {
+                    count[cities.indexOf(city)]++;
+                }
+                else
+                {
+                    cities.push(city);
+                    count[cities.indexOf(city)]=1;
+                }
+            })
+
+            let ret=[];
+            cities.forEach((city,index)=>{
+                ret.push({"city":city, numViolations: count[index]});
+            })
+            
+            console.log("Items returned: "+ret);
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        });
+        
+    })
+})
+
+
+exports.violationsByProvince = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationsByProvince triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            email: req.query.email,
+            //password: req.query.password
+        };*/
+
+
+
+        return this.violationsByProvince= db.collection('DetailedViolations')
+        .get()
+        .then(snapshot=> {
+            
+            let arr=[];
+            snapshot.forEach(doc =>{
+                arr.push(doc.data().province);
+            })
+            let provinces= [];
+            let count=[];
+            arr.forEach((province)=>{
+                if (provinces.includes(province))
+                {
+                    count[provinces.indexOf(province)]++;
+                }
+                else
+                {
+                    provinces.push(province);
+                    count[provinces.indexOf(province)]=1;
+                }
+            })
+
+            let ret=[];
+            provinces.forEach((province,index)=>{
+                ret.push({"province":province, numViolations: count[index]});
+            })
+            
+            console.log("Items returned: "+ret);
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        });
+        
+    })
+})
