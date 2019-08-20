@@ -2,8 +2,6 @@ import { Component, OnInit, HostListener, Input, Output } from '@angular/core';
 import { Driver } from '../../../shared/driver.model';
 import { DriverService } from '../../../shared/driver.service';
 import { ViolationService } from '../../../shared/violation.service';
-import { InfoListComponent } from '../info-list/info-list.component';
-import { EventEmitter } from 'selenium-webdriver';
 
 @Component({
   selector: 'driver-info',
@@ -12,7 +10,6 @@ import { EventEmitter } from 'selenium-webdriver';
 })
 export class DriverInfoComponent implements OnInit {
   numViolations: number;
-  @Output() toggle: EventEmitter = new EventEmitter();
   constructor(private service:DriverService, private vService:ViolationService) { }
  
   ngOnInit() {
@@ -28,9 +25,8 @@ export class DriverInfoComponent implements OnInit {
     // this.vService.driverViolations.length=0;
   } 
 
-  @HostListener('onClick')
   onClick(){
-    this.toggle.emit;
+    this.vService.viewViolations=true;
   }
 
   update(){

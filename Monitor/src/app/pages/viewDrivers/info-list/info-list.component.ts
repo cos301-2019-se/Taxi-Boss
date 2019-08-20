@@ -1,5 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { NbFlipCardComponent } from '@nebular/theme';
+import { ViolationService } from '../../../shared/violation.service';
 
 @Component({
   selector: 'info-list',
@@ -7,16 +7,15 @@ import { NbFlipCardComponent } from '@nebular/theme';
   styleUrls: ['./info-list.component.scss']
 })
 export class InfoListComponent implements OnInit {
-  @HostBinding('class.flipViolations')
-  flipViolations = false;
 
-  constructor() {
+  constructor(private vService: ViolationService) {
   }
 
   ngOnInit() {
+    this.vService.viewViolations=false;
   }
 
-  toggleCard() {
-    this.flipViolations = !this.flipViolations;
+  viewDrivers(){
+    this.vService.viewViolations=false;
   }
 }

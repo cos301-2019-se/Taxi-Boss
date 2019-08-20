@@ -10,6 +10,9 @@ export class ViolationService {
 
   numViolations: number;
   driverViolations: Violation[];
+  viewViolations: boolean;
+
+  //HTTP API For retrieving driver related data
   readonly rootUrl = "https://europe-west2-taxi-boss-3792e.cloudfunctions.net";
 
   httpOptions = {
@@ -18,9 +21,7 @@ export class ViolationService {
     }) 
   }
   
-  constructor(private http : HttpClient) {
-    
-  }
+  constructor(private http : HttpClient) {}
   
   getDriverViolations(curDriver: Driver){
       var numPlate = {
@@ -35,5 +36,9 @@ export class ViolationService {
           this.numViolations=0;
         }
       });
+  }
+
+  getWorstDriver(){
+    
   }
 }

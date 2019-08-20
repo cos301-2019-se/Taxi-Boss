@@ -1,8 +1,7 @@
-<nb-flip-card [showToggleButton]='false' #cardComponent1 [flipped]='flipViolations'>
+<nb-flip-card [showToggleButton]='false' #cardComponent1 [flipped]='this.vService.viewViolations'>
     <nb-card-front>
         <nb-card size="medium">
         <nb-card-header>Drivers 
-                <button (click)="toggleCard()">View Drivers</button>
         </nb-card-header>
         <driver-list></driver-list>
         </nb-card>
@@ -11,7 +10,7 @@
         <nb-card size="medium">
         <nb-card-header>
             Violations
-            <button (click)="toggleCard()">View Drivers</button>
+            <button (click)="viewDrivers()">View Drivers</button>
         </nb-card-header>
         <violations-list></violations-list>
         </nb-card>
