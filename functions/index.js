@@ -540,6 +540,9 @@ exports.loginDriver = functions
 
 
 
+//This function takes no parameters
+//Return -> {numUSSD:x}
+
 exports.numUSSD = functions
 .region('europe-west2')
 .https.onRequest((req, res) => {
@@ -577,6 +580,9 @@ exports.numUSSD = functions
 
 
 
+//This function takes no parameters
+//Return -> {numWEB:x}
+
 exports.numWEB = functions
 .region('europe-west2')
 .https.onRequest((req, res) => {
@@ -612,6 +618,11 @@ exports.numWEB = functions
     })
 })
 
+
+
+//This function takes no parameters
+//Return is each unique city with an associated count
+//Return -> [{"city":city, numViolations: x},...]
 
 exports.violationsByCity = functions
 .region('europe-west2')
@@ -666,6 +677,11 @@ exports.violationsByCity = functions
 })
 
 
+//This function takes no parameters
+//Return is each unique province with an associated count
+//Return -> [{"province":province, numViolations: x},...]
+
+
 exports.violationsByProvince = functions
 .region('europe-west2')
 .https.onRequest((req, res) => {
@@ -708,6 +724,143 @@ exports.violationsByProvince = functions
             })
             
             console.log("Items returned: "+ret);
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        });
+        
+    })
+})
+
+//This function takes a String month parameter (01 for January)
+//Which indicates the month
+/*Return ->[{
+    city: city,
+    date: date,
+    latitude: latitude,
+    longitude: longitude,
+    numberPlate: numberPlate,
+    province: province,
+    reportDate: reportDate,
+    reportTime: reportTime,
+    street: street,
+    time: time,
+    violationDescription: violationDescription,
+    violationOrigin: violationOrigin
+},...]*/
+
+exports.violationsByMonth = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationsByMonth triggered');
+    return cors(req, res, () => {
+
+        //let data= {
+            //name: req.query.fullName,
+          //  month: req.query.month
+            //password: req.query.password
+        //};
+
+
+        let data={
+            month: req.body.month
+        };
+
+        return violationList= db.collection('DetailedViolations')
+        .get()
+        .then(snapshot=> {
+            
+            let ret=[];
+            snapshot.forEach(doc => {
+                if (doc.data().date.substring(5,7)==data.month)
+                {
+                    
+                    ret.push({
+                        city: doc.data().city,
+                        date: doc.data().date,
+                        latitude: doc.data().latitude,
+                        longitude: doc.data().longitude,
+                        numberPlate: doc.data().numberPlate,
+                        province: doc.data().province,
+                        reportDate: doc.data().reportDate,
+                        reportTime: doc.data().reportTime,
+                        street: doc.data().street,
+                        time: doc.data().time,
+                        violationDescription: doc.data().violationDescription,
+                        violationOrigin: doc.data().violationOrigin
+                    })
+                }
+            })
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        });
+        
+    })
+})
+
+
+
+//This function takes no parameters
+//Returns all detailed violations structured in a JSON array
+/*Return ->[{
+    city: city,
+    date: date,
+    latitude: latitude,
+    longitude: longitude,
+    numberPlate: numberPlate,
+    province: province,
+    reportDate: reportDate,
+    reportTime: reportTime,
+    street: street,
+    time: time,
+    violationDescription: violationDescription,
+    violationOrigin: violationOrigin
+},...]*/
+
+exports.allDetailedViolations = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationsByMonth triggered');
+    return cors(req, res, () => {
+
+        //let data= {
+            //name: req.query.fullName,
+          //  month: req.query.month
+            //password: req.query.password
+        //};
+
+
+        /*let data={
+            month: req.body.month
+        };*/
+
+        return violationList= db.collection('DetailedViolations')
+        .get()
+        .then(snapshot=> {
+            
+            let ret=[];
+            snapshot.forEach(doc => {
+
+                    ret.push({
+                        city: doc.data().city,
+                        date: doc.data().date,
+                        latitude: doc.data().latitude,
+                        longitude: doc.data().longitude,
+                        numberPlate: doc.data().numberPlate,
+                        province: doc.data().province,
+                        reportDate: doc.data().reportDate,
+                        reportTime: doc.data().reportTime,
+                        street: doc.data().street,
+                        time: doc.data().time,
+                        violationDescription: doc.data().violationDescription,
+                        violationOrigin: doc.data().violationOrigin
+                    })
+            })
             
 
             res.setHeader('Content-Type', 'application/json');
