@@ -1,12 +1,13 @@
 <div class="row">
+  <div class="col-md-11">
+    <info-list></info-list>
+  </div>
+  <div class="col-md-4">
     <nb-card size="medium">
-        <nb-card-header>
-          Some users
-        </nb-card-header>
-        <nb-list>
-          <nb-list-item *ngFor="let user of users">
-            {{ user }}
-          </nb-list-item>
-        </nb-list>
-      </nb-card>
+      <nb-card-header>
+          Driver Info
+      </nb-card-header>
+      <driver-info></driver-info>
+    </nb-card>
+  </div>
 </div>

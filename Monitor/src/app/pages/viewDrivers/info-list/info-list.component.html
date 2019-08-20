@@ -1,0 +1,19 @@
+<nb-flip-card [showToggleButton]='false' #cardComponent1 [flipped]='flipViolations'>
+    <nb-card-front>
+        <nb-card size="medium">
+        <nb-card-header>Drivers 
+                <button (click)="toggleCard()">View Drivers</button>
+        </nb-card-header>
+        <driver-list></driver-list>
+        </nb-card>
+    </nb-card-front>
+    <nb-card-back>
+        <nb-card size="medium">
+        <nb-card-header>
+            Violations
+            <button (click)="toggleCard()">View Drivers</button>
+        </nb-card-header>
+        <violations-list></violations-list>
+        </nb-card>
+    </nb-card-back>
+</nb-flip-card>

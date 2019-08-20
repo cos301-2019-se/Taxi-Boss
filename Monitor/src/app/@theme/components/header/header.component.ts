@@ -5,6 +5,8 @@ import { UserData } from '../../../@core/data/users';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { NbAuthService, NbAuthSimpleToken, NbPasswordStrategyMessage, NbPasswordAuthStrategy, NbPasswordAuthStrategyOptions } from '@nebular/auth';
+import { MonitorService } from '../../../shared/monitor.service';
+import { Monitor } from '../../../shared/monitor.model';
 
 @Component({
   selector: 'ngx-header',
@@ -16,6 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
   user: {};
+  monitor: Monitor;
   
   themes = [
     {
@@ -48,13 +51,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private themeService: NbThemeService,
               // private userService: UserData,
               private breakpointService: NbMediaBreakpointsService,
-              private authService: NbAuthService) {
+              private authService: NbAuthService,
+              private monitorService: MonitorService) {
               this.authService.onTokenChange()
                 .subscribe((token: NbAuthSimpleToken) => {
                   // this.userDetails = message.
                   if (token.isValid()) {
                     this.user = token.getValue(); // here we receive a payload from the token and assigns it to our `user` variable 
-                    // console.log(token);
+                    this.monitor= new Monitor;
+                    this.monitor.email= token.getValue();
+                    this.monitorService.monitorDetails=this.monitor;
+                    // console.log(token.getValue());
                     // console.log();
                   }
               });

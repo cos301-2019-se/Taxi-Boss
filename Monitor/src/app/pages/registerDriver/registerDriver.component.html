@@ -3,29 +3,30 @@
   <nb-card>
     <nb-card-header>Register Driver</nb-card-header>
     <nb-card-body>
-      <form>
-        <div class="form-group">
-            <label for="exampleInputEmail1" class="label">Full Name</label>
-            <input type="email" nbInput fullWidth id="exampleInputEmail1" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1" class="label">Email address</label>
-          <input type="email" nbInput fullWidth id="exampleInputEmail1" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1" class="label">Cell Phone Number</label>
-          <input type="email" nbInput fullWidth id="phoneNumber" placeholder="Phone Number">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1" class="label">Number Plate</label>
-          <input type="email" nbInput fullWidth id="exampleInputEmail1" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1" class="label">Password</label>
-          <input type="password" nbInput fullWidth id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <button type="submit" nbButton status="danger">Add Driver</button>
-      </form>
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+            <div class="form-group">
+                <input name="cellNumber" #cellNumber="ngModel" [(ngModel)]="service.formData.cellNumber" class="form-control" placeholder="Cell Phone Number" required>
+            </div>
+            <div class="form-group">
+                <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" placeholder="Email Address">
+            </div>
+            <!-- <div class="form-group">
+                <input name="monitorEmail" #monitorEmail="ngModel" [(ngModel)]="service.formData.monitorEmail" class="form-control" placeholder="Monitor Email">
+            </div> -->
+            <input type="hidden" name="monitorEmail" #monitorEmail="ngModel" [(ngModel)]="service.formData.monitorEmail">
+            <div class="form-group">
+                <input name="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+                <input name="numberPlate" #numberPlate="ngModel" [(ngModel)]="service.formData.numberPlate" class="form-control" placeholder="Taxi Registration Number">
+            </div>
+            <div class="form-group">
+                <input name="password" #password="ngModel" [(ngModel)]="service.formData.password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-lg btn-block btn-info">Submit</button>
+            </div>
+        </form>
     </nb-card-body>
   </nb-card>
   </div>

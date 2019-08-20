@@ -104,7 +104,7 @@ export const NB_CORE_PROVIDERS = [
         token:{
           key:'email'
         },
-        baseEndpoint: 'https://europe-west2-taxi-boss.cloudfunctions.net',
+        baseEndpoint: 'https://europe-west2-taxi-boss-3792e.cloudfunctions.net',
          login: {
            redirect:{
              success: '/dashboard/'
