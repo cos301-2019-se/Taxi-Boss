@@ -537,3 +537,729 @@ exports.loginDriver = functions
         
     })
 })
+
+
+
+//This function takes no parameters
+//Return -> {numUSSD:x}
+
+exports.numUSSD = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('numUSSD triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            email: req.query.email,
+            //password: req.query.password
+        };*/
+
+
+
+        return numUSSD= db.collection('DetailedViolations')
+        .where('violationOrigin','==','USSD')
+        .get()
+        .then(snapshot=> {
+            
+            let arr=[];
+            snapshot.forEach(doc =>{
+                arr.push({rec: doc.data().violationOrigin});
+            })
+            ret=arr.length;
+            console.log("Items returned: "+ret);
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send({numUSSD: ret});
+
+        });
+        
+    })
+})
+
+
+
+//This function takes no parameters
+//Return -> {numWEB:x}
+
+exports.numWEB = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('numWEB triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            email: req.query.email,
+            //password: req.query.password
+        };*/
+
+
+
+        return numUSSD= db.collection('DetailedViolations')
+        .where('violationOrigin','==','WEB')
+        .get()
+        .then(snapshot=> {
+            
+            let arr=[];
+            snapshot.forEach(doc =>{
+                arr.push({rec: doc.data().violationOrigin});
+            })
+            ret=arr.length;
+            console.log("Items returned: "+ret);
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send({numWEB: ret});
+
+        });
+        
+    })
+})
+
+
+
+//This function takes no parameters
+//Return is each unique city with an associated count
+//Return -> [{"city":city, numViolations: x},...]
+
+exports.violationsByCity = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationsByCity triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            email: req.query.email,
+            //password: req.query.password
+        };*/
+
+
+
+        return this.violationsByCity= db.collection('DetailedViolations')
+        .get()
+        .then(snapshot=> {
+            
+            let arr=[];
+            snapshot.forEach(doc =>{
+                arr.push(doc.data().city);
+            })
+            let cities= [];
+            let count=[];
+            arr.forEach((city)=>{
+                if (cities.includes(city))
+                {
+                    count[cities.indexOf(city)]++;
+                }
+                else
+                {
+                    cities.push(city);
+                    count[cities.indexOf(city)]=1;
+                }
+            })
+
+            let ret=[];
+            cities.forEach((city,index)=>{
+                ret.push({"city":city, numViolations: count[index]});
+            })
+            
+            console.log("Items returned: "+ret);
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        });
+        
+    })
+})
+
+
+//This function takes no parameters
+//Return is each unique province with an associated count
+//Return -> [{"province":province, numViolations: x},...]
+
+
+exports.violationsByProvince = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationsByProvince triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            email: req.query.email,
+            //password: req.query.password
+        };*/
+
+
+
+        return this.violationsByProvince= db.collection('DetailedViolations')
+        .get()
+        .then(snapshot=> {
+            
+            let arr=[];
+            snapshot.forEach(doc =>{
+                arr.push(doc.data().province);
+            })
+            let provinces= [];
+            let count=[];
+            arr.forEach((province)=>{
+                if (provinces.includes(province))
+                {
+                    count[provinces.indexOf(province)]++;
+                }
+                else
+                {
+                    provinces.push(province);
+                    count[provinces.indexOf(province)]=1;
+                }
+            })
+
+            let ret=[];
+            provinces.forEach((province,index)=>{
+                ret.push({"province":province, numViolations: count[index]});
+            })
+            
+            console.log("Items returned: "+ret);
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        });
+        
+    })
+})
+
+//This function takes a String month parameter (01 for January)
+//Which indicates the month
+/*Return ->[{
+    city: city,
+    date: date,
+    latitude: latitude,
+    longitude: longitude,
+    numberPlate: numberPlate,
+    province: province,
+    reportDate: reportDate,
+    reportTime: reportTime,
+    street: street,
+    time: time,
+    violationDescription: violationDescription,
+    violationOrigin: violationOrigin
+},...]*/
+
+exports.violationsByMonth = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationsByMonth triggered');
+    return cors(req, res, () => {
+
+        //let data= {
+            //name: req.query.fullName,
+          //  month: req.query.month
+            //password: req.query.password
+        //};
+
+
+        let data={
+            month: req.body.month
+        };
+
+        return violationList= db.collection('DetailedViolations')
+        .get()
+        .then(snapshot=> {
+            
+            let ret=[];
+            snapshot.forEach(doc => {
+                if (doc.data().date.substring(5,7)==data.month)
+                {
+                    
+                    ret.push({
+                        city: doc.data().city,
+                        date: doc.data().date,
+                        latitude: doc.data().latitude,
+                        longitude: doc.data().longitude,
+                        numberPlate: doc.data().numberPlate,
+                        province: doc.data().province,
+                        reportDate: doc.data().reportDate,
+                        reportTime: doc.data().reportTime,
+                        street: doc.data().street,
+                        time: doc.data().time,
+                        violationDescription: doc.data().violationDescription,
+                        violationOrigin: doc.data().violationOrigin
+                    })
+                }
+            })
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        });
+        
+    })
+})
+
+
+
+//This function takes no parameters
+//Returns all detailed violations structured in a JSON array
+/*Return ->[{
+    city: city,
+    date: date,
+    latitude: latitude,
+    longitude: longitude,
+    numberPlate: numberPlate,
+    province: province,
+    reportDate: reportDate,
+    reportTime: reportTime,
+    street: street,
+    time: time,
+    violationDescription: violationDescription,
+    violationOrigin: violationOrigin
+},...]*/
+
+exports.allDetailedViolations = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationsByMonth triggered');
+    return cors(req, res, () => {
+
+        //let data= {
+            //name: req.query.fullName,
+          //  month: req.query.month
+            //password: req.query.password
+        //};
+
+
+        /*let data={
+            month: req.body.month
+        };*/
+
+        return violationList= db.collection('DetailedViolations')
+        .get()
+        .then(snapshot=> {
+            
+            let ret=[];
+            snapshot.forEach(doc => {
+
+                    ret.push({
+                        city: doc.data().city,
+                        date: doc.data().date,
+                        latitude: doc.data().latitude,
+                        longitude: doc.data().longitude,
+                        numberPlate: doc.data().numberPlate,
+                        province: doc.data().province,
+                        reportDate: doc.data().reportDate,
+                        reportTime: doc.data().reportTime,
+                        street: doc.data().street,
+                        time: doc.data().time,
+                        violationDescription: doc.data().violationDescription,
+                        violationOrigin: doc.data().violationOrigin
+                    })
+            })
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        });
+        
+    })
+})
+
+
+
+//This function takes 2 parameters: startTime (As a normal time string)
+//and endTime (As a normal time string) and returns all violations in an 
+//array containing objects containing all fields associated with that record in the db
+/*Return ->[{
+    city: city,
+    date: date,
+    latitude: latitude,
+    longitude: longitude,
+    numberPlate: numberPlate,
+    province: province,
+    reportDate: reportDate,
+    reportTime: reportTime,
+    street: street,
+    time: time,
+    violationDescription: violationDescription,
+    violationOrigin: violationOrigin
+},...]*/
+
+exports.violationsByTime = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationsByTime triggered');
+    return cors(req, res, () => {
+
+        //let data= {
+           // startTime: req.query.startTime,
+         //   endTime: req.query.endTime
+            //password: req.query.password
+       // };
+
+
+        let data={
+          startTime: req.body.startTime,
+          endTime: req.body.endTime
+        };
+
+        return violationList= db.collection('DetailedViolations')
+        .where('time','>=',data.startTime)
+        .where('time','<=',data.endTime)
+        .get()
+        .then(snapshot=> {
+            
+            let ret=[];
+            snapshot.forEach(doc => {
+
+                    
+                ret.push({
+                    city: doc.data().city,
+                    date: doc.data().date,
+                    latitude: doc.data().latitude,
+                    longitude: doc.data().longitude,
+                    numberPlate: doc.data().numberPlate,
+                    province: doc.data().province,
+                    reportDate: doc.data().reportDate,
+                    reportTime: doc.data().reportTime,
+                    street: doc.data().street,
+                    time: doc.data().time,
+                    violationDescription: doc.data().violationDescription,
+                    violationOrigin: doc.data().violationOrigin
+                })
+                
+            })
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        });
+        
+    })
+})
+
+
+//This function takes no parameters
+//It returns a JSON array containg objects as below
+//Each interval is named and has a numeric count associated with it
+
+/*Returns -> [
+    {"lessThanHour":x},
+    {"1-to-5-hours":x},
+    {"5-to-24-hours":x},
+    {"moreThanADay":x}
+];*/
+
+
+exports.numReportsAtIntervals = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('numReportsAtIntervals triggered');
+    return cors(req, res, () => {
+
+        //let data= {
+            //name: req.query.fullName,
+          //  month: req.query.month
+            //password: req.query.password
+        //};
+
+
+        /*let data={
+            month: req.body.month
+        };*/
+
+        return violationList= db.collection('DetailedViolations')
+        .get()
+        .then(snapshot=> {
+            
+            let ret=[
+                {"lessThanHour":0},
+                {"1-to-5-hours":0},
+                {"5-to-24-hours":0},
+                {"moreThanADay":0}
+            ];
+            snapshot.forEach(doc => {
+
+                if (doc.data().date!=doc.data().reportDate)
+                {
+                    ret[3].moreThanADay++;
+                }
+                else
+                {
+                    let time=doc.data().time.substring(0,2)+doc.data().time.substring(3,5);
+                    let reportTime=doc.data().reportTime.substring(0,2)+doc.data().reportTime.substring(3,5);
+                    if (reportTime-time<100)
+                    {
+                        ret[0].lessThanHour++;
+                    }
+                    else
+                    if (reportTime-time<500)
+                    {
+                        ret[1]["1-to-5-hours"]++;
+                    }
+                    else
+                    {
+                        ret[2]["5-to-24-hours"]++;
+                    }
+                }
+            })
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        });
+        
+    })
+})
+
+
+//This function takes monitor email as parameter
+//Returns a count of all violations under all his drivers
+//In a structured JSON array. 
+/*Returns ->{
+                        DaysAgo:<int of how many days ago. Today=0,
+                        "date":<Date as string>,
+                        "count":<int of count                        
+                    }*/
+
+
+exports.numViolationsByMonitorWeek = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationsByMonitorWeek triggered');
+    return cors(req, res, () => {
+
+
+
+
+            //let data= {
+                //name: req.query.fullName,
+              //  email: req.query.email,
+                //password: req.query.password
+            //};
+    
+    
+            let data={
+                email: req.body.email
+            };
+
+        let violations=[
+            {name:"0DaysAgo"},
+            {name:"1DaysAgo"},
+            {name:"2DaysAgo"},
+            {name:"3DaysAgo"},
+            {name:"4DaysAgo"},
+            {name:"5DaysAgo"},
+            {name:"6DaysAgo"}
+        ];
+        let dates=[];
+        let ret=[];
+        let plateList=[];
+            
+
+            return driverList= db.collection('Taxi Driver')
+            .where('monitorEmail','==',data.email)
+            .get()
+            .then(snapshot=> {
+                 
+
+                snapshot.forEach(doc => {
+                    plateList.push({
+                        numberPlate: doc.data().numberPlate
+                    })
+                })
+                console.log(plateList);
+
+                return;
+            })
+            .then(()=> {
+                
+                var current_datetime=new Date();
+                let day = current_datetime.getDate();
+                let month = current_datetime.getMonth()+1;
+                let year= current_datetime.getFullYear();
+                console.log("Current day: "+day+"Current month: "+month+"Current year: "+year);
+                
+                let dateString;
+                
+                for (var i=0;i<7;i++)
+                {
+                    if (day-i<=0)
+                    {
+                        if (month==1)
+                        {
+                            dateString=year-1+"-12-"+31-i;
+                        }
+                        else
+                        if (month==2)
+                        {
+                            dateString=year+"-01-"+31-i;
+                        }
+                        else
+                        if (month==3)
+                        {
+                            dateString=year+"-02-"+28-i;
+                        }
+                        else
+                        if (month==4)
+                        {
+                            dateString=year+"-03-"+31-i;
+                        }
+                        else
+                        if (month==5)
+                        {
+                            dateString=year+"-04-"+30-i;
+                        }
+                        else
+                        if (month==6)
+                        {
+                            dateString=year+"-05-"+31-i;
+                        }
+                        else
+                        if (month==7)
+                        {
+                            dateString=year+"-06-"+30-i;
+                        }
+                        else
+                        if (month==8)
+                        {
+                            dateString=year+"-07-"+31-i;
+                        }
+                        else
+                        if (month==9)
+                        {
+                            dateString=year+"-08-"+31-i;
+                        }
+                        else
+                        if (month==10)
+                        {
+                            dateString=year+"-09-"+30-i;
+                        }
+                        else
+                        if (month==11)
+                        {
+                            dateString=year+"-10-"+31-i;
+                        }
+                        else
+                        if (month==12)
+                        {
+                            dateString=year+"-11-"+30-i;
+                        }
+                    }
+                    else
+                    {
+                        month=month.toString();
+
+                        if (month.length==1)
+                        {
+                            month="0"+month;
+                        }
+                        var dayS=day-i;
+                        dayS=dayS.toString();
+                        
+                        if (dayS.length==1)
+                        {
+                            dayS="0"+dayS;
+                        }
+                        year=year.toString();
+                        dateString=year+"-"+month+"-"+dayS;
+                        dateString=dateString.toString();
+                        
+                    }
+
+                    dates[i]=dateString;
+
+                }
+
+                for (var k=0; k<7;k++)
+                {
+                    ret.push({
+                        DaysAgo:k,
+                        "date":dates[k],
+                        "count":0                        
+                    })
+                }
+
+                console.log(dates);
+                console.log(ret);
+
+                return violationCount= db.collection('DetailedViolations')
+                .get()
+                .then(snapshot=>{
+
+                    console.log("In Detailed execution");
+                    
+                    snapshot.forEach(doc=>{
+                        
+                        console.log("Format of date: "+doc.data().date);
+
+                        plateList.forEach(plate=>{
+                            console.log("In plate loop. Plate:"+plate.numberPlate);
+                            if (doc.data().numberPlate==plate.numberPlate)
+                            {
+                                for (var j=0;j<7;j++)
+                                {
+                                    console.log("Date match loop. Execution: "+j);
+                                    if (doc.data().date==dates[j])
+                                    {
+                                        console.log("match found in Detailed");
+                                        ret[j].count++;
+                                    }
+                                }
+                            }
+                        })
+                    })
+                })
+
+            })
+            .then(()=>{
+
+                return violationCount= db.collection('Violations')
+                .get()
+                .then(snapshot=>{
+                    console.log("In Violations execution");
+
+                    snapshot.forEach(doc=>{
+
+                        plateList.forEach(plate=>{
+                            if (doc.data().numberPlate==plate.numberPlate)
+                            {
+                                for (var j=0;j<7;j++)
+                                {
+                                    if (doc.data().date==dates[j])
+                                    {
+                                        console.log("Match found in Violations");
+                                        ret[j].count++;
+                                    }
+                                }
+                            }
+                        })
+                    })
+                })
+                
+
+            })
+            .then(()=>{
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(200).send(ret);            
+            })
+            .catch((err) => {
+                console.log(err);
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(500).send(err);      
+            });
+            
+        
+
+
+    });//cors
+
+})//onRequest
