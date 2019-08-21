@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { NbCardModule, NbListModule } from '@nebular/theme';
+import { Ng2SmartTableModule} from 'ng2-smart-table';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { ViewDriversComponent } from './viewDrivers.component';
@@ -14,7 +15,7 @@ import { InfoListComponent } from './info-list/info-list.component';
     NbCardModule,
     ThemeModule,
     NbListModule,
-    // UserService,
+    Ng2SmartTableModule
   ],
   declarations: [
     ViewDriversComponent,

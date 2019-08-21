@@ -11,7 +11,7 @@ import { MonitorService } from '../../shared/monitor.service';
 })
 export class RegisterDriverComponent implements OnInit{
   
-  constructor(private service : DriverService,
+  constructor(public service : DriverService,
     private firestore:AngularFirestore,
     private monitor: MonitorService) { }
 

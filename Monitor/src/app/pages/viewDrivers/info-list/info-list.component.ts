@@ -8,7 +8,7 @@ import { ViolationService } from '../../../shared/violation.service';
 })
 export class InfoListComponent implements OnInit {
 
-  constructor(private vService: ViolationService) {
+  constructor(public vService: ViolationService) {
   }
 
   ngOnInit() {

@@ -5,10 +5,5 @@ import { InfoListComponent } from './info-list/info-list.component';
   selector: 'ngx-viewDrivers',
   templateUrl: './viewDrivers.component.html',
 })
-export class ViewDriversComponent implements AfterViewInit{
-  @ViewChild(InfoListComponent, {static:false}) infoListRef: InfoListComponent;
-
-  ngAfterViewInit(){
-    this.infoListRef.flipViolations=true;
-  }
+export class ViewDriversComponent{
 }

@@ -10,7 +10,7 @@ import { ViolationService } from '../../../shared/violation.service';
 })
 export class DriverInfoComponent implements OnInit {
   numViolations: number;
-  constructor(private service:DriverService, private vService:ViolationService) { }
+  constructor(public service:DriverService, public vService:ViolationService) { }
  
   ngOnInit() {
     this.service.driverDetails ={

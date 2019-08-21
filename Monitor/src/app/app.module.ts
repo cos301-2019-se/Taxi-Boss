@@ -26,6 +26,7 @@ import {
 import { NgxEchartsModule } from 'ngx-echarts';
 import { environment } from '../environments/environment';
 import { FormsModule } from "@angular/forms";
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [AppComponent],
@@ -48,7 +49,8 @@ import { FormsModule } from "@angular/forms";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     CoreModule.forRoot(),
-    FormsModule
+    FormsModule,
+    NbEvaIconsModule
   ],
   providers: [
     AuthGuard

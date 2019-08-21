@@ -9,7 +9,7 @@ import { DriverService } from '../../../../shared/driver.service';
 })
 export class ViolationsListComponent implements OnInit {
 
-  constructor(private violationService : ViolationService, private driverService : DriverService) { }
+  constructor(public violationService : ViolationService, private driverService : DriverService) { }
 
   ngOnInit() {
     // this.violationService.getDriverViolations(this.driverService.driverDetails);
