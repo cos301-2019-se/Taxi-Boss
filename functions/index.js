@@ -1488,3 +1488,113 @@ exports.driverCountPerMonitor = functions
         
     })
 })
+
+
+
+//This function takes monitor email as parameter
+//Returns a count of all violations under all drivers grouped by violationDescription
+//In a structured JSON array. 
+/*Returns ->{
+    DaysAgo:<int of how many days ago. Today=0,
+    "date":<Date as string>,
+    "count":<int of count                        
+}*/
+
+
+exports.violationsByDescriptionMonitor = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationsByDescriptionMonitor triggered');
+    return cors(req, res, () => {
+
+
+
+
+            let data= {
+                //name: req.query.fullName,
+              email: req.query.email
+                //password: req.query.password
+            };
+    
+    
+            /*let data={
+                email: req.body.email
+            };*/
+
+        let violations=[];
+        let ret=[];
+        let plateList=[];
+            
+
+            return driverList= db.collection('Taxi Driver')
+            .where('monitorEmail','==',data.email)
+            .get()
+            .then(snapshot=> {
+                    
+
+                snapshot.forEach(doc => {
+                    plateList.push({
+                        numberPlate: doc.data().numberPlate
+                    })
+                })
+                //console.log(plateList);
+
+                return;
+            })
+            .then(()=> {
+                
+
+                return violationCount= db.collection('DetailedViolations')
+                .get()
+                .then(snapshot=>{
+
+                    //console.log("In Detailed execution");
+                    
+                    snapshot.forEach(doc=>{
+                        
+                        //console.log("Format of date: "+doc.data().date);
+                        let count=[];
+
+                        plateList.forEach(plate=>{
+                            //console.log("In plate loop. Plate:"+plate.numberPlate);
+                            if (doc.data().numberPlate==plate.numberPlate)
+                            {
+                                
+                                
+                                if (violations.includes(doc.data().violationDescription))
+                                {
+                                    count[violations.indexOf(doc.data().violationDescription)]++;
+                                }
+                                else
+                                {
+                                    violations.push(doc.data().violationDescription);
+                                    count[violations.indexOf(doc.data().violationDescription)]=1;
+                                }
+                                
+                    
+                                let ret=[];
+                                violations.forEach((violation,index)=>{
+                                    ret.push({"violationDescription":violation, "count": count[index]});
+                                })
+                            }
+                        })
+                    })
+                })
+
+            })
+            .then(()=>{
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(200).send(ret);            
+            })
+            .catch((err) => {
+                console.log(err);
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(500).send(err);      
+            });
+            
+        
+
+
+    });//cors
+
+})//onRequest
