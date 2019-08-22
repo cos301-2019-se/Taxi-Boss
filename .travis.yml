@@ -1,0 +1,85 @@
+language: generic
+dist: xenial
+addons:
+  apt:
+    packages:
+      - lib32stdc++6
+env:
+  global:
+    - FLUTTER_CHANNEL=stable
+
+before_install:
+  - cd DriverViolationApp
+  - cd cd taxiboss_driver
+
+install:
+  - git clone https://github.com/flutter/flutter.git -b $FLUTTER_CHANNEL
+  - export PATH="$PATH:`pwd`/flutter/bin/cache/dart-sdk/bin"
+  - export PATH="$PATH:`pwd`/flutter/bin"
+  - flutter doctor -v
+  - flutter packages get
+cache:
+  directories:
+  - $HOME/.pub-cache
+
+#static_analysis: &static_analysis
+ # name: "Static analysis"
+ # script: flutter analyze $TRAVIS_BUILD_DIR/Rating/give_rating/lib
+
+unit_tests: &unit_tests
+  name: "Unit tests"
+  script: flutter test
+
+build: &build
+  name: "Build APK"
+  language: android
+  jdk:
+    - oraclejdk8
+  android:
+    components:
+      - tools
+      - tools # See (https://github.com/travis-ci/travis-ci/issues/6040#issuecomment-219367943)
+      - platform-tools
+      - build-tools-28.0.3
+      - android-27 # Breaks the build if not present (https://github.com/flutter/flutter/pull/26798#issuecomment-455758159)
+      - android-28
+
+before_script:
+  - export BUILD_NAME=$TRAVIS_TAG
+  - export BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
+  
+script:
+  - if [[ $TRAVIS_TAG == "" ]]; then flutter build apk; else flutter build apk --build-name $BUILD_NAME --build-number $BUILD_NUMBER; fi
+
+deploy:
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file: build/app/outputs/apk/release/app-release.apk
+    skip_cleanup: true
+    name: $TRAVIS_TAG
+    on:
+      tags: true
+
+after_deploy:
+  - git branch $TRAVIS_TAG
+  - git push https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_TAG
+
+jobs:
+  include:
+  - #<<: *static_analysis
+  - <<: *unit_tests
+  - stage: build
+    <<: *build
+ # - stage: deploy
+
+stages:
+- name: test
+  if: (NOT branch =~ /^\d*\.\d*\.\d*$/) OR (NOT branch IN (internal, alpha, beta, prod))
+- name: build
+  if: (NOT branch =~ /^\d*\.\d*\.\d*$/) OR (NOT branch IN (internal, alpha, beta, prod))
+
+
+
+cache:
+  directories:
+  - $HOME/.pub-cache
