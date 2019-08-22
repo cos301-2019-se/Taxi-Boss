@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<!-- <table class="table table-hover">
     <thead>
         <th>Description</th>
         <th>Street</th>
@@ -6,7 +6,6 @@
         <th>Province</th>
         <th>Time</th>
         <th>Date</th>
-        <!-- <th>Password</th> -->
     </thead>
     <tbody>
         <tr *ngFor="let vio of violationService.driverViolations">
@@ -16,7 +15,8 @@
             <td>{{vio.province}}</td>
             <td>{{vio.time}}</td>
             <td>{{vio.date}}</td>
-            <!-- <td><a class="btn txt-danger"><i class="fa fa-trash"></i></a></td> -->
         </tr>
     </tbody>
-</table>
+</table> -->
+<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+</ng2-smart-table>

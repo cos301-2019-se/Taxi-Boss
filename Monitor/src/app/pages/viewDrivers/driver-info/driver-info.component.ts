@@ -1,16 +1,23 @@
-import { Component, OnInit, HostListener, Input, Output } from '@angular/core';
-import { Driver } from '../../../shared/driver.model';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DriverService } from '../../../shared/driver.service';
 import { ViolationService } from '../../../shared/violation.service';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'driver-info',
   templateUrl: './driver-info.component.html',
   styleUrls: ['./driver-info.component.scss']
 })
-export class DriverInfoComponent implements OnInit {
+export class DriverInfoComponent implements OnInit, OnDestroy {
   numViolations: number;
-  constructor(public service:DriverService, public vService:ViolationService) { }
+  currentTheme: string;
+  themeSubscription: any;
+
+  constructor(public service:DriverService, public vService:ViolationService, private themeService: NbThemeService) {
+    this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
+      this.currentTheme = theme.name;
+    });
+   }
  
   ngOnInit() {
     this.service.driverDetails ={
@@ -29,10 +36,11 @@ export class DriverInfoComponent implements OnInit {
     this.vService.viewViolations=true;
   }
 
-  update(){
-    // this.vService.getDriverViolations(this.service.driverDetails);
-    // if(this.vService.driverViolations.length!=null)
-    //   this.numViolations=this.vService.driverViolations.length;
+  viewDrivers(){
+    this.vService.viewViolations=false;
+  }
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
   }
 
 }

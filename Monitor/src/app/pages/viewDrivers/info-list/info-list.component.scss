@@ -1,5 +1,10 @@
 .card-flip-toggle-btn {
-    font-size: 25px;
+    font-size: 20px;
     vertical-align: text-bottom;
     float: right;
+}
+.card-flip-toggle-btn:hover {
+    // Your code here
+    opacity: .5;
+    cursor: pointer;
 }

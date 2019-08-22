@@ -21,13 +21,20 @@ export class ViolationService {
     }) 
   }
   
-  constructor(private http : HttpClient) {}
+  constructor(private http : HttpClient) {
+    this.driverViolations=[];
+  }
   
-  getDriverViolations(curDriver: Driver){
+  getList(curDriver: Driver): Promise<any>{
+    return new Promise((resolve, reject) => {
+      resolve(this.refreshViolations(curDriver));
+    });
+  }
+  refreshViolations(curDriver: Driver): Array<any>{
       var numPlate = {
         'numberPlate': curDriver.numberPlate
       }
-      return this.http.post(this.rootUrl+"/allViolationsByPlate", numPlate, this.httpOptions)
+      this.http.post(this.rootUrl+"/allViolationsByPlate", numPlate, this.httpOptions)
       .toPromise().then(res => this.driverViolations = res as Violation[])
       .then((res) => {
         if (typeof this.driverViolations !== 'undefined') {
@@ -36,6 +43,7 @@ export class ViolationService {
           this.numViolations=0;
         }
       });
+      return this.driverViolations;
   }
 
   getWorstDriver(){

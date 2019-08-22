@@ -21,7 +21,17 @@ export class DriverService {
     }) 
   }
 
-  constructor(private firestore:AngularFirestore, private http: HttpClient, private monitorService: MonitorService, private violationService: ViolationService) { }
+  constructor(private firestore:AngularFirestore, private http: HttpClient, private monitorService: MonitorService, private violationService: ViolationService) { 
+    this.driverList=[];
+    this.driverDetails={
+        cellNumber : '',
+        email : '',
+        monitorEmail : '',
+        name : '',
+        numberPlate : '',
+        password: '',
+    }
+  }
   
   postDriver(formData: Driver){
     return this.http.post(this.rootURL+'/addDriver', formData, this.httpOptions);
@@ -30,17 +40,25 @@ export class DriverService {
   getDrivers(){
     return this.firestore.collection('Taxi Driver').snapshotChanges();
   }
-  refreshList(){
+  
+  getList(): Promise<any>{
+    return new Promise((resolve, reject) => {
+      resolve(this.refreshList());
+    });
+  }
+  refreshList(): Array<any>{
     this.http.post(this.rootURL+'/listOfDrivers',this.monitorService.monitorDetails)
     .toPromise().then(res => this.driverList = res as Driver[])
     .then( res => this.driverDetails=this.driverList[0])
     .then((res) => {
-      if (typeof this.driverList !== 'undefined') {
+      if (typeof this.driverDetails !== 'undefined') {
+        console.log(this.driverDetails);
         this.numDrivers=this.driverList.length;
-        this.violationService.getDriverViolations(this.driverDetails);
+        this.violationService.refreshViolations(this.driverDetails);
       }else{
         this.numDrivers=0;
       }
     });
+    return this.driverList;
   }
 }

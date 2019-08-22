@@ -1,19 +1,2 @@
-<!-- <table class="table table-hover">
-    <thead>
-        <th>Name</th>
-        <th>Cell Number</th>
-        <th>Email</th>
-        <th>Number Plate</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let driv of service.driverList">
-            <td (click)="onSelect(driv)">{{driv.name}}</td>
-            <td (click)="onSelect(driv)">{{driv.cellNumber}}</td>
-            <td (click)="onSelect(driv)">{{driv.email}}</td>
-            <td (click)="onSelect(driv)"> {{driv.numberPlate}}</td>
-        </tr>
-    </tbody>
-</table> -->
-
-<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)" (userRowSelect)="onSelect($event)">
 </ng2-smart-table>

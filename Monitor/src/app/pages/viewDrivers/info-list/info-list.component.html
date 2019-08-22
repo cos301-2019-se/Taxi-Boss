@@ -1,16 +1,16 @@
 <nb-flip-card [showToggleButton]='false' #cardComponent1 [flipped]='this.vService.viewViolations'>
     <nb-card-front>
-        <nb-card size="medium">
+        <nb-card size="medium" status="warning">
         <nb-card-header>Drivers 
         </nb-card-header>
         <driver-list></driver-list>
         </nb-card>
     </nb-card-front>
     <nb-card-back>
-        <nb-card size="medium">
+        <nb-card size="medium" status="danger">
         <nb-card-header>
             Violations
-            <button (click)="viewDrivers()">View Drivers</button>
+            <i (click)="viewDrivers()"><nb-icon icon="arrow-ios-back-outline" class="card-flip-toggle-btn"></nb-icon></i>
         </nb-card-header>
         <violations-list></violations-list>
         </nb-card>
