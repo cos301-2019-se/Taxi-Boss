@@ -10,6 +10,8 @@ const functions = require('firebase-functions');
 //Initialise app
 const admin = require('firebase-admin');
 
+var crypto = require('crypto');
+
 //process.env.GCLOUD_PROJECT = 'taxi-boss';
 //admin.initializeApp({
 //    credential: admin.credential.applicationDefault()
@@ -70,10 +72,17 @@ exports.registerMonitor = functions
         let data={
             name: req.body.fullName,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            salt: "a"
         };
 
-        
+
+        let salt = crypto.randomBytes(16).toString('hex');
+        let hash = crypto.pbkdf2Sync(data.password, salt, 79,32,'sha512').toString('hex');
+        data.password=hash;
+        data.salt=salt;
+
+
         //let exists=false;
         monitor= db.collection('Monitor')
         .where('email','==',data.email)
@@ -130,6 +139,11 @@ exports.loginMonitor = functions
             password: req.body.password
         };
 
+        //let salt = crypto.randomBytes(16).toString('hex');
+        
+
+        //data.password=hash;
+
         return monitor= db.collection('Monitor')
         .where('email','==',data.email)
         .get()
@@ -143,7 +157,9 @@ exports.loginMonitor = functions
             let name;
             
             snapshot.forEach(doc => {
-                if (doc.data().password == data.password)
+
+                let hash = crypto.pbkdf2Sync(data.password, doc.data().salt, 79,32,'sha512').toString('hex');
+                if (doc.data().password == hash)
                 {
                    correct=true;
                    name=doc.data().name;
@@ -246,9 +262,15 @@ exports.addDriver = functions
             monitorEmail: req.body.monitorEmail,
             password: req.body.password,
             name: req.body.name,
-            numberPlate: req.body.numberPlate
+            numberPlate: req.body.numberPlate,
+            salt:"a"
 
         };
+
+        let salt = crypto.randomBytes(16).toString('hex');
+        let hash = crypto.pbkdf2Sync(data.password, salt, 79,32,'sha512').toString('hex');
+        data.password=hash;
+        data.salt=salt;
 
         
         let exists=false;
@@ -516,7 +538,9 @@ exports.loginDriver = functions
             let correct=false;
             
             snapshot.forEach(doc => {
-                if (doc.data().password == data.password)
+
+                let hash = crypto.pbkdf2Sync(data.password, doc.data().salt, 79,32,'sha512').toString('hex');
+                if (doc.data().password == hash)
                 {
                    correct=true;
                 }
