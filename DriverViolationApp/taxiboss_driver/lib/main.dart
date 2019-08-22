@@ -21,7 +21,7 @@ var numPlateG = "";
 
 class HomePage extends StatefulWidget {
   @override
-  HomePageState createState() => new HomePageState();
+  HomePageState createState() => new HomePageState();//Takes you to violations
 }
 
 class HomePageState extends State<HomePage> {
