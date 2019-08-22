@@ -1495,9 +1495,7 @@ exports.driverCountPerMonitor = functions
 //Returns a count of all violations under all drivers grouped by violationDescription
 //In a structured JSON array. 
 /*Returns ->{
-    DaysAgo:<int of how many days ago. Today=0,
-    "date":<Date as string>,
-    "count":<int of count                        
+[{"violationDescription":violation, "count": count[index]},...]            
 }*/
 
 
@@ -1510,16 +1508,16 @@ exports.violationsByDescriptionMonitor = functions
 
 
 
-            let data= {
+            //let data= {
                 //name: req.query.fullName,
-              email: req.query.email
+              //email: req.query.email
                 //password: req.query.password
-            };
+            //};
     
     
-            /*let data={
+            let data={
                 email: req.body.email
-            };*/
+            };
 
         let violations=[];
         let ret=[];
@@ -1572,13 +1570,141 @@ exports.violationsByDescriptionMonitor = functions
                                 }
                                 
                     
-                                let ret=[];
-                                violations.forEach((violation,index)=>{
-                                    ret.push({"violationDescription":violation, "count": count[index]});
-                                })
+                                //let ret=[];
+
+                                
                             }
                         })
                     })
+
+                    violations.forEach((violation,index)=>{
+                        ret.push({"violationDescription":violation, "count": count[index]});
+                })
+
+            })
+            .then(()=>{
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(200).send(ret);            
+            })
+            .catch((err) => {
+                console.log(err);
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(500).send(err);      
+            });
+    });
+
+})
+})
+
+
+
+//This function takes monitor email as parameter
+//Returns a count of all violations under all drivers grouped by violationDescription
+//In a structured JSON array. 
+/*Returns ->{
+[{"violationDescription":violation, "count": count[index]},...]            
+}*/
+
+
+exports.numViolationsPerMonitor = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('numViolationsPerMonitor triggered');
+    return cors(req, res, () => {
+
+
+
+        let violations=[];
+        let ret=[];
+        let plateList=[];
+
+        let monitors=[];
+        let plates=[];
+        let count=[];
+        let mons=[];
+
+            return driverList= db.collection('Taxi Driver')
+            .get()
+            .then(snapshot=> {
+                    
+                let present=false;
+                let idx;
+                snapshot.forEach(doc => {
+
+                    present=false;
+                    
+
+                    monitors.forEach((monitor,index) =>{
+                        //console.log(monitor);
+                        if (monitor.email==doc.data().monitorEmail)
+                        {
+                            //console.log(monitor.email+" is in the monitors aray");
+                            present=true;
+                            idx=index;
+                        }
+
+                    });
+
+                    if (!present)
+                    {
+
+                        monitors.push({
+                            email:doc.data().monitorEmail,
+                            "plates": [doc.data().numberPlate]
+                        })
+                    }
+                    else
+                    {
+                        monitors[idx].plates.push(doc.data().numberPlate);
+                    }
+                })
+                //console.log(monitors);
+                return;
+            })
+            .then(()=> {
+                
+
+                return violationCount= db.collection('DetailedViolations')
+                .get()
+                .then(snapshot=>{
+
+                    //console.log("In Detailed execution");
+
+                    
+                    snapshot.forEach(doc=>{
+                        
+                        //console.log("Format of date: "+doc.data().date);
+                        monitors.forEach((mon,index) =>{
+
+                            mon.plates.forEach(plate=>{
+
+                                //console.log("Monitor: "+mon.email+". Plate: "+plate);
+
+                                if (plate==doc.data().numberPlate)
+                                {
+                                    if (mons.includes(mon.email))
+                                    {
+                                        count[mons.indexOf(mon.email)]++;
+                                    }
+                                    else
+                                    {
+                                        mons.push(mon.email);
+                                        count[mons.indexOf(mon.email)]=1;
+                                    }
+                                }
+
+                            });
+                        });
+
+                    })
+
+                    mons.forEach((mon,index)=>{
+                        ret.push({
+                            email:mon,
+                            "count":  count[index]
+                        })
+                    })
+
                 })
 
             })
@@ -1598,3 +1724,144 @@ exports.violationsByDescriptionMonitor = functions
     });//cors
 
 })//onRequest
+
+
+
+//This function takes no parameters
+//Return -> {numAPP:x}
+
+exports.numAPP = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('numAPP triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            email: req.query.email,
+            //password: req.query.password
+        };*/
+
+
+
+        return numAPP= db.collection('DetailedViolations')
+        .where('violationOrigin','==','APP')
+        .get()
+        .then(snapshot=> {
+            
+            let arr=[];
+            snapshot.forEach(doc =>{
+                arr.push({rec: doc.data().violationOrigin});
+            })
+            ret=arr.length;
+            console.log("Items returned: "+ret);
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send({numAPP: ret});
+
+        });
+        
+    })
+})
+
+
+//This endpoint takes a numberPlate as argument
+//and deletes the associated driver record
+
+exports.deleteDriver = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('deleteDriver triggered');
+    return cors(req, res, () => {
+
+        /*let data={
+            numberPlate: req.query.numberPlate
+
+        };*/
+
+
+        let data={
+            numberPlate: req.body.numberPlate
+
+        };
+
+        
+        let exists=false;
+        return driver= db.collection('Taxi Driver')
+        .where('numberPlate','==',data.numberPlate)
+        .get()
+        .then(fd=>{
+            console.log("The doc: "+ fd.docs[0].id);
+            return fd.docs[0].id;
+        })
+        .then( id =>{
+
+            deleted = db.collection('Taxi Driver').doc(id).delete()
+            .then(()=>{
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(200).send({status: 'Driver deleted with plate '+data.numberPlate});
+            })
+        });
+        
+    })
+})
+
+
+
+//This endpoint takes a numberPlate as argument
+//and deletes the associated driver record
+
+exports.updateDriver = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('updateDriver triggered');
+    return cors(req, res, () => {
+
+        /*let data={
+            oldPlate: req.query.oldPlate,
+            numberPlate: req.query.numberPlate,
+            cellNumber: req.query.cellNumber,
+            email: req.query.email,
+            monitorEmail: req.query.monitorEmail,
+            name: req.query.name
+        };*/
+
+
+        let data={
+            oldPlate: req.body.oldPlate,
+            numberPlate: req.body.numberPlate,
+            cellNumber: req.body.cellNumber,
+            email: req.body.email,
+            monitorEmail: req.body.monitorEmail,
+            name: req.body.name
+
+        };
+
+        
+        let exists=false;
+        return driver= db.collection('Taxi Driver')
+        .where('numberPlate','==',data.oldPlate)
+        .get()
+        .then(fd=>{
+            console.log("The doc: "+ fd.docs[0].id);
+            return fd.docs[0].id;
+        })
+        .then( id =>{
+
+            deleted = db.collection('Taxi Driver').doc(id)
+            .update({
+                numberPlate:data.numberPlate,
+                cellNumber: data.cellNumber,
+                email: data.email,
+                monitorEmail: data.monitorEmail,
+                name: data.name                
+            })
+            .then(()=>{
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(200).send({status: 'Driver updated with new plate '+data.numberPlate});
+            })
+        });
+        
+    })
+})
