@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import { ViolationService } from '../../../shared/violation.service';
 
 @Component({
   selector: 'violations-pie',
@@ -9,13 +10,15 @@ import { NbThemeService } from '@nebular/theme';
 export class ViolationsPieComponent implements AfterViewInit, OnDestroy {
   options: any = {};
   themeSubscription: any;
-
-  constructor(private theme: NbThemeService) {
+  violationCategories: any={};
+  violationCounts: any={};
+  constructor(private theme: NbThemeService, private violationService:ViolationService) {
   }
 
   ngAfterViewInit() {
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
-
+      this.getData().then(()=>{
+        // console.log(this.violationCategories);
       const colors = config.variables;
       const echarts: any = config.variables.echarts;
 
@@ -29,14 +32,14 @@ export class ViolationsPieComponent implements AfterViewInit, OnDestroy {
         legend: {
           orient: 'vertical',
           left: 'left',
-          data: ['USA', 'Germany', 'France', 'Canada', 'Russia'],
+          data: this.violationCategories,
           textStyle: {
             color: echarts.textColor,
           },
         },
         series: [
           {
-            name: 'Countries',
+            name: 'Violations',
             type: 'pie',
             radius: '80%',
             center: ['50%', '50%'],
@@ -72,9 +75,21 @@ export class ViolationsPieComponent implements AfterViewInit, OnDestroy {
         ],
       };
     });
+  });
   }
   
   ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
+  }
+
+  async getData(){
+    await this.violationService.getAllViolationsPerCategory().then(res=>this.populateData());
+  }
+
+  populateData(){
+    for (var i = 0; i <this.violationService.getAllViolationsPerCategory.length; i++) {
+      this.violationCategories[i]=this.violationService.numAllViolationsPerCategory[i].violationDescription;
+      console.log(this.violationCategories[i]);
+    }
   }
 }

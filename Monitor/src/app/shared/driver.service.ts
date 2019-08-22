@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { MonitorService } from './monitor.service';
 import { ViolationService } from './violation.service';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ import { ViolationService } from './violation.service';
 export class DriverService {
 
   formData :Driver;
+  _driverDetails: Subject<any> = new Subject<any>();
   driverDetails :Driver;
   driverList: Driver[];
   numDrivers: number;
@@ -49,10 +51,12 @@ export class DriverService {
   refreshList(): Array<any>{
     this.http.post(this.rootURL+'/listOfDrivers',this.monitorService.monitorDetails)
     .toPromise().then(res => this.driverList = res as Driver[])
-    .then( res => this.driverDetails=this.driverList[0])
+    .then( res => {
+      this.driverDetails=this.driverList[0];
+      this._driverDetails.next(this.driverList[0]);
+    })
     .then((res) => {
       if (typeof this.driverDetails !== 'undefined') {
-        console.log(this.driverDetails);
         this.numDrivers=this.driverList.length;
         this.violationService.refreshViolations(this.driverDetails);
       }else{

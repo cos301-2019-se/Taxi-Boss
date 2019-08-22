@@ -1,24 +1,34 @@
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import { stringify } from '@angular/compiler/src/util';
+import { ViolationService } from '../../../shared/violation.service';
+import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'violations-bar',
   templateUrl: './violations-bar.component.html',
   styleUrls: ['./violations-bar.component.scss']
 })
-export class ViolationsBarComponent implements AfterViewInit, OnDestroy {
+export class ViolationsBarComponent implements AfterViewInit, OnDestroy, OnInit {
   options: any = {};
   themeSubscription: any;
-
-  constructor(private theme: NbThemeService) {
+  noViolationsList: any;
+  noViolations: any={};
+  weekDays: any={};
+  constructor(private theme: NbThemeService, private violationService:ViolationService) {
+      this.noViolationsList=[];
+      this.noViolations=new Array(7);
+      this.weekDays=new Array(7);
   }
 
   ngAfterViewInit() {
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
-
+      this.getData().then(()=>{
+        // console.log(this.noViolations);
+        this.determineDays();
       const colors: any = config.variables;
       const echarts: any = config.variables.echarts;
-
       this.options = {
         backgroundColor: echarts.bg,
         color: [colors.primaryLight],
@@ -37,7 +47,7 @@ export class ViolationsBarComponent implements AfterViewInit, OnDestroy {
         xAxis: [
           {
             type: 'category',
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            data: this.weekDays,
             axisTick: {
               alignWithLabel: true,
             },
@@ -75,17 +85,48 @@ export class ViolationsBarComponent implements AfterViewInit, OnDestroy {
         ],
         series: [
           {
-            name: 'Score',
+            name: 'Violations',
             type: 'bar',
             barWidth: '60%',
-            data: [10, 52, 200, 334, 390, 330, 220],
+            data: this.noViolations,
           },
         ],
       };
+      
+    });
     });
   }
 
   ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
+  }
+
+  ngOnInit(){
+    // this.getData();
+    // console.log(this.noViolations);
+  }
+
+  resolve(route: ActivatedRouteSnapshot): Promise<any> | boolean{
+    this.getData();
+    console.log(this.noViolations);
+    return true;
+  }
+  determineDays(){
+    var day;
+    var pipe = new DatePipe('en-US');
+    for (var i = 0; i <this.violationService.numViolationsPerDayList.length; i++) {
+      day=this.violationService.numViolationsPerDayList[i].date;
+      this.weekDays[i]=pipe.transform(day,"EE");
+    }
+  }
+
+  async getData(){
+    await this.violationService.getNumViolationsPerDay().then(res=>this.populateData());
+  }
+
+  populateData(){
+    for (var i = 0; i <this.violationService.numViolationsPerDayList.length; i++) {
+      this.noViolations[i]=this.violationService.numViolationsPerDayList[i].count;
+    }
   }
 }

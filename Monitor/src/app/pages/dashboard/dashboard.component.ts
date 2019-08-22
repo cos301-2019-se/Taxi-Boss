@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DriverService } from '../../shared/driver.service';
 import { NbThemeService } from '@nebular/theme';
+import { ViolationService } from '../../shared/violation.service';
 
 
 @Component({
@@ -11,14 +12,19 @@ export class DashboardComponent implements OnInit{
   currentTheme: string;
   themeSubscription: any;
   
-  constructor(public service:DriverService, private themeService: NbThemeService) {
+  constructor(public dService:DriverService, private vService:ViolationService, private themeService: NbThemeService) {
     this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
       this.currentTheme = theme.name;
     });
+    // this.getAllData();
    }
 
   ngOnInit(){
-    this.service.refreshList();
+    this.getAllData();
   }
 
+  async getAllData(){
+    await this.dService.refreshList();
+    await this.vService.getAllViolationsPerCategory();
+  }
 }

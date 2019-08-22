@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Violation } from './violation.model';
 import { Driver } from './driver.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MonitorService } from './monitor.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class ViolationService {
   numViolations: number;
   driverViolations: Violation[];
   viewViolations: boolean;
-
+  numViolationsPerDayList: any ={};
+  numAllViolationsPerCategory: any={};
   //HTTP API For retrieving driver related data
   readonly rootUrl = "https://europe-west2-taxi-boss-3792e.cloudfunctions.net";
 
@@ -21,8 +23,9 @@ export class ViolationService {
     }) 
   }
   
-  constructor(private http : HttpClient) {
+  constructor(private http : HttpClient, private monitorService: MonitorService) {
     this.driverViolations=[];
+    this.numViolationsPerDayList=[];
   }
   
   getList(curDriver: Driver): Promise<any>{
@@ -48,5 +51,16 @@ export class ViolationService {
 
   getWorstDriver(){
     
+  }
+
+  getNumViolationsPerDay(): Promise<any>{
+    return this.http.post(this.rootUrl+"/numViolationsByMonitorWeek", this.monitorService.monitorDetails, this.httpOptions)
+    .toPromise().then(res => this.numViolationsPerDayList = res );
+  }
+
+  getAllViolationsPerCategory(): Promise<any>{
+    return this.http.post(this.rootUrl+"/violationsByDescriptionMonitor", this.monitorService.monitorDetails, this.httpOptions)
+    .toPromise().then(res => this.numAllViolationsPerCategory = res )
+    .then(res => console.log(this.numAllViolationsPerCategory));
   }
 }

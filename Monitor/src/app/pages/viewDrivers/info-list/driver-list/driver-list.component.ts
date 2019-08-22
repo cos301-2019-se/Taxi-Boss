@@ -56,13 +56,19 @@ export class DriverListComponent{
   source: LocalDataSource = new LocalDataSource();
   constructor(public service:DriverService, public vService: ViolationService) { 
     this.source = new LocalDataSource();
-      this.service.getList().then((data) => {
-        this.source.load(data);
-      });
+      this.getDrivers();
+  }
+
+  async getDrivers(){
+    await this.service.getList().then((data) => {
+      this.source.load(data);
+      // this.service._driverDetails.next(data[0]);
+    });
   }
   onSelect(event){
     this.service.driverDetails = event.data;
-    this.vService.refreshViolations(this.service.driverDetails);
+    this.service._driverDetails.next(event.data);
+    this.vService.refreshViolations(event.data);
     // console.log(this.service.driverDetails.name);
   }
 
