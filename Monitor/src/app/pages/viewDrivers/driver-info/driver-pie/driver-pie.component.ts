@@ -10,13 +10,18 @@ import { ViolationService } from '../../../../shared/violation.service';
 export class DriverPieComponent implements AfterViewInit {
   options: any = {};
   themeSubscription: any;
+  violationCategories: any={};
+  formattedViolationList: any={};
 
-  constructor(public theme: NbThemeService, public vService: ViolationService) {
+  constructor(public theme: NbThemeService, public violationService: ViolationService) {
+    this.violationCategories=new Array();
+    this.formattedViolationList=new Array();
   }
 
   ngAfterViewInit() {
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
-
+      this.getData().then(()=>{
+        // console.log(this.violationCategories);
       const colors = config.variables;
       const echarts: any = config.variables.echarts;
 
@@ -27,27 +32,13 @@ export class DriverPieComponent implements AfterViewInit {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c} ({d}%)',
         },
-        legend: {
-          orient: 'vertical',
-          left: 'left',
-          data: ['USA', 'Germany', 'France', 'Canada', 'Russia'],
-          textStyle: {
-            color: echarts.textColor,
-          },
-        },
         series: [
           {
-            name: 'Countries',
+            name: 'Violations',
             type: 'pie',
             radius: '80%',
             center: ['50%', '50%'],
-            data: [
-              { value: 335, name: 'Germany' },
-              { value: 310, name: 'France' },
-              { value: 234, name: 'Canada' },
-              { value: 135, name: 'Russia' },
-              { value: 1548, name: 'USA' },
-            ],
+            data: this.formattedViolationList,
             itemStyle: {
               emphasis: {
                 shadowBlur: 10,
@@ -73,10 +64,28 @@ export class DriverPieComponent implements AfterViewInit {
         ],
       };
     });
+  });
   }
   
   ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
   }
 
+  async getData(){
+    await this.violationService.getAllViolationsPerCategory().then(res=>this.populateData());
+  }
+
+  populateData(){
+    var formattedViolation;
+    // console.log(this.violationService.getAllViolationsPerCategory);
+    for (var i = 0; i <this.violationService.numAllViolationsPerCategory.length; i++) {
+      this.violationCategories.push(this.violationService.numAllViolationsPerCategory[i].violationDescription);
+      formattedViolation={
+        value: this.violationService.numAllViolationsPerCategory[i].count, 
+        name: this.violationService.numAllViolationsPerCategory[i].violationDescription
+      }
+      this.formattedViolationList.push(formattedViolation);
+      // console.log(this.violationCategories[i]);
+    }
+  }
 }

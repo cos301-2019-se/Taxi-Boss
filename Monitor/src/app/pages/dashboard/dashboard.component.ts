@@ -25,6 +25,6 @@ export class DashboardComponent implements OnInit{
 
   async getAllData(){
     await this.dService.refreshList();
-    await this.vService.getAllViolationsPerCategory();
+    // await this.vService.getAllViolationsPerCategory();
   }
 }

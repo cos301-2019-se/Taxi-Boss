@@ -11,8 +11,10 @@ export class ViolationsPieComponent implements AfterViewInit, OnDestroy {
   options: any = {};
   themeSubscription: any;
   violationCategories: any={};
-  violationCounts: any={};
+  formattedViolationList: any={};
   constructor(private theme: NbThemeService, private violationService:ViolationService) {
+    this.violationCategories=new Array();
+    this.formattedViolationList=new Array();
   }
 
   ngAfterViewInit() {
@@ -29,27 +31,13 @@ export class ViolationsPieComponent implements AfterViewInit, OnDestroy {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c} ({d}%)',
         },
-        legend: {
-          orient: 'vertical',
-          left: 'left',
-          data: this.violationCategories,
-          textStyle: {
-            color: echarts.textColor,
-          },
-        },
         series: [
           {
             name: 'Violations',
             type: 'pie',
             radius: '80%',
             center: ['50%', '50%'],
-            data: [
-              { value: 335, name: 'Germany' },
-              { value: 310, name: 'France' },
-              { value: 234, name: 'Canada' },
-              { value: 135, name: 'Russia' },
-              { value: 1548, name: 'USA' },
-            ],
+            data: this.formattedViolationList,
             itemStyle: {
               emphasis: {
                 shadowBlur: 10,
@@ -87,9 +75,16 @@ export class ViolationsPieComponent implements AfterViewInit, OnDestroy {
   }
 
   populateData(){
-    for (var i = 0; i <this.violationService.getAllViolationsPerCategory.length; i++) {
-      this.violationCategories[i]=this.violationService.numAllViolationsPerCategory[i].violationDescription;
-      console.log(this.violationCategories[i]);
+    var formattedViolation;
+    // console.log(this.violationService.getAllViolationsPerCategory);
+    for (var i = 0; i <this.violationService.numAllViolationsPerCategory.length; i++) {
+      this.violationCategories.push(this.violationService.numAllViolationsPerCategory[i].violationDescription);
+      formattedViolation={
+        value: this.violationService.numAllViolationsPerCategory[i].count, 
+        name: this.violationService.numAllViolationsPerCategory[i].violationDescription
+      }
+      this.formattedViolationList.push(formattedViolation);
+      // console.log(this.violationCategories[i]);
     }
   }
 }
