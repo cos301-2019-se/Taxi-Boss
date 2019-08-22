@@ -1,0 +1,19 @@
+{
+  "name": "taxi",
+  "version": "1.0.0",
+  "description": "The taxi is not the boss",
+  "main": "/functions/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cos301-2019-se/Taxi-Boss.git"
+  },
+  "author": "Dewald van Hoven",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cos301-2019-se/Taxi-Boss/issues"
+  },
+  "homepage": "https://github.com/cos301-2019-se/Taxi-Boss#readme"
+}
