@@ -10,7 +10,7 @@ env:
 
 before_install:
   - cd DriverViolationApp
-  - cd cd taxiboss_driver
+  - cd taxiboss_driver
 
 install:
   - git clone https://github.com/flutter/flutter.git -b $FLUTTER_CHANNEL
