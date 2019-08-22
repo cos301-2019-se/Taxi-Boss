@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:unicorndial/unicorndial.dart';
+import 'speed.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'graph.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 final barColor = Colors.orange;
@@ -11,10 +14,10 @@ final barColor = Colors.orange;
 //    ));
 
 void main() => runApp(new MaterialApp(
-      home: new login(),
-    ));
+      home: new login(),//TODO: dsdfsdf
+));
 
-var numPlateG;
+var numPlateG = "";
 
 class HomePage extends StatefulWidget {
   @override
@@ -49,7 +52,7 @@ class HomePageState extends State<HomePage> {
     int statusCode = response.statusCode;
     // this API passes back the id of the new item added to the body
     var body = response.body;
-    print(body);
+    //print(body);
 
     setState(() {
       var toJsonData = json.decode(body);
@@ -61,58 +64,34 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    var childButtons = List<UnicornButton>();
-
-    childButtons.add(UnicornButton(
-        hasLabel: true,
-        labelText: "Speedometer",
-        currentButton: FloatingActionButton(
-          heroTag: "speed",
-          backgroundColor: Colors.green,
-          mini: true,
-          child: Icon(Icons.airline_seat_recline_extra),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) =>  HomePage()),
-            );
-          },
-        )));
-
-    childButtons.add(UnicornButton(
-      hasLabel: true,
-      labelText: "Violations",
-      currentButton: FloatingActionButton(
-        heroTag: "vio",
-        backgroundColor: Colors.red,
-        mini: true,
-        child: Icon(Icons.warning),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) =>  HomePage()),
-          );
-        },
-      )
-    ));
-
-    childButtons.add(UnicornButton(
-        hasLabel: true,
-        labelText: "Under Construction",
-        currentButton: FloatingActionButton(
-            heroTag: "other",
-            backgroundColor: Colors.grey,
-            mini: true,
-            child: Icon(Icons.crop_square))));
-
     return new Scaffold(
-        floatingActionButton: UnicornDialer(
-            backgroundColor: Color.fromRGBO(255, 255, 255, 0.6),
-            parentButtonBackground: Colors.orange,
-            orientation: UnicornOrientation.HORIZONTAL,
-            parentButton: Icon(Icons.dashboard),
-            childButtons: childButtons),
+        bottomNavigationBar: CurvedNavigationBar(
+          color: Colors.orange,
+          index: 1,
+          backgroundColor: Colors.white,
+          items: <Widget>[
+            Icon(Icons.drive_eta, size: 30, color: Colors.white),
+            Icon(Icons.warning, size: 30, color: Colors.white),
+            Icon(Icons.poll, size: 30, color: Colors.white),
+          ],
+          onTap: (index) {
+            //Handle button tap
+            if(index == 0)
+            {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>  Speed()),
+              );
+            }
+            else if(index == 2)
+            {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>  Graph()),
+              );
+            }
+          },
+        ),
         appBar: new AppBar(
           backgroundColor: barColor,
           title: new Text("Taxi Boss\nYour Violations"),
@@ -128,22 +107,23 @@ class HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Icon(
                     Icons.airport_shuttle,
-                    color: Colors.orange,
+                    color: Colors.orange[200],
                     size: 30.0,
                   ),
                   new Card(
+                    elevation: 3.0,
                     child: new Row(
                       children : <Widget>[
-                        Icon(
-                        Icons.error,
-                        color: Colors.red,
-                        size: 50.0,
-                      ),
+                        Padding(padding: EdgeInsets.all(9), child:Icon(
+                          Icons.error,
+                          color: Colors.redAccent,
+                          size: 50.0,
+                        )),
                         new RichText(
                           text: TextSpan(
                             style: DefaultTextStyle.of(context).style,
                             children: <TextSpan>[
-                              TextSpan(text: "\n"+data[index]['violationDescription']+"\n", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.red)),
+                              TextSpan(text: "\n"+data[index]['violationDescription'].replaceAll(new RegExp(r'_'), ' ')+"\n", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17, color: Colors.redAccent)),
                               TextSpan(text: data[index]['street']+"\n", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.black.withOpacity(0.4), fontSize: 14)),
                               TextSpan(text: data[index]['city']+"\n", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.black.withOpacity(0.4), fontSize: 14)),
                               TextSpan(text: data[index]['province']+"\n", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.black.withOpacity(0.4), fontSize: 14)),
@@ -151,9 +131,6 @@ class HomePageState extends State<HomePage> {
                             ],
                         ),
                       ),
-                      
-                        //new Text(data[index]['name']),//date
-                        //new Text(data[index]['name'])//street
                       ],
                       //padding: const EdgeInsets.all(20),
                   ))
@@ -162,7 +139,6 @@ class HomePageState extends State<HomePage> {
             }));
   }
 }
-
 //-----------------------------------------------------
 
 class login extends StatefulWidget {
@@ -209,6 +185,9 @@ class loginState extends State<login> {
       if(loginSuccess == "success")
       {
         numPlateG = myControllerNP.text;
+        final prefs = await SharedPreferences.getInstance();
+        prefs.setString('numPlate', numPlateG);
+        
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) =>  HomePage()),
@@ -220,31 +199,58 @@ class loginState extends State<login> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
         appBar: new AppBar(
           backgroundColor: barColor,
-          title: new Text("Taxi Boss\nLogin"),
+          title: new Text("Taxi Boss"),
         ),
-        body: Card(child: Column(children: <Widget>[
-          Text("\nNumber Plate:"),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              controller: myControllerNP,
-            )
+        body: Column(
+        children: <Widget>[
+          Padding(padding: EdgeInsets.only(top: 20),child: Card(
+            elevation: 3.0,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Padding(padding: EdgeInsets.only(top: 20),child: Center(child: Icon(Icons.lock_open, size: 120, color: Colors.orange[300]))),
+                Padding(
+                  padding: const EdgeInsets.all(25.0),
+                  child: TextField(
+                    textAlign: TextAlign.center,
+                    controller: myControllerNP,
+                    //expands: true,
+                    //autofocus: true,
+                    decoration: InputDecoration(
+                      labelText: 'Number Plate', 
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.orangeAccent, width: 1.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.orangeAccent, width: 1.0),
+                      ),  
+                    ),
+                  )
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(25.0),
+                  child: TextField(
+                    controller: myControllerPass,
+                    obscureText: true,
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.orangeAccent, width: 1.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.orangeAccent, width: 1.0),
+                      ),
+                    ),
+                    )
+                ),
+          ]
           ),
-          Text("Password"),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              controller: myControllerPass,
-            )
-          ),
-        ]
-        ),
-
-        ),
+          )),
+        ]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           getLogin(myControllerNP.text, myControllerPass.text);
