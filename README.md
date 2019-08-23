@@ -3,11 +3,11 @@
 ### The Project:
 EPI-Use has identified a problem in the informal public transport industry. Thus they envisioned a system of rating taxi drivers in the hopes that commuters will be able to make more informed decisions as to which taxi to get onto.
 
-##### [Web Reporting](taxiboss.azurewebsites.net/report.html)
+##### [Web Reporting](https://www.taxiboss.azurewebsites.net/report.html)
 
-##### [Monitor](taxi-boss-3792e.firebaseapp.com)
+##### [Monitor](https://www.taxi-boss-3792e.firebaseapp.com)
 
-##### [Super User](taxiboss.azurewebsites.net/superuser)
+##### [Super User](https://www.taxiboss.azurewebsites.net/superuser)
 
 ##### [Project Git Repo](https://github.com/cos301-2019-se/Taxi-Boss)
 
