@@ -109,7 +109,6 @@ export const NB_CORE_PROVIDERS = [
            redirect:{
              success: '/dashboard/'
            },
-           
            // ...
            endpoint: '/loginMonitor',
          },
@@ -119,6 +118,9 @@ export const NB_CORE_PROVIDERS = [
          },
          logout:{
            endpoint: '/loginMonitor',
+           redirect:{
+             success: '/auth/login'
+           }
          },
         }),
       

@@ -106,11 +106,6 @@ export class ViolationsBarComponent implements AfterViewInit, OnDestroy, OnInit 
     // console.log(this.noViolations);
   }
 
-  resolve(route: ActivatedRouteSnapshot): Promise<any> | boolean{
-    this.getData();
-    console.log(this.noViolations);
-    return true;
-  }
   determineDays(){
     var day;
     var pipe = new DatePipe('en-US');
