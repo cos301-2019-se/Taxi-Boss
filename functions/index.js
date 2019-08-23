@@ -798,8 +798,13 @@ exports.violationsByMonth = functions
             
             let ret=[];
             snapshot.forEach(doc => {
-                if (doc.data().date.substring(5,7)==data.month)
+                if(doc.data().date != null)
                 {
+                    console.log("Month: "+doc.data().date.substring(5,7)+" Month received: "+data.month);
+                }
+                if (doc.data().date != null && doc.data().date.substring(5,7)==data.month)
+                {
+                    console.log("I am not broken");
                     
                     ret.push({
                         city: doc.data().city,
@@ -818,7 +823,7 @@ exports.violationsByMonth = functions
                 }
             })
             
-
+            console.log("ret");
             res.setHeader('Content-Type', 'application/json');
             return res.status(200).send(ret);
 
