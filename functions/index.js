@@ -1546,6 +1546,7 @@ exports.violationsByDescriptionMonitor = functions
         let violations=[];
         let ret=[];
         let plateList=[];
+        let count=[];
             
 
             return driverList= db.collection('Taxi Driver')
@@ -1575,7 +1576,7 @@ exports.violationsByDescriptionMonitor = functions
                     snapshot.forEach(doc=>{
                         
                         //console.log("Format of date: "+doc.data().date);
-                        let count=[];
+                        
 
                         plateList.forEach(plate=>{
                             //console.log("In plate loop. Plate:"+plate.numberPlate);
@@ -1886,6 +1887,75 @@ exports.updateDriver = functions
                 return res.status(200).send({status: 'Driver updated with new plate '+data.numberPlate});
             })
         });
+        
+    })
+})
+
+
+
+//This function takes a number plate as parameter and returns 
+//a structured JSON array containing the count of each committed violation
+
+exports.violationCountByPlate = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('violationCountByPlate triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            numberPlate: req.query.numberPlate
+            //password: req.query.password
+        };*/
+
+
+        let data={
+            numberPlate: req.body.numberPlate
+        };
+
+        return violationList= db.collection('DetailedViolations')
+        .where('numberPlate','==',data.numberPlate)
+        .get()
+        .then(snapshot=> {
+            
+            let ret=[];
+            let count=[];
+            let violations=[];
+
+            snapshot.forEach(doc=>{
+                //console.log("In plate loop. Plate:"+plate.numberPlate);
+
+                    
+                    
+                if (violations.includes(doc.data().violationDescription))
+                {
+                    count[violations.indexOf(doc.data().violationDescription)]++;
+                }
+                else
+                {
+                    violations.push(doc.data().violationDescription);
+                    count[violations.indexOf(doc.data().violationDescription)]=1;
+                }
+                
+    
+                //let ret=[];
+
+                    
+                
+            })
+
+            violations.forEach((violation,index)=>{
+                ret.push({
+                    violationDescription:violation,
+                    "count":  count[index]
+                })
+            })
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        })
         
     })
 })
