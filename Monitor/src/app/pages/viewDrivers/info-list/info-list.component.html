@@ -3,7 +3,9 @@
         <nb-card size="medium" status="warning">
         <nb-card-header><h6>Drivers</h6>
         </nb-card-header>
-        <driver-list></driver-list>
+        <nb-card-body>
+            <driver-list></driver-list>
+        </nb-card-body>
         </nb-card>
     </nb-card-front>
     <nb-card-back>
@@ -12,7 +14,9 @@
             <h6>Violations</h6>
             <i (click)="viewDrivers()"><nb-icon icon="arrow-ios-back-outline" class="card-flip-toggle-btn"></nb-icon></i>
         </nb-card-header>
-        <violations-list></violations-list>
+        <nb-card-body>
+            <violations-list></violations-list>
+        </nb-card-body>
         </nb-card>
     </nb-card-back>
 </nb-flip-card>

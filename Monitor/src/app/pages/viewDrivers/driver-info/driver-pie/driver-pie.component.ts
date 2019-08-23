@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { ViolationService } from '../../../../shared/violation.service';
+import { DriverService } from '../../../../shared/driver.service';
 
 @Component({
   selector: 'driver-pie',
@@ -13,7 +14,7 @@ export class DriverPieComponent implements AfterViewInit {
   violationCategories: any={};
   formattedViolationList: any={};
 
-  constructor(public theme: NbThemeService, public violationService: ViolationService) {
+  constructor(public theme: NbThemeService, public violationService: ViolationService,public driverService: DriverService) {
     this.violationCategories=new Array();
     this.formattedViolationList=new Array();
   }
@@ -38,7 +39,7 @@ export class DriverPieComponent implements AfterViewInit {
             type: 'pie',
             radius: '80%',
             center: ['50%', '50%'],
-            data: this.formattedViolationList,
+            data:  this.formattedViolationList,
             itemStyle: {
               emphasis: {
                 shadowBlur: 10,
@@ -72,17 +73,17 @@ export class DriverPieComponent implements AfterViewInit {
   }
 
   async getData(){
-    await this.violationService.getAllViolationsPerCategory().then(res=>this.populateData());
+    await this.violationService.getDriverViolationsPerCategory(this.driverService.driverDetails.numberPlate).then(res=>this.populateData());
   }
 
   populateData(){
     var formattedViolation;
     // console.log(this.violationService.getAllViolationsPerCategory);
-    for (var i = 0; i <this.violationService.numAllViolationsPerCategory.length; i++) {
-      this.violationCategories.push(this.violationService.numAllViolationsPerCategory[i].violationDescription);
+    for (var i = 0; i <this.violationService.numDriverViolationsPerCategory.length; i++) {
+      this.violationCategories.push(this.violationService.numDriverViolationsPerCategory[i].violationDescription);
       formattedViolation={
-        value: this.violationService.numAllViolationsPerCategory[i].count, 
-        name: this.violationService.numAllViolationsPerCategory[i].violationDescription
+        value: this.violationService.numDriverViolationsPerCategory[i].count, 
+        name: this.violationService.numDriverViolationsPerCategory[i].violationDescription
       }
       this.formattedViolationList.push(formattedViolation);
       // console.log(this.violationCategories[i]);

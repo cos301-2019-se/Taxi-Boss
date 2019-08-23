@@ -69,6 +69,7 @@ export class DriverListComponent{
     this.service.driverDetails = event.data;
     this.service._driverDetails.next(event.data);
     this.vService.refreshViolations(event.data);
+    this.vService.getDriverViolationsPerCategory(this.service.driverDetails.numberPlate);
     // console.log(this.service.driverDetails.name);
   }
 

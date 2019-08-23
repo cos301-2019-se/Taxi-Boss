@@ -118,9 +118,6 @@ export const NB_CORE_PROVIDERS = [
          },
          logout:{
            endpoint: '/loginMonitor',
-           redirect:{
-             success: '/auth/login'
-           }
          },
         }),
       
