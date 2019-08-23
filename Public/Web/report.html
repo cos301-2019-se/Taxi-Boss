@@ -14,6 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+    <!-- google maps api -->
+    <!-- API key removed for saftey-->
+    <!--<script  async defer src="https://maps.googleapis.com/maps/api/js?key=API KEY&callback=initMap"
+    type="text/javascript"></script>-->
+
     <script type="text/javascript">
 
       //This function shows the "other" textbox, when a user clicks "other" when reporting a violation
@@ -33,9 +40,168 @@
         }
       }
 
-    </script>
 
-    <style>
+      //This function tries to locate the user.
+      function getLocation() 
+      {
+        
+        
+
+        if (navigator.geolocation) 
+        {
+          navigator.geolocation.getCurrentPosition(viewPosition, errorOccured);
+        } 
+        else
+        { 
+          console.log("Geolocation is not supported by this browser.");
+        }
+      }
+
+      function viewPosition(position) 
+      {
+        //Print the posotion of the user or the marker.
+        printAddress(position.coords.latitude, position.coords.longitude);
+      }
+
+
+      //This function handles errors that might occur while trying to retrieve the geolocation.
+      function errorOccured(error) {
+
+        switch(error.code) {
+          case error.PERMISSION_DENIED:
+            console.log("User denied the request for Geolocation."); 
+            break;
+          case error.POSITION_UNAVAILABLE:
+            console.log("Location information is unavailable.");
+            break;
+          case error.TIMEOUT:
+            console.log("The request to get user location timed out.");
+            break;
+          case error.UNKNOWN_ERROR:
+            console.log("An unknown error occurred.");
+            break;
+        }
+      }
+
+
+      //This function receives the address object from google maps api, and sorts it so it can be read.
+      function sortAddress(obj)
+      {
+        var place = [];
+
+        obj.address_components.forEach( function(el) 
+        {
+          //This array stores the long names of the different areas.
+          place[el.types[0]] = el.long_name;
+
+        });
+
+        return place;
+
+      } 
+
+
+      //This function autofills the remainder of the form, once the geolocation has been retrieved. It also stores the latitiude and longitude of the user or marker.
+      function printAddress(latitude, longitude) 
+      {
+        //Saves the latitude and longitude of the user or marker.
+        document.getElementById("latitude").value = latitude;
+        document.getElementById("longitude").value = longitude;
+
+       
+        //Create a Geocoder object
+        var geoObj = new google.maps.Geocoder();
+ 
+        //Stores the latitude and longitude in an object
+        var locale = new google.maps.LatLng(latitude, longitude);
+ 
+        //find out info about our location
+        geoObj.geocode({ 'latLng': locale }, function (results, status) 
+        {
+          if(status == google.maps.GeocoderStatus.OK)
+          {
+            if(results[0]) 
+            {
+              var address = sortAddress(results[0]);
+
+              var city = address.locality;
+              var street = address.route;
+              var province = address.administrative_area_level_1;
+            
+              document.getElementById("street").value = street;
+              document.getElementById("city").value = city;
+              document.getElementById("province").value = province;
+
+            } 
+            else
+            {
+              error('Google did not return any results.');
+            }
+
+          }
+
+          else 
+          {
+            error("Reverse Geocoding failed due to: " + status);
+          }
+
+        })
+      };
+
+
+      //This function places a map on the website once the "Choose from map" button is pressed.
+      function loadMap()
+      {
+
+        var mymap = document.getElementById("map");
+        mymap.style.display = "block";
+
+        initMap();
+      }
+
+
+      //This function initializes the map and a marker and adds a listerner to the marker.
+      var map;
+      function initMap() 
+      {
+        var coordinates = new google.maps.LatLng(-25.755647999999997,28.241100799999998);
+
+        var settings = {
+          zoom: 6,
+          center: coordinates,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+
+        }
+
+        map = new google.maps.Map(document.getElementById("map"), settings);
+
+        var marker = new google.maps.Marker({
+         position: coordinates, 
+         draggable: true,
+         map: map
+
+        });
+
+        google.maps.event.addListener(marker, 'drag', function(event) 
+        {
+          getCoords(event.latLng);
+        });
+      }
+
+      //This function gets the longitude and latitude of the location and passes them to printAddress.
+      function getCoords(location ) 
+      {
+        var latitude = location.lat();
+        var longitude = location.lng();
+
+        printAddress(latitude, longitude);
+
+      }
+
+  
+  </script>
+
+  <style>
 
       .footer 
       {
@@ -48,9 +214,23 @@
         text-align: center;
 		  }
 
-    </style>
+      #map
+      {
+        height: 300px;
+        width: 300px;
+        padding: 0;
+        margin: 0;
+      }
+
+  </style>
+
     
 </head>
+
+
+
+
+
 <body style="background-color: #FED428">
 
     <!--Taxi Boss Logo-->
@@ -76,7 +256,7 @@
         <!--Creates a textbox so users can insert number plate of taxi-->
         <div class = "col-sm-4">
           <div class="form-group" >
-            <label for="text"><b>Number Plate:</b></label>
+            <label for="text"><b>Number Plate of driver:</b></label>
             <input type="text" class="form-control" id="numberPlate"  placeholder="Enter number plate" name="numberPlate">
           </div>
         </div>
@@ -139,7 +319,7 @@
         <!--Shows claender, so users can choose the date when the violation took place-->
         <div class = "col-sm-6">
           <div class="form-group">
-            <label for="date"><b>Date:</b></label>
+            <label for="date"><b>Date when the violation occured:</b></label>
             <input type="date" class="form-control" id="date" name="date" >
           </div>
         </div>
@@ -147,10 +327,37 @@
          <!--Shows watch, so users can choose the time when the violation took place-->
         <div class = "col-sm-6">
           <div class="form-group">
-            <label for="time"><b>Time:</b></label>
+            <label for="time"><b>Time when the violation occured:</b></label>
             <input type="time" class="form-control" id="time"  name="time">
           </div>
         </div>
+
+
+
+
+        <!--Button that allows user to send their exact location or point to the location where the incident occured-->
+        <div class = "col-sm-6">
+          <div class="form-group">
+            <p><label for="text"><b>Where did the violation occur?</b></label></p>
+            <p><input type="button"  class="btn btn-warning" onclick="getLocation()" value="Violation occured here" name = "button" ></p>
+
+            <p><label for="text"><b>OR</b></label></p>
+            <p><input type="button"  class="btn btn-warning" onclick="loadMap()" value="Choose from map" name = "button" ></p>
+            <br>
+            <p id = "map" style="display: none"></p>
+          </div>
+        </div>
+
+
+
+        <!-- Storing the longitude and latitude that is calculted in the javascript functions-->
+        <div class = "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="latitude" placeholder="latitude" name="latitude" value="" style="display: none;">
+            <input type="text" class="form-control" id="longitude" placeholder="longitude" name="longitude" value="" style="display: none;">
+          </div>
+        </div>
+        
 
         <!--Text box that allows users to insert the name of the street where the violation took place-->
         <div class = "col-sm-6">
@@ -181,6 +388,7 @@
         <!--Submit button that sends a post request to the php file on the server, once it has been clicked-->
         <div class = "col-sm-12">
           <input type="submit" class="btn btn-primary" name="submit"></input>
+
         </div>
 
      </form>

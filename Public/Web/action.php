@@ -7,12 +7,12 @@
 
 		//use API key to connect to the database
 		$firestore = new FireStoreApiClient(
-		 'taxi-boss', '' //api goes in quotes
+		 'taxi-boss-3792e', 'AIzaSyC1FK6R2NLk0cfhMsMoE4EJnsNZaB47hfk'
 		);
 		
 
 		//variable names
-		$numberPlate = $event = $date = $time = $other = $street = $city = $province = "";
+		$numberPlate = $event = $date = $time = $other = $street = $city = $province = $latitude = $longitude = $reportDate = $reportTime = "";
 	
 
 	
@@ -28,6 +28,12 @@
 		$street = $_POST['street'];
 		$city = $_POST['city'];
 		$province = $_POST['province'];
+
+		$latitude = $_POST['latitude'];
+		$longitude = $_POST['longitude'];
+
+		$reportDate = date("Y-m-d");
+		$reportTime = date("H:i");
 
 
 		//If the "other" option was chosen
@@ -99,9 +105,30 @@
 		$document->setString('province', $province);
 		$document->setString('numberPlate', $numberPlate);
 		$document->setString('violationDescription', $event);
+		
+		
 
 		//add the document 
 		$firestore->addDocument('Violations', $document);
+
+
+		//set object values for the other document
+		$document->setString('violationOrigin', 'WEB');
+		$document->setString('time', $time);
+		$document->setString('date', $date);
+		$document->setString('street', $street);
+		$document->setString('city', $city);
+		$document->setString('province', $province);
+		$document->setString('numberPlate', $numberPlate);
+		$document->setString('violationDescription', $event);
+		$document->setString('latitude', $latitude);
+		$document->setString('longitude', $longitude);
+		$document->setString('reportDate', $reportDate);
+		$document->setString('reportTime', $reportTime);
+
+		//add the document
+		$firestore->addDocument('DetailedViolations', $document);
+
 
 		//Thank the user
 		echo "<body style='background-color: #FED428'>";
