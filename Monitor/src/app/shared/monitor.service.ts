@@ -7,7 +7,8 @@ import { Monitor } from './monitor.model';
 export class MonitorService {
   monitorDetails: Monitor;
   constructor() { 
-
+    this.monitorDetails=new Monitor;
+    this.monitorDetails.email="brian@brian.com";
   }
 
   setMonitor(mDetails: string){
