@@ -1,0 +1,61 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  .picture {
+    background-image: url('../../../../assets/images/taxi.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    min-height: 200px;
+    border-top-left-radius: nb-theme(card-border-radius);
+    border-top-right-radius: nb-theme(card-border-radius);
+    flex: 1;
+  }
+
+  .details {
+    padding: nb-theme(card-padding);
+  }
+
+  .description {
+    text-align: justify;
+  }
+
+  nb-card-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .link-icon {
+    font-size: 1.75rem;
+  }
+
+  nb-icon {
+    font-size: 1.55rem;
+
+    ::ng-deep svg {
+      vertical-align: top;
+    }
+  }
+
+  .card-flip-toggle-btn {
+    font-size: 20px;
+    vertical-align: text-bottom;
+    float: right;
+}
+.card-flip-toggle-btn:hover {
+    // Your code here
+    opacity: 0.5;
+    cursor: pointer;
+}
+h6 {
+  color:white;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.14);
+  text-align: center;
+}
+
+nb-card-header {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+}

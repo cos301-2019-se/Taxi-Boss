@@ -1,0 +1,13 @@
+<nb-card>
+    <div class="icon-container">
+        <div class="icon status-warning">
+            <nb-icon icon="people-outline" [options]="{ animation: { type: 'pulse' } }" class="icon-heading"></nb-icon>
+        </div>
+    </div>
+
+    <div class="details">
+        <div class="title paragraph">Registered Drivers</div>
+        <div class="title h5">{{service.numDrivers}}</div>
+        <div class="status paragraph-2 card-description"><nb-icon icon="info-outline" status="info" class="info-icon"></nb-icon> Your total number of registered drivers.</div>
+    </div>
+</nb-card>

@@ -1,0 +1,25 @@
+<nb-flip-card [showToggleButton]='false' #cardComponent1 [flipped]='this.vService.viewViolations'>
+  <nb-card-front>
+    <nb-card size="medium">
+      <div class="picture"></div>
+      <!-- <img class="picture" src="../../../../assets/images/taxi.jpg"/> -->
+      <div class="details">
+        <div class="h4">{{service.driverDetails.name}}</div>
+        <div class="description">
+            Number of violations: {{vService.numViolations}} 
+        </div>
+      </div>
+      <nb-card-footer>
+            <button nbButton hero status="warning" (click)="onClick()">View Violations</button>
+      </nb-card-footer>
+    </nb-card>
+  </nb-card-front>
+  <nb-card-back>
+      <nb-card status="danger">
+          <nb-card-header><h6>Driver Violation Categories</h6>
+              <i (click)="viewDrivers()"><nb-icon icon="arrow-ios-back-outline" class="card-flip-toggle-btn"></nb-icon></i>
+          </nb-card-header>
+          <driver-pie></driver-pie>
+      </nb-card>
+  </nb-card-back>
+</nb-flip-card>

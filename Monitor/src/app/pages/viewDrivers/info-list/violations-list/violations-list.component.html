@@ -1,0 +1,22 @@
+<!-- <table class="table table-hover" style="display: block; overflow-y: scroll">
+    <thead>
+        <th>Description</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>Province</th>
+        <th>Time</th>
+        <th>Date</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vio of violationService.driverViolations">
+            <td>{{vio.violationDescription}}</td>
+            <td>{{vio.street}}</td>
+            <td>{{vio.city}}</td>
+            <td>{{vio.province}}</td>
+            <td>{{vio.time}}</td>
+            <td>{{vio.date}}</td>
+        </tr>
+    </tbody>
+</table> -->
+<ng2-smart-table [settings]="settings" [source]="violationService.source" >
+</ng2-smart-table>

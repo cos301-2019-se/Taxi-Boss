@@ -1,0 +1,13 @@
+<nb-card>
+<div class="icon-container">
+    <div class="icon status-danger">
+        <nb-icon icon="alert-triangle-outline" [options]="{ animation: { type: 'zoom' } }" class="icon-heading"></nb-icon>
+    </div>
+</div>
+
+<div class="details">
+    <div class="title paragraph">High Risk Driver</div>
+    <div class="title h5">{{service.driverDetails.name}}</div>
+    <div class="status paragraph-2 card-description"><nb-icon icon="info-outline" class="info-icon" status="warning"></nb-icon> Driver with the most complaints this week.</div>
+</div>
+</nb-card>

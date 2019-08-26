@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -68,3 +69,8 @@ Taxi Boss-6784cc3930bc.json
 
 taxi-boss-3792e-firebase-adminsdk-kuxph-65b1c48207.json
 
+=======
+node_modules
+node_modules
+node_modules
+>>>>>>> WIP_Monitor
