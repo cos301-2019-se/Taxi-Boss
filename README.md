@@ -46,7 +46,7 @@ EPI-Use has identified a problem in the informal public transport industry. Thus
 > *Member*
 
 ###### **Interests:**
-> *Poetry and calligraphy*
+> *Poetry, calligraphy and outerspace*
 
 ###### **Skills:**
 > *I am a final year BSc Computer Science student that is skilled in a variety of programming languages, namely, C++, Java, Python 3, Android Development and LAMP Stack.*
