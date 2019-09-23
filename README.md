@@ -49,10 +49,10 @@ EPI-Use has identified a problem in the informal public transport industry. Thus
 > *Poetry and calligraphy*
 
 ###### **Skills:**
-> *I am a final year BSc Computer Science student that is skilled in a variety of programming languages, namely, C++, Java, Python 3, x86 Assembly, Android Development and LAMP Stack.*
+> *I am a final year BSc Computer Science student that is skilled in a variety of programming languages, namely, C++, Java, Python 3, Android Development and LAMP Stack.*
 
 ###### **Work Experience:**
-> *I have co-developed a social media app called WingD, for Aurecon’s Limelight Graduate Program, in 2018.*
+> *I co-developed a social media app called WingD, for Aurecon’s Limelight Graduate Program, in 2018.*
 
 ###### **Attitudes:**
 > *I am a confident, zealous and diligent young lady, who remains reliable, authentic and full of personality. I exhibit good moral character and pride myself in my punctuality and ability to successfully carry out tasks.*
