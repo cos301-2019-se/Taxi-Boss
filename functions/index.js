@@ -1611,6 +1611,15 @@ exports.violationsByDescriptionMonitor = functions
                         ret.push({"violationDescription":violation, "count": count[index]});
                 })
 
+                /*let highest= "";
+                let highestCount =0;
+                ret.forEach(plate => {
+                    if (plate.count > highestCount)
+                    {
+                        highest = plate.
+                    }
+                })*/
+
             })
             .then(()=>{
                 res.setHeader('Content-Type', 'application/json');
@@ -1961,6 +1970,183 @@ exports.violationCountByPlate = functions
             return res.status(200).send(ret);
 
         })
+        
+    })
+})
+
+
+
+//Login with JSON name=name, password=password
+exports.loginSuperUser = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('loginSuperUser triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            email: req.query.email,
+            password: req.query.password
+        };*/
+
+
+        let data={
+            name: req.body.name,
+            password: req.body.password
+        };
+
+        //let salt = crypto.randomBytes(16).toString('hex');
+        
+
+        //data.password=hash;
+
+        return monitor= db.collection('SuperUser')
+        .where('name','==',data.name)
+        .get()
+        .then(snapshot=> {
+            if (snapshot.empty){
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(500).send({status: 'Account not found'});
+            }
+
+            let correct=false;
+            let name;
+            
+            snapshot.forEach(doc => {
+
+                let hash = crypto.pbkdf2Sync(data.password, doc.data().salt, 79,32,'sha512').toString('hex');
+                if (doc.data().password == hash)
+                {
+                   correct=true;
+                   name=doc.data().name;
+                }
+            })
+            
+            if (correct == true)
+            {
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(200).send({data:{
+                    name: name,
+                   // token: name,
+                    email: data.email
+                }});
+            }
+            else{
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(500).send({status: 'Incorrect password'});
+            }
+ 
+
+        });
+        
+    })
+})
+
+
+//Register with JSON name=name, password=password
+exports.registerSuperUser = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('registerSuperUser triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            name: req.query.fullName,
+            email: req.query.email,
+            pass: req.query.password
+        };*/
+
+
+        let data={
+            name: req.body.name,
+            //email: req.body.email,
+            password: req.body.password,
+            salt: "a"
+        };
+
+
+        let salt = crypto.randomBytes(16).toString('hex');
+        let hash = crypto.pbkdf2Sync(data.password, salt, 79,32,'sha512').toString('hex');
+        data.password=hash;
+        data.salt=salt;
+
+
+        //let exists=false;
+        monitor= db.collection('SuperUser')
+        .where('name','==',data.name)
+        .get()
+        .then(snapshot=> {
+            if (!snapshot.empty){
+                res.setHeader('Content-Type', 'application/json');
+                return res.status(200).send({status: 'Name already registered'});
+            }
+            return;
+        })
+            
+        /*if (exists==true)
+        {
+           
+        }*/
+
+        return addDoc= db.collection('SuperUser').add(data)
+        .then( ref=> {
+            
+            console.log('Account with name '+data.name+' has been registered. ID: ', ref.id);
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(data);
+        });
+
+        
+    })
+})
+
+
+//Takes JSON with email = email, returns json with highest risk driver's details
+
+exports.highestRiskDriver = functions
+.region('europe-west2')
+.https.onRequest((req, res) => {
+    console.log('listOfDrivers triggered');
+    return cors(req, res, () => {
+
+        /*let data= {
+            //name: req.query.fullName,
+            email: req.query.email,
+            //password: req.query.password
+        };*/
+
+
+        let data={
+            email: req.body.email
+        };
+
+        return driverList= db.collection('Taxi Driver')
+        .where('monitorEmail','==',data.email)
+        .get()
+        .then(snapshot=> {
+            
+            let ret=[];
+            snapshot.forEach(doc => {
+                ret.push({
+                    name: doc.data().name,
+                    cellNumber: doc.data().cellNumber,
+                    email: doc.data().email,
+                    numberPlate: doc.data().numberPlate
+                })
+            })
+
+            let highRisk = {};
+
+
+            ret.forEach( driver =>{
+                
+            })
+            
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).send(ret);
+
+        });
         
     })
 })
