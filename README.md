@@ -1,7 +1,7 @@
 # Supreme Internect
 ## Taxi-Boss
 ### The Project:
-EPI-Use has identified a problem in the informal public transport industry. Thus they envisioned a system of rating taxi drivers in the hopes that they can incentivize good driving behaviour and discourage bad driving behavior. Our system helps our client achieve that goal. Taxi Boss puts the power back into the public's hands. It allows the public to send in reports when taxi drivers commit road violations. This data is then gathered to create a profile of each driver.
+EPI-Use has identified a problem in the informal public transport industry. Thus they envisioned a system of rating taxi drivers in the hopes that they can incentivize good driving behaviour and discourage bad driving behavior. Our system helps our client achieve that goal. Taxi Boss puts the power back into the public's hands. It allows the public to send in reports of road violations. This data is then gathered to create a profile of each driver.
 
 ##### [Web Reporting](https://taxi-boss.azurewebsites.net/report.html)
 
