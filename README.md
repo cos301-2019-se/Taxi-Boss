@@ -19,6 +19,8 @@ EPI-Use has identified a problem in the informal public transport industry. Thus
 
 #### [Coding Standards](Documentation/coding_standards.pdf)
 
+#### [Continuous integration and automated testing](https://travis-ci.org/cos301-2019-se/Taxi-Boss)
+
 ### The team:
 **team email**: supremeinternect@gmail.com
 
