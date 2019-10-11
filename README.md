@@ -13,7 +13,7 @@ EPI-Use has identified a problem in the informal public transport industry. Thus
 
 #### [SRS Document](Documentation/Taxi_Boss_SRS.pdf)
 
-#### [Test Policy Document](Documentation/Testing policy document.pdf)
+#### [Test Policy Document](Documentation/Testing%20policy%20document.pdf)
 
 #### [User Manual](Documentation/user_manual.pdf)
 
