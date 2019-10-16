@@ -5,7 +5,7 @@ EPI-Use has identified a problem in the informal public transport industry. Thus
 
 ##### [Web Reporting](https://taxi-boss.azurewebsites.net/report.html)
 
-##### [Monitor](https://taxi-boss-3792e.firebaseapp.com)
+##### [Monitor](https://taxiboss.tech)
 
 ##### [Super User](https://taxi-boss.azurewebsites.net/superuser/)
 
