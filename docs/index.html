@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Supereme Internect - Taxi Boss</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="The OTP subsystem of the NextGen ATM" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="apple-touch-icon-precomposed" href="media/favicon.png" />
+  <link rel="icon" href="media/favicon.png" />
+  <link rel="shortcut icon" href="media/favicon.png" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body class="page page-style-guide">
+
+  <main>
+
+    <section class="bg-dark center dark padding">
+      <div class="margin-bottom margin-top max-width-m">
+        <h1>What is Taxi Boss?</h1>
+        <p class="lead"><a href="https://youtu.be/t6Cp2ilnq2I">More details into why and how it works.</a></p>
+      </div>
+    </section>
+
+    <div class="padding">
+      <div class="row max-width-l">
+        <div class="col-one-fifth">
+          <aside class="sidebar">
+            <h6 class="sidebar-header">Sections</h6>
+            <ul class="blank">
+              <li><a href="#intro">Introduction</a></li>
+              <li><a href="#driver">Driver App</a></li>
+              <li><a href="#monitor">Monitor Portal</a></li>
+              <li><a href="#superuser">Superuser Portal</a></li>
+              <li><a href="#wreporting">Web Reporting Portal</a></li>
+              <li><a href="#ureporting">USSD Reporting Portal</a></li>
+              <li><a href="#challenges">Challenges</a></li>
+              <li><a href="https://youtu.be/t6Cp2ilnq2I">Video</a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="col-four-fifths">
+
+          <section id="intro">
+            <h4>Introduction</h4>
+            <p class="paragraph">Taxi boss is an incentive-driven platform primarily oriented around the monitoring and assessment of taxi driver behaviour. This is done by providing analytics about driver behaviour to the relevant stakeholders in order to inform the judgements of taxi drivers with bad driving behaviour. The objective behind its conception is to make provisions for making our roads safer.<br><br>
+              Our system helps our client achieve that goal. Taxi Boss puts the power back into the public's hands. It allows the public to send in reports of traffic violations through our reporting website. This data is then gathered to create profiles of the drivers. The monitor can view the performance of each of their drivers and add and remove drivers. Our Super User system allows third party organisations such as Insuarance companies to use the collected data to decide on insurance premiums and helps the Road Works Organisations improve road designs on roads with recurrent reported traffic violations. Lastly, our driver app allows the driver to view their performance and it also automatically detects and reports speeding violations.
+              </p>
+              <img src="media/devices.jpg" alt="devices" class="center">
+            <br>
+            <table>
+              <tr>
+                <th>Access Point</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>Taxi Driver App</td>
+                <td>Used by the driver in order to view existing violations and provide automated violation reporting based on the device's location based data.<td>
+              </tr>
+              <tr>
+                <td>Taxi Monitor Portal</td>
+                <td>Used by the taxi group owner in order to monitor and analyse the performance of taxi drivers registered to them.<td>
+              </tr>
+              <tr>
+                <td>Superuser Portal</td>
+                <td>Used by the third-party stakeholders in order to monitor and analyse the performance of all taxi drivers.</td>
+              </tr>
+              <tr>
+                <td>Web Reporting Portal</td>
+                <td>Used by people reporting a violation with access to internet in order to report a violation.</td>
+              </tr>
+              <tr>
+                <td>USSD Reporting Portal</td>
+                <td>Used by people reporting a violation through USSD prompts in order to report a violation.</td>
+              </tr>
+            </table>
+          </section>
+
+          <div class="divider"></div>
+
+          <section id="driver">
+            <h4>Taxi Driver App</h4>
+            <p class="paragraph">The taxi driver app’s main objective is to provide the driver with the ability to track and be notified of any violations related to them and to automatically report violations to the system using the smart phone’s sensors. This meant that the app had to be designed to be non-intrusive and intuitive and had to be a native application instead of a web application. 
+              With all of this in consideration, we chose to develop this system with Flutter due to it being a cross-platform framework that works well with native mobile technologies.</p>
+            <img src="media/driver.jpg" alt="driver" class="center">
+          </section>
+
+          <div class="divider"></div>
+
+          <section id="monitor">
+            <h4>Monitor Portal</h4>
+            <p class="paragraph">Returns the status of whether the OTP - that had been previously generated - and PIN - that has been sent in the request - match.</p>
+            <p class="paragraph">Portal URL: <a href="http://taxiboss.tech/">Monitor</a></p>
+            <img src="media/monitor.jpg" alt="monitor" class="center">
+            <!-- <table>
+              <tr>
+                <th>Page</th>
+                <th>Function</th>
+              </tr>
+              <tr>
+                <td>clientID</td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>Type</td>
+                <td>string</td>
+              </tr>
+            </table> -->
+            
+          </section>
+
+          <div class="divider"></div>
+          <section id="superuser">
+            <h4>Superuser Portal</h4>
+            <!-- <p class="paragraph">Returns the status of whether the OTP - that had been previously generated - and PIN - that has been sent in the request - match.</p> -->
+            <p class="paragraph">Portal URL: <a href="https://taxi-boss.azurewebsites.net/superuser/">Superuser</a></p>
+            <img src="media/superuser.jpg" alt="superuser" class="center">
+            <!-- <table>
+              <tr>
+                <th>Page</th>
+                <th>Function</th>
+              </tr>
+              <tr>
+                <td>clientID</td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>Type</td>
+                <td>string</td>
+              </tr>
+            </table> -->
+            
+          </section>
+          <div class="divider"></div>
+          <section id="wreporting">
+            <h4>Web Reporting Portal</h4>
+            <!-- <p class="paragraph">Returns the status of whether the OTP - that had been previously generated - and PIN - that has been sent in the request - match.</p> -->
+            <p class="paragraph">Portal URL: <a href="https://taxi-boss.azurewebsites.net/report.html">Web Reporting</a></p>
+            <img src="media/web_report.jpg" alt="web report" class="center">
+            
+          </section>
+          <div class="divider"></div>
+          <section id="ureporting">
+            <h4>USSD Reporting Portal</h4>
+            <!-- <p class="paragraph">Returns the status of whether the OTP - that had been previously generated - and PIN - that has been sent in the request - match.</p> -->
+            <p class="paragraph">USSD code: (ask for code due to limited credits)</p>
+            <img src="media/ussd_report.jpg" alt="ussd report" class="center">
+          </section>
+          <div class="divider"></div>
+          <section id="challenges">
+            <h4>Challenges</h4>
+            <p class="paragraph">Looking back, we noted that the initial phase was a difficult time for our team. From not really knowing each other, to losing a team member, to adjusting to software requirement changes. These challenges brought up quite a bit of doubt and uncertainty, which made development very difficult for us, because we weren’t certain whether we were doing was what we were supposed to be doing. 
+              <br><br>
+              We all came into this project with a lack of experience in real-world product development, having only dabbled in making static websites, algorithmic coding and very basic web app development. The assumption that developing a multi-platform based system like this didn’t seem too difficult. This ignorance was born from the surface level research that we had performed during our tendering stage. Once our bid was won, and we delved into more research regarding the appropriate technology stack, we began to realize that the extent of the complexity of building and integrating multiple platforms was fully comprehended.
+              <br><br> 
+              Once we had chosen our technology and the development had finally begun, issues relating to the scope, feasibility and ambiguity of the client’s requirements surfaced. This led to completely redesigning the system halfway through our development schedule, while developing in languages and technologies we were all unfamiliar with. Nevertheless, this didn’t stop us, in fact it pushed us. And we believe that it worked particularly well because everyone in the group was proactive and took initiative. It showed us how we were all capable of adapting under pressure, maintaining composure and becoming great software engineers.
+              <br><br>
+              Our team motto was <em>“From 4 to 1 cause of COS 301”</em> and we feel like that is exactly what we embodied during this project.
+              </p>
+            <img src="media/group.jpg" alt="group" class="center">
+          </section>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer-main bg-light padding">
+    <p class="copyright"><span>COS 301: Software Engineering </span><a href="https://cs.up.ac.za/" target="_blank">University of Pretoria</a><span> - © All rights reserved.</span></p>
+  </footer>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
