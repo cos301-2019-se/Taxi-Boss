@@ -2,6 +2,8 @@
 ## Taxi-Boss
 ### The Project:
 EPI-Use has identified a problem in the informal public transport industry. Thus they envisioned a system of reporting traffic violations in the hopes that they can incentivize good driving behaviour and discourage bad driving behavior. Our system helps our client achieve that goal. Taxi Boss puts the power back into the public's hands. It allows the public to send in reports of traffic violations through our reporting website. This data is then gathered to create profiles of the drivers. The monitor can view the performance of each of their drivers and add and remove drivers. Our Super User system allows third party organisations such as Insuarance companies to use the collected data to decide on insurance premiums and helps the Road Works Organisations improve road designs on roads with recurrent reported traffic violations. Lastly, our driver app allows the driver to view their performance and it also automatically detects and reports speeding violations.
+##### [The Deep Stuff](https://cos301-2019-se.github.io/Taxi-Boss/)
+
 ##### [Explainer Video](https://youtu.be/t6Cp2ilnq2I)
 
 ##### [Web Reporting](https://taxi-boss.azurewebsites.net/report.html)
